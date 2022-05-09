@@ -1,0 +1,61 @@
+a {
+    color: #2155cd;
+    /* a 태그에 대해 color red 적용 */
+    text-decoration: solid underline #2155cd 2px; /* Property: Value */
+}
+.headline{
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    border: 5px solid grey;
+    border-radius: 40px 80px;
+    font-size:45px;
+    text-align: center;
+}
+.active{
+    border-bottom: 5px solid gray;
+}
+#grid1{
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+#author{
+    font-weight: bold;
+    text-align: right;
+    width: 200px;
+}
+#grid2 ol{
+    border-right: 3px solid gray;
+    margin: 20px;
+    margin-left: 50px;
+    width: 100px;
+    padding: 20px;
+}
+#pic{
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+img{
+    float: left;
+    width: 700px;
+    height: 450px;
+    object-fit: cover;
+}
+#grid2{
+    display: grid;
+    grid-template-columns: 1fr auto 4fr;
+}
+#html{
+    border-left: 3px solid gray;
+    padding: 20px;
+    margin-right: 50px;
+}
+@media(max-width: 1200px){
+    #grid2{
+        display: block;
+    }
+    #grid2 ol{
+    border-right: none;
+}
