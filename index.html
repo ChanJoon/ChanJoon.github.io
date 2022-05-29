@@ -1,88 +1,146 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>찬준이의 HTML</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5PT50ZWR3"></script>
-        <script>
+
+<head>
+    <title>찬준이의 HTML</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5PT50ZWR3"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'G-Z5PT50ZWR3');
-        </script>
-    </head>
-    <body>      
-        <div class="headline">
-            <a href="index.html">Hello Web</a>
-        </div>
-        <input type="button" value="Click Me!" onclick="
-        document.querySelector('body').style.backgroudColor = '#f76e11';
-        document.querySelector('a').style.color = '#ff9f45';
-        document.querySelector('a').style.textDecoration = '#ff9f45';
-        document.querySelector('a').style.backgroudColor = '#f76e11';
-        document.getElementById('#grid1').style.backgroudColor = 'black';
-        ">
+    </script>
+</head>
 
-        <div class="bottomgrey" id="grid1">
-            <div id="sitebirth">
-                Started at 220319
-            </div>
-            <div id="author">
-                Made by ChanJoon
-            </div>
-        </div>
+<body>
+    <div class="headline">
+        <a href="index.html">Hello Web</a>
+    </div>
+    <input type="button" value="Click Me!" onclick="
+        var a = document.querySelector('a');
+        var el = document.querySelector('.headline');
 
-        <div id="grid2">
-            <ol>
-                <h2 style="margin-top: 0px">
-                    <font color="grey">List</font>
-                </h2>
-                <h4>
+        if(this.value === 'Click Me!'){
+        a.style.color = 'orange';
+        el.style.backgroundColor = '#FEF9A7';
+        this.value = 'Nice!';
+
+        } else {
+        a.style.color = '#2155cd';
+        el.style.backgroundColor = '#e1f5fe';
+        this.value = 'Click Me!';
+        }
+    ">
+    <input id="night_day" type="button" value="night" onclick="
+                var target = document.querySelector('body');
+                var el = document.querySelector('.headline');
+
+                if(this.value === 'night'){
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                el.style.backgroundColor = '#E3FCBF';
+                this.value = 'day';
+            
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length){
+                    alist[i].style.color = '#14C38E';
+                    alist[i].style.textDecoration = 'underline';
+                    alist[i].style.textDecorationColor = '#E3FCBF';
+                    alist[i].style.textDecorationThickness = '2px';
+                    i = i + 1;
+                }
+                } else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                el.style.backgroundColor = '#e1f5fe';
+                this.value = 'night';
+            
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length){
+                    alist[i].style.color = '#2155cd';
+                    alist[i].style.textDecoration = 'underline';
+                    alist[i].style.textDecorationColor = '#2155cd';
+                    alist[i].style.textDecorationThickness = '2px';
+                    i = i + 1;
+                }
+                }
+            ">
+
+    <div class="bottomgrey" id="grid1">
+        <div id="sitebirth">
+            Started at 220319
+        </div>
+        <div id="author">
+            Made by ChanJoon
+        </div>
+    </div>
+
+    <div id="grid2">
+        <ol>
+            <h2 style="margin-top: 0px">
+                <font color="grey">List</font>
+            </h2>
+            <h4>
                 <li><a href="apple.html">Apple</a></li>
                 <li><a href="banana.html">Banana</a></li>
                 <li><a href="cow.html">Cow</a></li>
-                </h4>
-            </ol>
+            </h4>
+        </ol>
 
-            <div id="pic">
-                <!--<img src="https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/3135/7648.png" width="80%">
+        <div id="pic">
+            <!--<img src="https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/3135/7648.png" width="80%">
                 -->
-                <center><iframe width="800" height="450" src="https://www.youtube.com/embed/Ma3NRsq4nzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div id="html">
-            <a href = "https://www.w3.org/TR/html5/" target="_blank" title="html5 specification">Hypertext Markup Language (HTML)</a>
-            is the standard markup language for <strong> creating <u>web pages</u> </strong> and web applications.
-            
-            <br>Web browsers receive HTML documents from a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.
-            </div>
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/Ma3NRsq4nzE"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
         </div>
-        
-        <br><br>
-        HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects, such as interactive forms, may be embedded into the rendered page. It provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets.
+        <div id="html">
+            <a href="https://www.w3.org/TR/html5/" target="_blank" title="html5 specification">Hypertext Markup Language
+                (HTML)</a>
+            is the standard markup language for <strong> creating <u>web pages</u> </strong> and web applications.
 
-        <p>
-            <div id="disqus_thread"></div>
-            <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                /*
-                var disqus_config = function () {
-                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                */
-                (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document, s = d.createElement('script');
-                s.src = 'https://firstweb-15.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </p>
-    </body>
+            <br>Web browsers receive HTML documents from a web server or from local storage and render them into
+            multimedia web pages. HTML describes the structure of a web page semantically and originally included cues
+            for the appearance of the document.
+        </div>
+    </div>
+
+    <br><br>
+    HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects, such as
+    interactive forms, may be embedded into the rendered page. It provides a means to create structured documents by
+    denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML
+    elements are delineated by tags, written using angle brackets.
+
+    <p>
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://firstweb-15.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+    </p>
+</body>
+
 </html>
