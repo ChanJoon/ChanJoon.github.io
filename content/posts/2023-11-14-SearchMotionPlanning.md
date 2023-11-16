@@ -66,6 +66,9 @@ Sampling 방식을 사용한 Planning with 6 DOF는 여러 연구에서 진행�
 
 이 때, quadrotor의 yaw는 decoupled되어 있고 system dynamics에 영향을 주지 않으므로 상수로 가정한다. (*=heading을 진행 방향과 일치시키지 않는다는 의미 = simpler*)
 
+>[!note]
+>- yaw도 dynamics에 고려한 경로 계획 논문이 있을까?
+
 ### A. System Dynamics
 Quadrotor의 dynamics는 $\mathbb{R}^3$ 에서 [differentially flat](https://en.wikipedia.org/wiki/Flatness_(systems_theory)) 함이 증명되었다. [5] 따라서 position $\mathbf{x}=[x,y,z]^T$ 를 시간에 대한 미분인 속도, 가속도, jerk로 표현한 경로 생성과 제어에 관한 선행 연구들 [6-7]을 통해 Model dynamics를 전개하였다. ^916c13
 
@@ -386,6 +389,7 @@ $$
 여기서 $T^p$ 는 이전에 얻은 저차원 궤적 $\Phi^p$ 의 실행 시간이다. 그리고 $J^q(s^n_p, s_g)$ 는 이 경로를 따라 $s_n^p$ 로부터 $s_g$ 까지 소요된 control effort [[#^6b8677|수식 (22)]] 이다. $J^q$ 인 이유는 여기서의 control input의 dimension이 $p$ 가 아닌 $q$ 이기 때문이다.
 
 하지만 저차원 궤적 $\Phi^p$ 에서는 $\mathbf{x}$ 의 $q$ 차 미분값을 사용하지 않으므로 $J^q(s^n_p, s_g)=0$ 이 된다.
+
 다시 식 (24)를 정리하면 아래와 같다.
 
 $$
@@ -398,8 +402,17 @@ $$
 >*"the heuristic function defined in (23) is not admissible since it may not necessarily be the under-estimation of the actual cost-to-goal"*
 
 이라고 언급하였다. (??)
+
 그럼에도 [[#^5f0c39|Fig. 4.]]에서 수행한 경로 계획을 수식 (23)을 적용하면 아래와 같이 control effort와 실행 시간은 커지지만 연산 시간과 그래프 탐색에 고려된 노드의 숫자가 훨씬 적음을 아래 그림으로 보였다.
 
 ![[Liu et al_fig6.png]]
 
 **Evaluation**과 **Experiments** 는 생략하였다. 끄읏
+
+>[!question]
+>- [ ] : Collision Free Primitives 부분
+>- 일정 $I$ states 까지 충돌 여부를 확인하는데 이 때의 $I$ 는 어떻게 선택하는가? $t\in[0,\tau]$ 에서도 일부 취하는 것으로 보인다.. 그렇다면 미리 주어진 장애물 지도가 있어야 한다..!!
+>- [ ] : 수식 (23) ~ (25) 부분. 
+>- ***Appendix***와 식 (23)을 이해했을 때는 같은 $n$ 번째 *lattice* 에 도달하는데 걸린 $T_n$ 은 $p$ 와 $q$ 에서 다른 값이 된다. 현재까지의 궤적 $\Phi^q_n$ 에서 $s_n^q=\Phi^q_n(T_n)$ 이고, $s_n^p=\Phi^p(T_n)$ 이라고 할 때, $s^p_n$ 이 왜 *undefined states* 인지는 모르겠으나..
+>- $H_1(\cdot)$ 은 이 둘 간의 궤적을 구하고, $H_2(\cdot)$ 은 이전에 구한 저차원 궤적으로 남은 부분을 취하는 것으로 이해하였다.
+>- 그러면 본 논문에서 사용한 heuristic $H$ 는 jerk control을 사용하되 저차원 궤적을 따라가도록 만들어진 함수로 봐도 되는 것일까?
