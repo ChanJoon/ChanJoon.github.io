@@ -8,11 +8,10 @@ tags:
   - ros
 math: "true"
 ---
-
 # Search-Based Motion Planning for Aggressive Flight in SE(3)
 
 ```
-Liu, Sikang, et al. "Search-based motion planning for aggressive flight in se (3)." _IEEE Robotics and Automation Letters_ 3.3 (2018): 2439-2446.
+Liu, Sikang, et al. "Search-based motion planning for aggressive flight in se (3)." IEEE Robotics and Automation Letters 3.3 (2018): 2439-2446.
 ```
 
 [Arxiv](https://arxiv.org/abs/1710.02748)
