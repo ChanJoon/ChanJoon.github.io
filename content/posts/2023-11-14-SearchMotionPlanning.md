@@ -46,10 +46,14 @@ Sampling 방식을 사용한 Planning with 6 DOF는 여러 연구에서 진행�
 >
 >[3] Liu, Sikang, et al. "Search-based motion planning for quadrotors using linear quadratic minimum time control." 2017 IEEE/RSJ international conference on intelligent robots and systems (IROS). IEEE, 2017.
 
+^723bc9
+
 또한, [3]에서 참고한 Optimal control 논문은 T-RO 논문인 [4] 이다. (*추후 훑어볼 것!!*)
 
 >[!cite]
 >[4] M. Mueller, M. Hehn, and R. D’Andrea, “A computationally efficient motion primitive for quadrocopter trajectory generation,” IEEE Trans. on Robotics (T-RO), vol. 31, no. 6, pp. 1294–1310, 2015.
+
+^ab48cd
 
 대부분 시간에 대한 state $x(t)$ 로 이루어진 다항식으로 경로를 생성하므로 state의 dimension이 커질수록 높은 연산량을 요구한다.
 
@@ -58,7 +62,7 @@ Sampling 방식을 사용한 Planning with 6 DOF는 여러 연구에서 진행�
 후자는 비효율적이나 heuristic한 방식을 통해 이를 개선할 수 있다. weighted heuristic 방식 대신 adaptive dimension을 활용한 방식을 적용하여 본 논문에서는 hierarchical planning procedure를 도입하였다.
 
 ## Motion Planning with Attitude Constraints
-앞선 논문 [3]을 통해 만들어진 motion primitives를 이용해 trajectory planning framework에 대한 설명이 이루어진다.
+[[#^723bc9 |앞선 논문 [3] ]]을 통해 만들어진 motion primitives를 이용해 trajectory planning framework에 대한 설명이 이루어진다.
 
 이 때, quadrotor의 yaw는 decoupled되어 있고 system dynamics에 영향을 주지 않으므로 상수로 가정한다. (*=heading을 진행 방향과 일치시키지 않는다는 의미 = simpler*)
 
@@ -123,6 +127,8 @@ u_m t+a_0
 \tag{10}
 $$
 
+^0e9d52
+
 **요약하면 differential flatness한 state에 대해 jerk $j$ 대신 control input $u_m$ 으로 수식화한 것이다.**
 
 이 때 $F(\cdot)$ 은 주어진 $u_m,s_0,t$ 에 대해 minimum jek trajectory를 만드는 함수이다. [3-4]
@@ -141,6 +147,8 @@ s.t. s_0 \gets \Phi(0), s_g \gets \Phi(T)
 \tag{11}
 $$
 
+^6c3abf
+
 이 때 $T=\tau$ 이고 이에 따라 $J=\int^T_0\|j\|^2dt=\|u_m\|^2\tau$ ($\because$ constant jerk input $u_m$ ) 이다.
 
 따라서 state $s_n$ 에서 $u_m$ 을 가한 primitive(=curve =trajectory)의 cost function $C(\cdot)$ 은 아래와 같이 정리된다.
@@ -152,7 +160,7 @@ $$
 s.t. \ C(s_n,u_m)=C(u_m)=(\|u_m\|^2+\rho)\tau \tag{12}
 $$
 
-*Pontryagin' minimum principle*에 의해 식 (10)은 식 (11)의 optimal solution 이다. 따라서 식 (11)을 푸는 것은 아래의 deterministic shortest path problem의 최적해를 찾는 것과 같다. (= 아래 problem의 optima = optimal trajectory)
+*Pontryagin' minimum principle*에 의해 [[#^0e9d52|식 (10)]]은 [[#^6c3abf|식 (11)]]의 optimal solution 이다. 따라서 [[#^6c3abf|식 (11)]]을 푸는 것은 아래의 deterministic shortest path problem의 최적해를 찾는 것과 같다. (= 아래 problem의 optima = optimal trajectory)
 
 >[!question] Todo
 >- Pontryagin' minimum principle과 선행 논문 [3] 증명 정리
@@ -185,7 +193,7 @@ $$
 > - 그래프 탐색보다 효율적인 방식으로 궤적을 생성하는 것은 어떨까
 > - 혹은 $\mathbf{A}^*$ 보다 좋은 방식은 없을까
 
-기존의 distance-based heuristic은 속도, 가속도 혹은 방향을 급격하게 바뀔 수도 있는 경로 계획에서는 부적합하여 논문 [3]에서 제시한 방식을 사용한다.
+기존의 distance-based heuristic은 속도, 가속도 혹은 방향을 급격하게 바뀔 수도 있는 경로 계획에서는 부적합하여 [[#^723bc9 |논문 [3] ]]에서 제시한 방식을 사용한다.
 
 이 방식은 *Linear Quadratic Minimum Time* 문제의 해와 trajectory smoothness를 고려한다.
 
@@ -284,7 +292,9 @@ J^j=\int^J_0\| \mathbf{x}^{(j)}\|^2dt
 \tag{22}
 $$
 
-본 논문에서 실험을 통해 $j$ 가 증가함에 따라 실행 시간 $T^j$ 와 연산 시간 $t^j$ 는 증가함을 알 수 있다.
+^6b8677
+
+본 논문에서 실험을 통해 $j$ 가 증가함에 따라 실행 시간 $T^j$ 와 연산 시간 $t^j$ 는 증가함을 알 수 있다. ^5f0c39
 - $T^1<T^2<T^3$
 - $t^1<t^2<t^3$
 
@@ -297,15 +307,18 @@ control input의 차원이 하나씩 커질 수록 연산 시간은 대략 20~30
 
 $\Phi^q$ 에서 각 primitive 간의 시간 간격은 $\tau$ 라고 가정하고, 그래프에서의 각 격자(*lattice*) $s_n^q$ 는 시작부터 현재 격자까지 걸린 최소시간 $T_n$ 과 연관되어 있다고 가정한다. 따라서 $T_n$ 은 $\tau$ 의 정수배이다.
 
-선행 논문 [3]에서는 heuristic $H(s_n^q)$ 를 현재 state $s_n^q$ 에서부터 목적 $s_g$ 까지 계산했지만 본 논문에서는 이전에 얻은 $\Phi^p$ 와 $T_n$ 을 통해 구한 중간 지점(*intermediate goal*) $s^p_n=\Phi^p(T_n)$ 을 이용한 heuristic을 제안한다.
+[[#^723bc9 |선행 논문 [3] ]]에서는 heuristic $H(s_n^q)$ 를 현재 state $s_n^q$ 에서부터 목적 $s_g$ 까지 계산했지만 본 논문에서는 이전에 얻은 $\Phi^p$ 와 $T_n$ 을 통해 구한 중간 지점(*intermediate goal*) $s^p_n=\Phi^p(T_n)$ 을 이용한 heuristic을 제안한다.
 
 $$
 H(s^q_n, \Phi^p)=H_1(s_n^q, s^p_n)+H_2(s^p_n, s_g)
 \tag{23}
 $$
 
+^a828cb
+
 $H_1(\cdot)$ 은 ***Appendix***에 정리되어 있으나 여기서 정리해보도록 한다.
 
+---
 ### Appendix: Linear Quadratic Minimum Time for Jerk Control
 
 그래프 탐색에서의 heuristic function $H(s,s_g)$ 는 constraints를 완화하여 얻은 실제 cost의 underestimation 이다. underestimation의 의미는 아래와 같이 설명할 수 있다.
@@ -314,15 +327,17 @@ $H_1(\cdot)$ 은 ***Appendix***에 정리되어 있으나 여기서 정리해보
 - 만약 heuristic이 cost를 underestimation한다면, 탐색 알고리즘은 여전히 최적 경로를 찾을 수 있지만, 필요한 것보다 더 많은 노드를 탐색할 수 있다.
 - 만약 heuristic이 비용을 overestimation한다면, 탐색된 경로는 최적이 아닐 수 있으며, 이는 suboptima 일 수 있다.
 
-*Problem 2*의 cost인 heuristic $H$ 를 풀어 state $s$ 와 $s_g$ 사이의 최적 경로를 찾고자 한다.
+*Problem 2*의 cost인 heuristic $H$ 를 풀어 state $s$ 와 $s_g$ 사이의 최적 경로를 찾고자 한다. 위치, 속도, 가속도에 대해서는 [[#^723bc9|선행 연구[3] ]]에서 보였고 여기에서는 jerk control에 대해 보인다.
 
 ***Problem 2***
-주어진 현재 state $s$, 목적 state $s_g$ 에 대해 아래와 같은 cost function을 갖는 최적 경로를 찾는다.
+주어진 현재 state $s$, 목적 state $s_g$ 에 대해 아래와 같은 cost function을 갖는 최적 경로를 찾는다. ^99c441
 
 $$
 c \min_{\mathbf{j}, \space T}\int^T_0 \| \mathbf{j}\|^2dt+\rho T
 \tag{28}
 $$
+
+^c8e725
 
 초기 state $s=[p_0^T,v_0^T,a_0^T]^T$ 라고 가정하면 Pontryagin's minimum principle에 의해 아래와 같이 최적 경로의 위치 수식이 정리된다.
 
@@ -330,3 +345,61 @@ $$
 p=\frac{d_5}{120}t^5+\frac{d_4}{24}t^4+\frac{d_3}{6}t^3+\frac{a_0}{2}t^2+v_0t+p_0
 \tag{29}
 $$
+
+계수 $d_i, \space i=3,4,5$는 [[#^ab48cd|논문 [4] ]]에서 $s, s_g, T$ 를 통해 정의되었다.
+
+따라서 [[#^c8e725|식 (28)]] 에서 cost function $C(T)$ 를 정리하면 아래와 같다.
+
+$$
+\begin{align}
+C(T)&=\int^T_0(\frac{d_5}{2}t^2+d_4t+d_3)^2dt+\rho T \\
+&=\frac{d_5^2}{20}T^5+\frac{d_4^Td_5}{4}T^4+(\frac{d_4^Td_4}{3}+\frac{d_3^Td_5}{3})T^3+d_3^Td_4T^2+d_3^2T+\rho T
+\end{align}
+\tag{30}
+$$
+
+즉 위의 $p(t)$ 를 3번 미분하여 $j(t)$ 를 얻어 [[#^99c441|Problem 2]] 의 cost 부분에 넣어 계산한 것이다.
+
+$C(T)$ 의 최솟값은 $T$ 에 대해 미분하여 해 $T^*$ 를 찾음으로써 구할 수 있다.
+$$
+\frac{dC}{dT}=c_0+\dots+c_6T^{-6}=0,\space T \in [0, \infty)
+\tag{31}
+$$
+
+계수 $c_i, \space i=0,\dots,6$ 들은 앞서 초기 state $s$ 와 목적 state $s_g$ 를 통해 아래와 같이 결정된다.
+
+![[Liu et al_appendix.png]]
+
+결국, $H(s, s_g)=C(T^*)$ 이다.
+
+---
+
+다시 [[#^a828cb|수식 (23)]]으로 돌아가 살펴보자.
+
+$H_1(\cdot)$ 은 현재 state $s_n^q$ 로부터 중간 목표 지점 $s_n^p$ 까지의 최적 경로이다. $H_2(\cdot)$ 는 $\Phi^p$ 를 통해 아래와 같이 정리할 수 있다.
+
+$$
+H_2(s_n^p, s_g)=J^q(s^n_p, s_g)+\rho (T^p-T_n)
+\tag{24}
+$$
+
+여기서 $T^p$ 는 이전에 얻은 저차원 궤적 $\Phi^p$ 의 실행 시간이다. 그리고 $J^q(s^n_p, s_g)$ 는 이 경로를 따라 $s_n^p$ 로부터 $s_g$ 까지 소요된 control effort [[#^6b8677|수식 (22)]] 이다. $J^q$ 인 이유는 여기서의 control input의 dimension이 $p$ 가 아닌 $q$ 이기 때문이다.
+
+하지만 저차원 궤적 $\Phi^p$ 에서는 $\mathbf{x}$ 의 $q$ 차 미분값을 사용하지 않으므로 $J^q(s^n_p, s_g)=0$ 이 된다.
+다시 식 (24)를 정리하면 아래와 같다.
+
+$$
+H_2(s_n^p, s_g)=\rho(T^p-T_n)
+\tag{25}
+$$
+
+하지만 마지막에 저자는 
+
+>*"the heuristic function defined in (23) is not admissible since it may not necessarily be the under-estimation of the actual cost-to-goal"*
+
+이라고 언급하였다. (??)
+그럼에도 [[#^5f0c39|Fig. 4.]]에서 수행한 경로 계획을 수식 (23)을 적용하면 아래와 같이 control effort와 실행 시간은 커지지만 연산 시간과 그래프 탐색에 고려된 노드의 숫자가 훨씬 적음을 아래 그림으로 보였다.
+
+![[Liu et al_fig6.png]]
+
+**Evaluation**과 **Experiments** 는 생략하였다. 끄읏
