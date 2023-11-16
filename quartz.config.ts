@@ -7,7 +7,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "google",
+      tagId: "G-NY368MZMG8",
     },
     baseUrl: "chanjoon.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
