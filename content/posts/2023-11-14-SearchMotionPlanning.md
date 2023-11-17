@@ -1,11 +1,10 @@
 ---
 date: 2023-11-14
 layout: post
-title: Search-Based Motion Planning
+title: "[RA-L '18] Search-Based Motion Planning in SE(3)"
 categories: Robotics
 tags:
   - paper
-  - ros
 math: "true"
 ---
 # Search-Based Motion Planning for Aggressive Flight in SE(3)
@@ -62,7 +61,10 @@ Sampling 방식을 사용한 Planning with 6 DOF는 여러 연구에서 진행�
 후자는 비효율적이나 heuristic한 방식을 통해 이를 개선할 수 있다. weighted heuristic 방식 대신 adaptive dimension을 활용한 방식을 적용하여 본 논문에서는 hierarchical planning procedure를 도입하였다.
 
 ## Motion Planning with Attitude Constraints
-[[#^723bc9 |앞선 논문 [3] ]]을 통해 만들어진 motion primitives를 이용해 trajectory planning framework에 대한 설명이 이루어진다.
+
+^168943
+
+앞선 논문 [3]을 통해 만들어진 motion primitives를 이용해 trajectory planning framework에 대한 설명이 이루어진다.
 
 이 때, quadrotor의 yaw는 decoupled되어 있고 system dynamics에 영향을 주지 않으므로 상수로 가정한다. (*=heading을 진행 방향과 일치시키지 않는다는 의미 = simpler*)
 
@@ -81,7 +83,7 @@ Quadrotor의 dynamics는 $\mathbb{R}^3$ 에서 [differentially flat](https://en.
 
 *추후 훑어볼 것...*
 
->[!question] Todo
+>[!example] Todo
 >- Lattice search
 >- 논문 [4-7] 리뷰
 
@@ -89,7 +91,7 @@ Quadrotor의 dynamics는 $\mathbb{R}^3$ 에서 [differentially flat](https://en.
 
 ![[quadrotor_dynamics.png]]
 
->[!question] Todo
+>[!example] Todo
 >- 논문 [6]과 같이 SO(3)에서의 orientation 수식 전개
 
 >[!note]
@@ -102,6 +104,8 @@ $$
 \mathbf{x}(t) \coloneqq \sum_{k=0}^K \mathbf{d}_k \frac{t^k}{k!} = \mathbf{d}_K \frac{t^K}{K!} + \dots + \mathbf{d}_1t + \mathbf{d}_0
 \tag{8}
 $$
+
+^f09c4e
 
 $\mathbf{d}_k \in \mathbb{R}^3$ 는 계수이고, 위 식을 미분함으로써 속도, 가속도, jerk, snap에 대한 다항식을 얻어낼 수 있다.
 
@@ -165,7 +169,7 @@ $$
 
 *Pontryagin' minimum principle*에 의해 [[#^0e9d52|식 (10)]]은 [[#^6c3abf|식 (11)]]의 optimal solution 이다. 따라서 [[#^6c3abf|식 (11)]]을 푸는 것은 아래의 deterministic shortest path problem의 최적해를 찾는 것과 같다. (= 아래 problem의 optima = optimal trajectory)
 
->[!question] Todo
+>[!example] Todo
 >- Pontryagin' minimum principle과 선행 논문 [3] 증명 정리
 
 ***Problem 1*** ^9a204f
@@ -196,7 +200,7 @@ $$
 > - 그래프 탐색보다 효율적인 방식으로 궤적을 생성하는 것은 어떨까
 > - 혹은 $\mathbf{A}^*$ 보다 좋은 방식은 없을까
 
-기존의 distance-based heuristic은 속도, 가속도 혹은 방향을 급격하게 바뀔 수도 있는 경로 계획에서는 부적합하여 [[#^723bc9 |논문 [3] ]]에서 제시한 방식을 사용한다.
+기존의 distance-based heuristic은 속도, 가속도 혹은 방향을 급격하게 바뀔 수도 있는 경로 계획에서는 부적합하여 논문 [3]에서 제시한 방식을 사용한다.
 
 이 방식은 *Linear Quadratic Minimum Time* 문제의 해와 trajectory smoothness를 고려한다.
 
@@ -243,8 +247,10 @@ r & 0 & 0 \\
 \tag{18}
 $$
 
->[!question] Todo
+>[!example] Todo
 >- Lie theory와 SE(3), SO(3)
+
+>[!question]
 >- 수식 (17, 18) 의미 이해 (*$d=x(t)=p$가 아닌지?*)
 
 >[!note]
@@ -310,7 +316,7 @@ control input의 차원이 하나씩 커질 수록 연산 시간은 대략 20~30
 
 $\Phi^q$ 에서 각 primitive 간의 시간 간격은 $\tau$ 라고 가정하고, 그래프에서의 각 격자(*lattice*) $s_n^q$ 는 시작부터 현재 격자까지 걸린 최소시간 $T_n$ 과 연관되어 있다고 가정한다. 따라서 $T_n$ 은 $\tau$ 의 정수배이다.
 
-[[#^723bc9 |선행 논문 [3] ]]에서는 heuristic $H(s_n^q)$ 를 현재 state $s_n^q$ 에서부터 목적 $s_g$ 까지 계산했지만 본 논문에서는 이전에 얻은 $\Phi^p$ 와 $T_n$ 을 통해 구한 중간 지점(*intermediate goal*) $s^p_n=\Phi^p(T_n)$ 을 이용한 heuristic을 제안한다.
+선행 논문 [3]에서는 heuristic $H(s_n^q)$ 를 현재 state $s_n^q$ 에서부터 목적 $s_g$ 까지 계산했지만 본 논문에서는 이전에 얻은 $\Phi^p$ 와 $T_n$ 을 통해 구한 중간 지점(*intermediate goal*) $s^p_n=\Phi^p(T_n)$ 을 이용한 heuristic을 제안한다.
 
 $$
 H(s^q_n, \Phi^p)=H_1(s_n^q, s^p_n)+H_2(s^p_n, s_g)
@@ -330,7 +336,7 @@ $H_1(\cdot)$ 은 ***Appendix***에 정리되어 있으나 여기서 정리해보
 - 만약 heuristic이 cost를 underestimation한다면, 탐색 알고리즘은 여전히 최적 경로를 찾을 수 있지만, 필요한 것보다 더 많은 노드를 탐색할 수 있다.
 - 만약 heuristic이 비용을 overestimation한다면, 탐색된 경로는 최적이 아닐 수 있으며, 이는 suboptima 일 수 있다.
 
-*Problem 2*의 cost인 heuristic $H$ 를 풀어 state $s$ 와 $s_g$ 사이의 최적 경로를 찾고자 한다. 위치, 속도, 가속도에 대해서는 [[#^723bc9|선행 연구[3] ]]에서 보였고 여기에서는 jerk control에 대해 보인다.
+*Problem 2*의 cost인 heuristic $H$ 를 풀어 state $s$ 와 $s_g$ 사이의 최적 경로를 찾고자 한다. 위치, 속도, 가속도에 대해서는 선행 연구[3]에서 보였고 여기에서는 jerk control에 대해 보인다.
 
 ***Problem 2***
 주어진 현재 state $s$, 목적 state $s_g$ 에 대해 아래와 같은 cost function을 갖는 최적 경로를 찾는다. ^99c441
@@ -349,7 +355,7 @@ p=\frac{d_5}{120}t^5+\frac{d_4}{24}t^4+\frac{d_3}{6}t^3+\frac{a_0}{2}t^2+v_0t+p_
 \tag{29}
 $$
 
-계수 $d_i, \space i=3,4,5$는 [[#^ab48cd|논문 [4] ]]에서 $s, s_g, T$ 를 통해 정의되었다.
+계수 $d_i, \space i=3,4,5$는 논문 [4]에서 $s, s_g, T$ 를 통해 정의되었다.
 
 따라서 [[#^c8e725|식 (28)]] 에서 cost function $C(T)$ 를 정리하면 아래와 같다.
 
@@ -411,7 +417,7 @@ $$
 
 >[!question]
 >- [ ] : Collision Free Primitives 부분
->- 일정 $I$ states 까지 충돌 여부를 확인하는데 이 때의 $I$ 는 어떻게 선택하는가? $t\in[0,\tau]$ 에서도 일부 취하는 것으로 보인다.. 그렇다면 미리 주어진 장애물 지도가 있어야 한다..!!
+>- 일정 $I$ states 까지 충돌 여부를 확인하는데 이 때의 $I$ 는 어떻게 선택하는가? $t\in[0,\tau]$ 에서도 일부 취하는 것으로 보인다.. 그렇다면 미리 주어진 장애물 지도가 있어야 하는 것인지 혹은 주어진 센서 범위 안에서만 수행하는 것인지?
 >- [ ] : 수식 (23) ~ (25) 부분. 
 >- ***Appendix***와 식 (23)을 이해했을 때는 같은 $n$ 번째 *lattice* 에 도달하는데 걸린 $T_n$ 은 $p$ 와 $q$ 에서 다른 값이 된다. 현재까지의 궤적 $\Phi^q_n$ 에서 $s_n^q=\Phi^q_n(T_n)$ 이고, $s_n^p=\Phi^p(T_n)$ 이라고 할 때, $s^p_n$ 이 왜 *undefined states* 인지는 모르겠으나..
 >- $H_1(\cdot)$ 은 이 둘 간의 궤적을 구하고, $H_2(\cdot)$ 은 이전에 구한 저차원 궤적으로 남은 부분을 취하는 것으로 이해하였다.
