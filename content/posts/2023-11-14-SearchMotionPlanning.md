@@ -120,6 +120,8 @@ s(t) = [p^T,v^T,a^T]^T
 \tag{9}
 $$
 
+^687857
+
 이다.
 
 **pre-defined control set $\mathscr{U}_M$ 에서의 constant jerk input $\mathbf{u}_m$ 을 initial state $\mathbf{s}_0$ 에 가해 만들어진 curve는 $t \in [0, \tau]$ 에서의 motion primitive 이다. 이를 수식화하면 아래와 같다.**
