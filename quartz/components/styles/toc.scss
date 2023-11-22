@@ -51,6 +51,7 @@ button#toc {
     margin: 0.5rem 0;
     padding: 0;
     & > li > a {
+      font-size: 0.9rem;
       color: var(--dark);
       opacity: 0.35;
       transition:
