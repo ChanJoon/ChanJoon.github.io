@@ -255,6 +255,9 @@ $$
 >[!question]
 >- 수식 (17, 18) 의미 이해 (*$d=x(t)=p$가 아닌지?*)
 
+>[!success] Solved (23.11.21)
+>동일한 것은 맞으나 시간에 따라 달라지는 state를 $d$ 로 정의한 것이고, $E\tilde{p}$ 를 통해 결국 CoM으로부터 타원체 안에 있는 모든 점들을 의미한다.
+
 >[!note]
 >- 타원체보다 정확하게 4개의 타원과 구로 이루어진 configuration은 어떨까
 >- 3x3 크기의 행렬에서 표현이 어려울 것으로 보임
@@ -418,9 +421,13 @@ $$
 **Evaluation**과 **Experiments** 는 생략하였다. 끄읏
 
 >[!question]
->- [ ] : Collision Free Primitives 부분
+>- [x] : Collision Free Primitives 부분
 >- 일정 $I$ states 까지 충돌 여부를 확인하는데 이 때의 $I$ 는 어떻게 선택하는가? $t\in[0,\tau]$ 에서도 일부 취하는 것으로 보인다.. 그렇다면 미리 주어진 장애물 지도가 있어야 하는 것인지 혹은 주어진 센서 범위 안에서만 수행하는 것인지?
->- [ ] : 수식 (23) ~ (25) 부분. 
+>- [x] : 수식 (23) ~ (25) 부분. 
 >- ***Appendix***와 식 (23)을 이해했을 때는 같은 $n$ 번째 *lattice* 에 도달하는데 걸린 $T_n$ 은 $p$ 와 $q$ 에서 다른 값이 된다. 현재까지의 궤적 $\Phi^q_n$ 에서 $s_n^q=\Phi^q_n(T_n)$ 이고, $s_n^p=\Phi^p(T_n)$ 이라고 할 때, $s^p_n$ 이 왜 *undefined states* 인지는 모르겠으나..
 >- $H_1(\cdot)$ 은 이 둘 간의 궤적을 구하고, $H_2(\cdot)$ 은 이전에 구한 저차원 궤적으로 남은 부분을 취하는 것으로 이해하였다.
 >- 그러면 본 논문에서 사용한 heuristic $H$ 는 jerk control을 사용하되 저차원 궤적을 따라가도록 만들어진 함수로 봐도 되는 것일까?
+
+>[!success] Solved (23.11.21)
+>- [[2023-11-16-SearchMotionPlanningLQMTC|이전 논문]]에서는 map resolution을 바탕으로 선택하였지만 본 논문에서는 튜닝 가능한 영역으로 보임. Fig.2 에서도 elements에 대한 내용이 있고 [[2023-11-29-WholebodyMotionPlanning|Yang et al.]]에서도 control effort 의 range, step에 tuning이 필요한 것을 문제로 지적함.
+>- $A^*$ 알고리즘과 거의 동일하다고 생각해야 한다. 이전 궤적 $\Phi^p_n$ 을 구하는 것이 아니라 처음부터 목적 지점까지 탐색해가면서 경로를 계획할 때, 중간 지점에서는 그 때의 state 까지 고차원에서의 cost를 계산하고 목적 지점까지는 그냥 최단시간 경로로 계획하는 것을 $H_1+H_2$ 로 표현한 것이다.
