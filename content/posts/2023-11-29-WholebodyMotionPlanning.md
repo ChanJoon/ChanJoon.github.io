@@ -22,10 +22,10 @@ Sikang 논문에서 문제로 지적한 (dynamics 고려없는) $A^*$ 로 경로
 다만, Sikang 논문보다 수식에서의 설명이 추상화되어있고 코드도 명확하게 공개하지 않아 이해하기 어려웠다.
 
 **주요 Contributions**
-- 다면체(*polyhedron*)를 통해 3차원 공간에서의 연산이나 OCP의 constraints를 해결
-- 타원체 대신 직육면체(*tilted cuboid*)로 기체 모델링
-- Dynamically feasible, collision-free한 OCP를 unconstrained optimization으로 해결
-- 이를 위해 nonlinear constraints 들은 cubic penalty function을 사용함
+- **다면체(*polyhedron*)를 통해 3차원 공간에서의 연산이나 OCP의 constraints를 해결**
+- **타원체 대신 직육면체(*tilted cuboid*)로 기체 모델링**
+- **Dynamically feasible, collision-free한 OCP를 unconstrained optimization으로 해결**
+- **이를 위해 nonlinear constraints 들은 cubic penalty function을 사용함**
 
 **A *milliseconds*-level full-body *optimazation-based* trajectory planning with collision-free and dynamic feasibility**
 
@@ -43,11 +43,11 @@ Quadrotor가 비행을 하며 그리는 궤적이 non-convex 하기 때문에 dy
 >- 아래는 논문 내용, 이후에 이어지는 내용으로 attitude 이야기 일 수도 있으나 일단은 orientation으로 표현함.
 >- *The mainstream work-around is to ignore the orientation of drones completely by dilating obstacles radically according to its largest axis length, which leads to conservative performance that does not fully exploit free spaces.*
 
-드론의 자세(*attitude*)를 고려하는 당시에 optimization-based 방법들은 고차원의 다양체에서(*manifolds residing in high dimensions*) 문제를 정의하거나 환경에 대한 가정을 사용하고 있었다.
+드론의 자세(*attitude*)를 고려하는 당시의 optimization-based 방법들은 고차원의 다양체에서(*manifolds residing in high dimensions*) 문제를 정의하거나 환경에 대한 가정을 사용하고 있었다.
 
 search-based 방법이나 discretized space를 통해 최적화 문제를 푸는 방법들은 많은 연산 시간과 높은 메모리 사용이 필요하지만 때때로 좋지 않은 결과를 내었다.(아마도 discretization에서의 문제)
 
-본 논문은 일련의 다면체로 3차원 공간을 표현하여 dynamically feasible한 경로를 만드는 자신들의 선행 연구를 기반으로 드론의 자세를 명확히 구해내 이를 constraints 대신 목적 함수의 penalty term으로 넘겨 OCP를 풀어낸다.
+본 논문은 일련의 다면체로 3차원 공간을 표현하여 dynamically feasible한 경로를 만드는 자신들의 선행 연구를 기반으로 드론의 자세를 명확히 구해내 이를 constraints 대신 **목적 함수의 penalty term으로 넘겨 OCP를 풀어낸다.**
 
 >[!quote] Previous work
 >- Z. Wang, X. Zhou, C. Xu, and F. Gao, “Geometrically constrained trajectory optimization for multicopters,” arXiv preprint arXiv:2103.00190, 2021.
@@ -62,7 +62,7 @@ search-based 방법이나 discretized space를 통해 최적화 문제를 푸는
 
 본 논문이 ZJU-FAST-Lab 연구실에서 나왔고, HKUST Aerial Robotics Group, MaRS 랩과 더불어 드론의 자율비행 관련 연구를 많이 진행한 곳이다.
 
-**convex polyhedrons** 로 free space를 표현하고, Safe flight corridors 개념으로 확장하여 비행과 연결지은 연구들도 여기 저자들이 많이 작성하였고, 본 논문에도 해당 개념이 적용되었다. (추후의 T-RO 논문도 해당 내용이 들어간다.)
+**convex polyhedrons** 로 free space를 표현하고, Safe flight corridors 개념으로 확장하여 비행과 연결지은 연구들도 여기 저자들이 많이 작성하였고, 본 논문에도 해당 개념이 적용되었다. (추후의 T-RO 논문도 해당 내용이 들어간다.) ^6a33b6
 
 >[!quote] Free spaces with polyhedrons
 >
@@ -137,7 +137,7 @@ $p^{[s-1]} = [p^T, \dot{p}^T,\dots,(p^{(s-1)})^T]^T \in \mathbb{R}^{ms}$ 로 $s-
 
 ![[Yang2021icra_theorem2.png]]
 
-이해한 바로는 [[2023-11-14-SearchMotionPlanning#^f09c4e|Liu et al.의 식 (8)]] 과 결론적으로 같은 내용이다. 계수와 time $t$ 로 이루어진 다항식 $p(t)$ 는 $\bar{d_i}-1$ 차 까지 연속이고 미분 가능하다. $\bar{d_i}-1 = (2s-d_i)-1$
+이해한 바로는 [[2023-11-14-SearchMotionPlanning#^f09c4e|Liu et al.의 식 (8)]] 과 결론적으로 같은 내용이다. 계수와 time $t$ 로 이루어진 다항식 $p(t)$ 는 $\bar{d_i}-1$ 차 까지 연속이고 미분 가능하다. $\bar{d_i}-1 = (2s-d_i)-1$ ^7ed7ef
 
 >[!question]
 >- $d_i$ 의 정의가 따로 나와있지 않은데(못찾았거나), 어떤 $d_i$ 에 대해로 해석하면 되나?
@@ -153,7 +153,7 @@ $p^{[s-1]} = [p^T, \dot{p}^T,\dots,(p^{(s-1)})^T]^T \in \mathbb{R}^{ms}$ 로 $s-
 
 $$
 \begin{align}
-\min_{q, T} & H(q, T) \tag{10a} \\
+\min_{q, T} \space & H(q, T) \tag{10a} \\
 s.t. & \space \text{certain constraints} \tag{10b}
 \end{align}
 $$
@@ -252,7 +252,7 @@ $$
 
 [[#^a47047|Body attitude]]를 참고하면 $R^i_b$ 에 의해 $\mathscr{G}_{att}$ 의 인자가 $p_i, \ddot{p}_i$ 인 것을 볼 수 있고 이는 다항식으로 이루어져 $\mathscr{G}_{att}(c_i, T_i)$ 로 표현 가능하다. (i.e. $\mathscr{Q}_i(t) \subset \mathscr{P}^\mathscr{H}_i,\forall t \in [0, T_i]$)
 
-하지만 논문에서 언급된 대로 두 polyhedron 교차 지점 안에 드론 궤적을 모델대로 확장한 것이 그대로 들어가지는 않는다.
+**하지만 논문에서 언급된 대로 두 polyhedron 교차 지점 안에 드론 궤적을 모델대로 확장한 것이 그대로 들어가지는 않는다.**
 
 *the inflated drone trajectory does not necessarily stay within either the intersection of two polyhedrons*
 
@@ -271,12 +271,12 @@ $$
 
 $$
 \begin{align}
-G^k_{att}(c_i, T_i, \hat{i}) = \big[
+G^k_{att}(c_i, T_i, \hat{t}) = \big[
 (n^k_i)^T (p_i(\hat{t} \cdot T_i) &+ R^i_b (\hat{t} \cdot T_i) \tilde{q}_v - o^k_i)
 \big]^8_{v=1}
 \in \mathbb{R}^8 \tag{20a} \\
 
-G_{att}(c_i, T_i, \hat{i})  &= \big[
+G_{att}(c_i, T_i, \hat{t})  &= \big[
 [G^k_{att}(c_i,T_i,\hat{t})^T]^{K_i}_{k=1}
 \big]^T \tag{20b}
 \end{align}
@@ -287,6 +287,10 @@ $G_{att} : \mathbb{R}^{2s \times 3} \times \mathbb{R}_+ \times [0,1] \rightarrow
 
 >[!question]
 >- $G_{att} : \mathbb{R}^{2s \times 3} \times \mathbb{R}_+ \times [0,1]$
+
+>[!success] Solved
+>- 생각해보니 함수에서 $\rightarrow$ 의 의미는 정의역에서 치역으로의 의미이므로, 위 공간에 대한 정의는 함수에 들어가는 각각 인자에 해당하는 것이다.
+>- 따라서 $c_i \in \mathbb{R}^{2s \times 3}, T_i \in \mathbb{R}_+, \hat{i} \in [0,1]$ 와 같이 정리하면 된다.
 
 그리고 주어진 가중치 벡터 $\cal{X} \in \mathbb{R}^{8K_i}$ 에 대해 $p_i(t)$ 에서의 time integral penalty function $I_{att}:\mathbb{R}^{2s \times 3} \times \mathbb{R}_+ \times \mathbb{Z}_\geq \rightarrow \mathbb{R}_+$ 을 제안하였다.
 
@@ -310,10 +314,10 @@ $$
 
 이 페널티 함수는 목적 함수에 바로 더해져 [[#^d7728a|수식 (13)]] 을 unconstrained optmization으로 해결할 수 있게 되었다.
 
-이렇게 Cubic penalty 와 같은 방식의 페널티 함수는 최적화 문제에서 종종 사용된다고 한다. 입력과 목표값간의 차이가 클 수록 페널기가 더 커지게 된다.
+이렇게 Cubic penalty 와 같은 방식의 페널티 함수는 최적화 문제에서 종종 사용된다고 한다. 입력과 목표값간의 차이가 클 수록 페널티가 더 커지게 된다.
 
 >[!question]
->- entry-wise cubic & maximum function 은 이해하였으나 구적법 과정에서 relative resolution과 구적법 계수의 의미
+>- entry-wise cubic & maximum function 은 이해하였으나 구적법 과정에서 relative resolution $1/ \kappa_i$ 과 구적법 계수 $w_j$ 의 의미
 >- 이미 weight vector $\cal{X}$ 이 있는데 이게 어떤 의미가 있는지?
 
 **수식 (14), (19), (20)을 쭉 타고오면서 이해한 내용을 정리해보자. $i\in\{1,2,...,M\},k=1,\dots, K_i$ 임을 유의한다.**
@@ -339,6 +343,14 @@ $\mathscr{G}^k_{att}$ 의 $v$ 번째 요소인 $\mathscr{G}^{k,v}_{att}$ 의 미
 
 >[!question]
 >- 어떻게 dynamics도 polyhedron을 이용해 수식을 구성하였을까
+
+>[!success] Solved
+>- 한번 차분히 생각해보자.
+>- 드론에서는 differential flatness 로 인해 dynamic constraints 는 속도, 가속도 등의 상, 하한으로 정의된다. (e.g. $|v_{max}| \leq 4 \space(m/s)$)
+>- 위의 safety contraints 는 polyhedrone 을 이용하였지만 속도, 가속도는 $p_i(t)\coloneqq c_i^T \beta_0(t)$ 를 미분하여 얻어지므로 $I_{dyn}(c_i, T_i)=\gamma\max\big[|\dot{p_i}(t)|-v_{max},0\big]^3$ 로 표현 가능하다.
+>- *(물론 resolution 을 사용하면 $\kappa$ 도 마찬가지로 적용되어 integral 해야 한다.)*
+>- 
+>- 현재속도의 절댓값이 최대 속도의 크기보다 작다면 constraint 를 만족하여 음수가 되므로, penalty = 0 인 것이고 그것이 아니라면(조건을 violate) 한다면 세제곱만큼 커진다.
 
 유한수치해석의 한계(*the finite resolution of approximation*)로 때때로 비선형 조건 $\mathscr{G}_{att}, \mathscr{G}_{dyn}$ 들이 어겨지는 상황(*Violation of nonlinear constraints*)이 발생하지만 실험을 통해 전체 경로를 만들어내는 데에는 큰 영향이 없다고 한다.
 
