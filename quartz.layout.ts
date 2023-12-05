@@ -27,7 +27,7 @@ export const defaultContentPageLayout: PageLayout = {
     // Component.DesktopOnly(Component.Explorer()),
     Component.DesktopOnly(Component.RecentNotes({
     	title: "Recent notes",
-    	limit: 8,
+    	limit: 6,
     	linkToMore: "posts/" as SimpleSlug,
     })),
   ],
