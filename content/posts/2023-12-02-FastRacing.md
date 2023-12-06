@@ -10,8 +10,7 @@ math: "true"
 
 # Fast-Racing: An Open-Source Strong Baseline for SE(3) Planning in Autonomous Drone Racing
 
->[!cite]
->- Z. Han, Z. Wang, N. Pan, Y. Lin, C. Xu and F. Gao, "Fast-Racing: An Open-Source Strong Baseline for $\mathrm{SE}(3)$ Planning in Autonomous Drone Racing," in IEEE Robotics and Automation Letters, vol. 6, no. 4, pp. 8631-8638, Oct. 2021, doi: 10.1109/LRA.2021.3113976.
+> Z. Han, Z. Wang, N. Pan, Y. Lin, C. Xu and F. Gao, "Fast-Racing: An Open-Source Strong Baseline for $\mathrm{SE}(3)$ Planning in Autonomous Drone Racing," in IEEE Robotics and Automation Letters, vol. 6, no. 4, pp. 8631-8638, Oct. 2021, doi: 10.1109/LRA.2021.3113976.
 
 [Publisher Link](https://doi.org/10.1109/LRA.2021.3113976.)
 
@@ -43,8 +42,8 @@ nonlinear constraints 를 cubic and max function 으로 바꿔 unconstrained opt
 특히, 다항식과 $max(\cdot, 0)^3$ 으로 정리되는 **목적함수의 gradient를 total time, constraints point의 discretization number $M, L$ 에 대해 GPU 쓰레드 / 블럭으로 분할하여 연산하는 방식을 제안**한 것이 인상적이었다.
 
 **문제점**
-1. a known map / static racing tracks
-2. a global trajectory offline before the racing starts
+1. **a known map / static racing tracks; 좁은 틈은 물론 전체 지도에 대한 정보가 있어야 하고, 동적 장애물에 대한 회피가 불가능하다**
+2. **a global trajectory offline before the racing starts; 처음 최적화를 위한 전역 경로 생성이 필요하다**
 
 ## Related Works
 

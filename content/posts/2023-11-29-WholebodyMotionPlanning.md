@@ -10,8 +10,7 @@ math: "true"
 
 # Whole-Body Real-Time Motion Planning for Multicopters
 
->[!quote]
->- S. Yang, B. He, Z. Wang, C. Xu and F. Gao, "Whole-Body Real-Time Motion Planning for Multicopters," 2021 IEEE International Conference on Robotics and Automation (ICRA), Xi'an, China, 2021, pp. 9197-9203, doi: 10.1109/ICRA48506.2021.9561526.
+> S. Yang, B. He, Z. Wang, C. Xu and F. Gao, "Whole-Body Real-Time Motion Planning for Multicopters," 2021 IEEE International Conference on Robotics and Automation (ICRA), Xi'an, China, 2021, pp. 9197-9203, doi: 10.1109/ICRA48506.2021.9561526.
 
 [PDF](https://zhepeiwang.github.io/pubs/icra_2021_wholebody.pdf) / [Publisher Link](https://doi.org/10.1109/ICRA48506.2021.9561526)
 
