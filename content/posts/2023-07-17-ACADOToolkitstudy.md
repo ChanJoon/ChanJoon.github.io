@@ -1,11 +1,12 @@
 ---
 date: 2023-07-17
 layout: post
-title: "ACADO Toolkit study"
+title: ACADO Toolkit study
+tags:
+  - self-study
+  - acado
 ---
 ## ACADO Toolkit study
-
-#acado
 
 ### Tutorials
 
@@ -71,8 +72,6 @@ Tutorial의 설명에 integration 방법으로 제시된 룽게 쿠타 방법에
 >- [x] a Runge-Kutta method
 
 **Runge-kutta method**
-
-#Runge-kutta
 
 *References*
 - [위키백과: 룽게-쿠타 방법](https://ko.wikipedia.org/wiki/%EB%A3%BD%EA%B2%8C-%EC%BF%A0%ED%83%80_%EB%B0%A9%EB%B2%95)

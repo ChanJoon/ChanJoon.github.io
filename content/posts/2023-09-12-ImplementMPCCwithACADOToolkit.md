@@ -1,7 +1,10 @@
 ---
 date: 2023-09-12
 layout: post
-title: "Implement MPCC with ACADO Toolkit"
+title: Implement MPCC with ACADO Toolkit
+tags:
+  - self-study
+  - acado
 ---
 ### Implement MPCC with ACADO Toolkit
 

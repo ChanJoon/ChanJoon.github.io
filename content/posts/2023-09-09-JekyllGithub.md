@@ -1,10 +1,11 @@
 ---
 date: 2023-09-09
 layout: post
-title: "Jekyll 과 Github으로 사이트 제작하기"
+title: Jekyll 과 Github으로 사이트 제작하기
+tags:
+  - Web
 ---
 ### Jekyll 과 Github으로 사이트 제작하기
-#jekyll #Github-Actions
 
 *Reference*
 https://jekyllrb-ko.github.io/docs/
