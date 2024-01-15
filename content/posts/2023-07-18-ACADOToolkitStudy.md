@@ -1,10 +1,12 @@
 ---
 date: 2023-07-18
 layout: post
-title: "ACADO Toolkit Study"
+title: ACADO Toolkit Study
+tags:
+  - self-study
+  - acado
 ---
 ### ACADO Toolkit Study
-#acado 
 
 #### Code Generation Tool
 
@@ -164,7 +166,6 @@ Control variables:
 >- [ ] LSQ에서 coefficient matrix를 어떤 식으로 설정하는지
 >- [ ] 전체 time horizon $T$를 linear하거나 exponential하게도 고려하는 것으로 알고 있는데, 이러한 경우에 scaling을 어떻게 하는지
 >
->#todo
 
 CGT 예제처럼 필요한 qp solver 폴더를 넣어주고 돌리면 아래와 같이 결과가 나온다.
 

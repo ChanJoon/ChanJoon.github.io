@@ -1,10 +1,13 @@
 ---
 date: 2023-08-18
 layout: post
-title: "Implementing MPCC with ACADO"
+title: Implementing MPCC with ACADO
+tags:
+  - self-study
+  - acado
 ---
 ### Implementing MPCC with ACADO
-#self-study #mpcc
+
 >[!todo]
 >*Update 이전 todo로 작성한 목록들을 업데이트*
 >- [ ] Gauss-Newton Hessian approximation

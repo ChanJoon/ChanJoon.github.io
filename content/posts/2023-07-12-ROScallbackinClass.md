@@ -42,6 +42,8 @@ title: "ROS callback in Class"
 
 ### ACADO Toolkit Study
 
+#acado 
+
 >[!todo]
 >- [ ] Gauss-Newton Hessian approximation
 >- [ ] Explicit Runge-Kutta (ERK) / Implicit Runge-Kutta (IRK)
