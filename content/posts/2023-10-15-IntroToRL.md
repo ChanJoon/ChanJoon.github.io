@@ -1,7 +1,7 @@
 ---
 date: 2023-10-15
 layout: post
-title: "Introduction to RL"
+title: "2. Introduction to RL"
 categories: ReinforcementLearning
 tags: RL
 math: "true"
