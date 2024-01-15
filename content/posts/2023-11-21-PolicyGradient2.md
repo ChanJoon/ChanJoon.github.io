@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Policy Gradient (2)
+title: "4. Policy Gradient (2)"
 date: 2023-11-21
 categories: ReinforcementLearning
 tags:
