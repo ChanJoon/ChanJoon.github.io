@@ -231,6 +231,9 @@ $$
 >- 수식 (16) 에서 $\hat{\Omega}R^TR_dR_\Omega-R^TR_d\dot{\Omega}_d$ 부분이 어떻게 생기게 된 것인지?
 >- 수식(3) 이 inertial frame 에서 정의된 것으로 이해했는데 그렇다면 (15) 는 body-fixed frame 에서의 $f$ 를 의미하는 것인가? $Re_3$ 부분이 곱해진 이유?
 
+>[!done] Solved
+>- 수식(3) 에 $Re_e$ 가 곱해진 이유는 아래 설명되어 있듯이, attitude error 에 따라 전체 thrust 의 크기를 작게 하기 위함이다.
+
 이 때 desired trajectory 에서 필요한 *net force* 는 다음과 같이 주어진 상수 $B$ 보다 작다.
 
 $$
