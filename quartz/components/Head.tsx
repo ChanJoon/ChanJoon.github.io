@@ -44,6 +44,7 @@ export default (() => {
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
+        <meta name="google-site-verification" content="iOAiEPHvvDOqlgRlQ479Q8n8dvvcCJVPV8A8MMbSBOU" />
       </head>
     )
   }
