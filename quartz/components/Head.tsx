@@ -37,6 +37,7 @@ export default (() => {
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
         <meta name="google-site-verification" content="iOAiEPHvvDOqlgRlQ479Q8n8dvvcCJVPV8A8MMbSBOU" />
+        <meta name="naver-site-verification" content="09e6838f1994ed1ef594ca4b09490a153648c4c0" />
       </head>
     )
   }
