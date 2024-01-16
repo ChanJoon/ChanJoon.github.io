@@ -99,6 +99,8 @@ J\dot{\Omega}+\Omega&\times J\Omega=M \tag{5}
 \end{align}
 $$
 
+^ad61f8
+
 여기서 *hat map* $\hat{\cdot}: \mathbb{R}^3 \rightarrow \frak{so}(3)$ 은 $\hat{x}y=x\times y \quad \forall x,\ y \in \mathbb{R}^3$ 를 만족하는 연산자이다.
 
 즉, $\mathbb{R}^3$ 에 있는 vector 를 skew-symmetric matrix 바꿔준다. $\vec{\Omega}=[\Omega_x,\Omega_y,\Omega_z]^T\in\mathbb{R}^3$ 에 대해 hat map 이 아래와 같이 표현된다.
@@ -125,7 +127,7 @@ translation dynamics 는 $-fRe_3$ 에 의해 제어되므로 $x_d(t)$ 로 이동
 
 이는 앞서 $\vec{b}_{1_d}(t)$ 에 의해 정해진다.
 
-$\vec{b}_{1_d}(t)$ 는 $\vec{b}_{3_d}(t)$ 에 평행하지 않다고 가정하므로, 이를 $\vec{b}_{3_d}(t)$ 을 법선으로 삼는 평면에 투영(*projection*) 한다. 이로써 desired attitude $R_d=[\vec{b}_{2_d}\times\vec{b}_{3_d},\vec{b}_{2_d},\vec{b}_{3_d}] \in \mathbf{SO}(3)$ 가 결정된다.
+$\vec{b}_{1_d}(t)$ 는 $\vec{b}_{3_d}(t)$ 에 평행하지 않다고 가정하므로, 이를 $\vec{b}_{3_d}(t)$ 을 법선으로 삼는 평면에 투영(*projection*) 한다. 이로써 desired attitude $R_d=[\vec{b}_{2_d}\times\vec{b}_{3_d},\vec{b}_{2_d},\vec{b}_{3_d}] \in \mathbf{SO}(3)$ 가 결정된다. ^48f464
 
 이 때 $\vec{b}_{2_d}=\frac{\vec{b}_{3_d}\times\vec{b}_{1_d}}{\|\vec{b}_{3_d}\times\vec{b}_{1_d}\|}$ 이다. 이 $R_d$ 를 따라가기 위해 $M$ 이 결정된다.
 
@@ -152,8 +154,109 @@ $$
 
 attitude $R$ 과 각속도 $\Omega$ 는 $\mathbf{TSO}(3)$ (*the tangent bundle of $\mathbf{SO}(3)$*) 에서 전개되므로 복잡한 수식 전개가 필요하다.
 
+우선 $\mathbf{SO}(3)$ 에서 error function 을 아래와 같이 정의한다.
+
 $$
 \Psi(R, R_d) = \frac{1}{2}\text{tr}[I-R^T_dR] \tag{8}
 $$
 
-WIP
+$R$ 과 $R_d$ 의 각도 차이가 $180^\circ$ 이내인 영역에서 $R=R_d$ 라면 *locally positive-defnite* 하다.
+
+그리고 이에 대한 sublevel set $L_2$ 을 정의한다.
+
+$$
+L_2=\{R_d,R\in\mathbf{SO}(3)|\Psi(R, R_d)\lt 2 \}
+$$
+
+풀어보면 둘의 각도 차이가 $180^\circ$ 라면 $R_d^TR=\begin{bmatrix}-1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1\end{bmatrix}$ 이다. 따라서 이 때의 $\Psi(R, R_d)$ 값은 2가 된다.
+
+그러므로 $L_2$ 는 $180^\circ$ 이내의 각의 집합이므로 논문 표현대로 *almost covers $\mathbf{SO}(3)$* 한다.
+
+회전 행렬 $R$ 의 변화를 $\delta R=R\hat{\eta}\ \text{for}\ \eta\in\mathbb{R}^3$ 로 표현하면 위의 error function $\Psi$ 의 미분은 아래와 같다.
+
+$$
+\mathbf{D}_R\Psi(R,R_d)\cdot R\hat{\eta}=-\frac{1}{2}\text{tr}[R_d^TR\hat{\eta}]=\frac{1}{2}(R_d^TR-R^TR_d)^\vee\cdot\eta \tag{9}
+$$
+
+이 때 *vee* map $\vee: \frak{so}(3)\rightarrow\mathbb{R}^3$ 은 위에서 *hat* map $\hat(\cdot)$ 의 역함수이다.
+
+>[!question]
+>- Equation (9) 의 유도과정
+
+이로부터 attitude tracking error $e_R$ 을 아래와 같이 정의한다.
+
+$$
+e_R=\frac{1}{2}(R_d^TR-R^TR_d)^\vee\cdot \tag{10}
+$$
+
+두 접벡터( tangent vector ) $\dot{R}\in\mathbf{T_R SO}(3)$ 와 $\dot{R}_d\in\mathbf{T_{R_d} SO}(3)$ 는 서로 다른 tangent space 에 놓여있으므로 바로 비교할 수 없다.
+
+그래서 $\dot{R}_d$ 를 $\mathbf{T_R SO}(3)$ 공간의 벡터로 변환한 후에 $\dot{R}$ 과 비교한다.
+
+$$
+\dot{R}-\dot{R}_d(R_d^TR)=R\hat{\Omega}-R_d\hat{\Omega_d}R_d^TR=R(\Omega-R^TR_d\Omega_d)^\land
+$$
+
+>[!question]
+>- 위 수식 뒷 부분 수식 전개
+
+이로써, 각속도에 대한 추종 오차를 다음과 같이 정의한다.
+
+$$
+e_\Omega=\Omega-R^TR_d\Omega_d \tag{11}
+$$
+
+$\frac{d}{dt}(R^T_dR)=(R^T_dR)\hat{e}_\Omega$ 이므로 $e_\Omega$ 가 회전행렬 $R^T_dR$ 의 각속도 임을 알 수 있다.
+
+### B. Tracking Controller
+
+경로로부터 주어진 $x_d(t), \vec{b}_{1_d}(t)$ 와 양의 상수 $k_x,k_v,k_R,k_\Omega$ 로부터 아래와 같이 $\vec{b}_{3_d}$ 를 정의한다.
+
+$$
+\vec{b}_{3_d}=\frac{-k_xe_x-k_ve_v-mge_3+m\ddot{x}_d}{\|-k_xe_x-k_ve_v-mge_3+m\ddot{x}_d\|} \tag{12}
+$$
+
+당연히 분모 $\|-k_xe_x-k_ve_v-mge_3+m\ddot{x}_d\| \neq 0$ 임을 가정한다.
+
+[[#^48f464|앞서 정의한 ]] $R_d$ 에 대해 control inputs $f,M$ 은 아래와 같이 구성한다.
+
+$$
+\begin{align}
+f&=-(-k_xe_x-k_ve_v-mge_3+m\ddot{x}_d)\cdot Re_3 \tag{15} \\
+M&=-k_Re_R-k_\Omega e_\Omega+\Omega\times J\Omega-J(\hat{\Omega}R^TR_dR_\Omega-R^TR_d\dot{\Omega}_d) \tag{16}
+\end{align}
+$$
+
+>[!question]
+>- 수식 (16) 에서 $\hat{\Omega}R^TR_dR_\Omega-R^TR_d\dot{\Omega}_d$ 부분이 어떻게 생기게 된 것인지?
+>- 수식(3) 이 inertial frame 에서 정의된 것으로 이해했는데 그렇다면 (15) 는 body-fixed frame 에서의 $f$ 를 의미하는 것인가? $Re_3$ 부분이 곱해진 이유?
+
+이 때 desired trajectory 에서 필요한 *net force* 는 다음과 같이 주어진 상수 $B$ 보다 작다.
+
+$$
+\|-mge_3+m\ddot{x}_d\|\lt B \tag{14}
+$$
+
+(16) 에서의 control moment $M$ 은 $\mathbf{SO}(3)$ 에 상응하는 추종 제어기이다. [[#^ad61f8|수식 (4), (5)]] 에서 제시된 dynamics 대로 이 제어기는 attitude tracking error 를 기하급수적으로 줄인다.
+
+마찬가지로 (15) 에서의 제어기는 $\mathbb{R}^3$ 에서의 translational dynamics 를 반영한다. attitude tracking error 가 없음을 전제로 $-fRe_3$ 가 translation 에 대한 추종 제어를 할 수 있다.
+
+따라서, attitude tracking error 가 0이 되면서 translational tracking error 가 0으로 수렴하게 된다.
+
+물론 순간적으로 attitude tracking error 가 0이 아닐 수 있고, attitude error 가 커지면 $fRe_3$ 의 방향이 desired direction $R_de_3$ 의 방향으로부터 많이 벗어날 수 있다.
+
+그래서 (15) 에서 attitude tracking error 가 크면 전체 thrust $f$ 의 크기가 작아지도록 하였다.
+
+$f$ 의 수식에 desired body-fixed axis $\vec{b}_{3_d}=R_de_3$ 오 현재의 body-fixed axis $\vec{b}_3=Re_r$ 의 dot product $\cdot$ 을 포함하였다.
+
+### C. Exponential Asymptotic Stability
+
+### D. Almost Global Exponential Attractiveness
+
+### E. Properties and Extensions
+
+## Conclusion
+
+본 논문은 $\mathbf{SE}(3)$ 에서의 geometric controller 를 제안하여 오일러각이나 쿼터니언에서의 단점을 극복할 수 있었다.
+
+또한, 처음 attitude error 가 $90^\circ$ 라면 기하급수적으로 안정화되고 $180^\circ$ 이내라면 다시 $90^\circ$ 이내의 오차로 수렴하면서 *almost global*  함을 보였다.
