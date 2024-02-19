@@ -11,7 +11,7 @@ const config: QuartzConfig = {
       tagId: "G-NY368MZMG8",
     },
     baseUrl: "chanjoon.github.io",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", ".obsidian", "posts/2024-02-06-GCOPTER.md"],
     defaultDateType: "created",
     theme: {
       typography: {
