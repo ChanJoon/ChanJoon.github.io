@@ -11,7 +11,7 @@ const config: QuartzConfig = {
       tagId: "G-NY368MZMG8",
     },
     baseUrl: "chanjoon.github.io",
-    ignorePatterns: ["private", "templates", ".obsidian", "posts/2024-02-06-GCOPTER.md"],
+    ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
       typography: {
@@ -22,8 +22,8 @@ const config: QuartzConfig = {
       colors: {
         lightMode: {
           light: "#faf8f8",
-          lightgray: "#F5F7F8",
-          gray: "#b8b8b8",
+          lightgray: "#DBE2EF",
+          gray: "#F08A5D",
           darkgray: "#4e4e4e",
           dark: "#45474B",
           secondary: "#495E57",
@@ -32,7 +32,7 @@ const config: QuartzConfig = {
         },
         darkMode: {
           light: "#222831",
-          lightgray: "#4C566A",
+          lightgray: "#04364A",
           gray: "#646464",
           darkgray: "#ECF9FF",
           dark: "#14FFEC",

@@ -5,6 +5,7 @@ title: Implement MPCC with ACADO Toolkit
 tags:
   - self-study
   - acado
+  - optimization
 ---
 ### Implement MPCC with ACADO Toolkit
 
