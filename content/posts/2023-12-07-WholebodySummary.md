@@ -5,6 +5,7 @@ date: 2023-12-07
 categories: Robotics
 tags:
   - self-study
+  - optimization
 math: "true"
 ---
 # Summary

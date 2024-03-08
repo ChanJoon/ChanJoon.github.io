@@ -2,6 +2,9 @@
 date: 2023-07-28
 layout: post
 title: "Paper Review: PAMPC: Perception-Aware Model Predictive Control for Quadrotors"
+tags:
+  - paper
+  - self-study
 ---
 ### Paper Review: PAMPC: Perception-Aware Model Predictive Control for Quadrotors
 #paper 

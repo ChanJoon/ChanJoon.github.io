@@ -5,6 +5,7 @@ title: ACADO Toolkit Study
 tags:
   - self-study
   - acado
+  - optimization
 ---
 ### ACADO Toolkit Study
 

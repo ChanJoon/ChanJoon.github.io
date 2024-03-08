@@ -14,6 +14,7 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 ## Contents
 
  - 📂 [Paper Review](/tags/paper)
+ - 📂 [Optimal Control & Planning](/tags/optimization)
  - 📂 [Reinforcement Learning](/tags/rl)
  - 📂 [Self Study](/tags/self-study)
  - 📂 [etc](/tags)
