@@ -21,11 +21,15 @@ VSCode 에 있는 [LaTeX Workshop](https://github.com/James-Yu/LaTeX-Workshop/wi
     e.g., /usr/local/texlive/2023/bin/x86_64-linux
 ```
 
-그리고 이를 PATH 에 추가하기 위해 `~/.bashrc` 에서 넣어준다.
+그리고 이를 PATH 에 추가하기 위해 `~/.bashrc` 에서 넣어준다. 주의할 점은 $PATH 를 뒤에 넣어주어야 새로 설치된 경로를 잘 인식한다. 기존에 제공되는 TexLive 가 인식될 수 있다. 
 
 ```bash
-echo "export PATH=$PATH:/usr/local/texlive/2023/bin/x86_64-linux
+echo "export PATH=/usr/local/texlive/2023/bin/x86_64-linux:$PATH
 " >> ~/.bashrc
+
+# Check installed versions
+tlmgr version
+tex --version
 ```
 
 `sudo apt install latexmk` 로 추가적인 LaTeX 를 설치해주어주어도 된다.
