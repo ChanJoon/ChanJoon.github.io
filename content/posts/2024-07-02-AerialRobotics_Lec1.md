@@ -249,12 +249,23 @@ FC(Flight Controller) 외에도 SBC(ex. Intel Nuc i7) 과 센서들이 탑재되
 
 **Agility with Scaling**
 
-- mass, intertia
-	$m \sim l^3,\ I \sim l^5$
-- thrust
-	$F \sim \pi r^2 \times (wr)^2 \sim l^2v^2$
-- moment
-	$M \sim Fl$
+- Mass, Intertia
+	$$
+	m \sim l^3,\ I \sim l^5
+	$$
+	
+	질량 $m$ 은 $\rho V$ 이고, $V \sim l^3$ 이므로 $m\sim l^3$ 이다.
+	
+	distributed mass 에 대해 관성 $I$ 는 $\int_V\rho r^2 dV$ 이다.
+	$dV \sim l^3$ 이고 $r^2 \sim l^2$ 이므로 $I \sim \rho l^3 \times l^2$ 이다.
+- Thrust
+	$$
+	F \sim \pi r^2 \times (wr)^2 \sim l^2v^2
+	$$
+- Moment
+	$$
+	M \sim Fl
+	$$
 
 따라서, $a, \alpha$ 는 아래와 같이 근사화할 수 있다.
 
@@ -266,11 +277,18 @@ a \sim \frac{F}{m} \sim \frac{v^2}{l} \\
 $$
 
 그리고 $v$ 와 $l$ 의 관계를 두 가지 종류로 근사화할 수 있다.
-1. Froude scaling $v \sim \sqrt{l}$
+1. Froude scaling
+	$$
+	v \sim \sqrt{l}
+	$$
+	유체역학에서 constant Froude number $Fr$ 를 위해 $Fr=\frac{v}{\sqrt{gl}}$ 을 만족해야 한다고 한다.
 
-	이 경우, $a \sim 1,\ \alpha \sim \frac{1}{l}$ 가 된다.
-2. Mach scaling $v \sim 1$
-
+	그러므로, $a \sim 1,\ \alpha \sim \frac{1}{l}$ 가 된다.
+2. Mach scaling
+	마찬가지로 constant Mach number $Ma$ 는 $Ma=\frac{v}{c}$ 를 만족하여 아래와 같은 관계를 가진다.
+	$$
+	v \sim 1
+	$$
 	이 경우, $a \sim \frac{1}{l},\ \alpha \sim \frac{1}{l^2}$ 이다.
 
 따라서 작은 기체일 수록(smaller $l$), 최대 각가속도 $\alpha_{max}$ 가 커지는 것을 알 수 있다.
