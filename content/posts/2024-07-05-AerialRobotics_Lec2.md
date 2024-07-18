@@ -9,7 +9,7 @@ math: "true"
 ---
 # Geometry and Mechanics
 
-[[Previous Post: Lecture 1 Introduction ]]
+이전 Post: [[2024-07-02-AerialRobotics_Lec1 | Introduction]]
 
 ## 2.1 Quadrotor Kinematics
 
