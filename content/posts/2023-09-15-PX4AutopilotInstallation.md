@@ -4,7 +4,7 @@ layout: post
 title: "귀찮을 때 보기위한 PX4-Autopilot 설치"
 ---
 
-### PX4-Autopilot Installation 
+## PX4-Autopilot Installation 
 
 ```bash
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
@@ -87,3 +87,17 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/simulation/gazebo-classic/sitl_gazebo-classic
 roslaunch px4 posix_sitl.launch
 ```
+
+**Edited on Aug. 02**
+`bullet` 관련 에러 발생 시 해결법 정리
+
+```bash
+-- Checking for module 'bullet>=2.82'  
+-- No package 'bullet' found  
+-- Checking for module 'bullet2.82>=2.82'  
+-- No package 'bullet2.82' found  
+CMake Error at /usr/lib/x86_64-linux-gnu/cmake/gazebo/gazebo-config.cmake:102 (message):  
+Error: Bullet > 2.82 not found, please install libbullet2.82-dev.
+```
+
+[Reference Link](https://github.com/khancyr/ardupilot_gazebo/issues/14#issuecomment-828152816)
