@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ill-posed matrix
+title: Ill-conditioned matrix
 date: 2024-08-13
 categories: Mathematics
 tags:
