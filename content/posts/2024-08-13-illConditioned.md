@@ -49,3 +49,86 @@ $\mathbf{A}\mathbf{x}=\mathbf{b}$ 에서 $\mathbf{A}$ 가 invertible 하다면 �
 **ill-conditioned** 의 경우는 condition number 가 매우 큰 경우에 해당하여 well-posed 이면서 ill-conditioned 일 수 있다.
 
 nearly singular 라고 부르기도 하며, 안정성이 낮아 noise 에도 큰 오차가 발생한다.
+
+## An example of ill-conditioned matrices
+
+[Reference PDF](https://emtiyaz.github.io/pcml15/illconditioned.pdf)
+
+아래와 같은 상황을 생각해보자.
+
+$$
+\begin{cases}
+x+y&=2 \\
+x+1.001y &= 2
+\end{cases}
+$$
+and
+$$
+\begin{cases}
+x+y&=2 \\
+x+1.001y &= 2.001
+\end{cases}
+$$
+
+그렇다면 왼쪽의 해는 $x=2, y=0$ 인 반면, 오른쪽의 해는 $x=1,y=1$ 이다.
+이러한 coefficient matrix 를 *ill-conditioned* 하다고 한다. 
+
+앞서 언급한 것처럼, coefficient 의 약간의 변화로 해가 크게 변하기 때문이다. 위의 예시에서 condition number 는 4004 라고 한다.
+
+반올림 오차(rounding error) 로 인해 ill-conditioned system 은 다루기 어렵다.
+아래의 또다른 예시를 살펴보자.
+
+$$
+\begin{cases}
+.001x+y&=1 \\
+x+y &= 2
+\end{cases}
+$$
+
+위 예시의 해는 $x=1000/999\approx 1, y=998/999 \approx 1$ 이고 coefficient 가 약간 변하더라도 해는 크게 변하지 않음을 알 수 있다. 이 경우 condition number 는 4이다.
+
+하지만 일반적인 row reduction algorithm 으로 풀어내면 ill-conditioned system 이 된다.
+위 식을 풀기 위해 첫 번째 열에 1000을 곱해 두 번째 열에서 빼낸다고 해보자. 그 이후, -999를 나눈 후 소숫점 세 자리까지 반올림 한다.
+$$
+\begin{cases}
+.001x+y&=1 \\
+-999y &= -998
+\end{cases}
+$$
+
+$$
+\begin{cases}
+.001x+y&=1 \\
+y &= 1.00
+\end{cases}
+$$
+
+ 이로써 $x=0, y=1$ 로 위의 해와 비교했을 때 상당히 부정확함을 알 수 있다.(condition number $\approx 2002$)
+
+**partial pivoting** 을 활용하면 이러한 문제를 해결할 수 있다. 이전 시스템의 열을 서로 바꿔주는 것이다.
+
+$$
+\begin{cases}
+x+y &= 2 \\
+.001x+y&=1
+\end{cases}
+$$
+
+$$
+\begin{cases}
+x+y &= 2 \\
+.999y&=.998
+\end{cases}
+$$
+
+$$
+\begin{cases}
+x+y &= 2 \\
+y&=1
+\end{cases}
+$$
+
+그럼 위와 같은 과정으로 문제가 해결되므로 rounding 이후에도 해가 $x=1,y=1$ 로 꽤 정확하게 나옴을 알 수 있다. (condition number $\approx 4$)
+
+>[!tip] Youtube Lesson
+> ![](https://youtu.be/bVyMJUw608o?si=yqLk8oHfhc7-Guas)
