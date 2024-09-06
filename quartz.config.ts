@@ -15,9 +15,8 @@ const config: QuartzConfig = {
       provider: "google",
       tagId: "G-NY368MZMG8",
     },
-    locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    baseUrl: "chanjoon.github.io",
+    ignorePatterns: ["private", "templates", ".obsidian", "Note.md"],
     defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
@@ -36,8 +35,7 @@ const config: QuartzConfig = {
           dark: "#45474B",
           secondary: "#495E57",
           tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          highlight: "#F4CE14",
         },
         darkMode: {
           light: "#222831",
@@ -56,6 +54,10 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.FrontMatter(),
+      Plugin.TableOfContents({
+      	maxDepth: 4,
+      	collapseByDefault: false,
+      }),
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "filesystem"],
       }),
