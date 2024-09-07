@@ -6,7 +6,9 @@ title: My Note Container
 	<img src="static/icon.png" width="250px"/>
 </p>
 
-Hi. I’m **Chan-joon Park**, Undergrad M.E. Student at Yonsei Univ.
+Hi. I’m **Chan-joon Park**, M.S Student in KAIST Robotics
+
+(Bachelor of M.E. from Yonsei University)
 
 My dream is **to share the thrill that engineering fills my heart** and ignite a similar passion in others. I am currently deeply interested in **Robotics and Autonomous Navigation**, especially in the field of Aerial Vehicles.
 
@@ -15,6 +17,6 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 
  - 📂 [Paper Review](/tags/paper)
  - 📂 [Optimal Control & Planning](/tags/optimization)
- - 📂 [Reinforcement Learning](/tags/rl)
+ - 📂 [Reinforcement Learning](/tags/RL)
  - 📂 [Self Study](/tags/self-study)
  - 📂 [etc](/tags)
