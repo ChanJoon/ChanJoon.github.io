@@ -5,8 +5,9 @@ date: 2023-12-07
 categories: Robotics
 tags:
   - self-study
-  - optimization
+  - control-planning
 math: "true"
+draft: "true"
 ---
 # Summary
 

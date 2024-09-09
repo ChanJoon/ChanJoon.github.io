@@ -589,7 +589,7 @@ HandlerInfo make_handler(void (_C::*fn)(const mavlink::mavlink_message_t*, _T &)
 >[!info]- mavlink_msg_gps_raw_int.hpp
 >// MESSAGE GPS_RAW_INT support class
 > 
-> #pragma once
+> \#pragma once
 > 
 > namespace mavlink {
 > namespace common {

@@ -5,7 +5,8 @@ date: 2024-02-19
 categories: Optimization
 tags:
   - self-study
-  - optimization
+  - control-planning
+  - mathematics
 math: "true"
 ---
 # Quasi-Newton

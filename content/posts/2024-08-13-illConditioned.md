@@ -12,11 +12,11 @@ math: "true"
 # Introduction
 
 >[!quote]
-> [1] D. W. Mellinger, “Trajectory Generation and Control for Quadrotors.”
+>A poor choice of basis functions can cause the matrix H in (7.3) to be **ill-conditioned** for large order polynomials. In order to diagonalize H and ensure that it is **well-conditioned** matrix we use Legendre polynomials as basis functions for the krth derivatives of our positions.
+>
+> `D. W. Mellinger, “Trajectory Generation and Control for Quadrotors.”`
 
-Thesis 를 정리하며 읽는 중 optimization-based 경로 생성에서 종종 등장하는 **ill-conditioned matrix** 가 무엇인지 알아보고자 한다.
-
-> A poor choice of basis functions can cause the matrix H in (7.3) to be ill-conditioned for large order polynomials.
+[Thesis](https://rpg.ifi.uzh.ch/docs/PhD18_Faessler.pdf) 를 정리하며 읽는 중 optimization-based 경로 생성에서 종종 등장하는 **ill-conditioned matrix** 가 무엇인지 알아보고자 한다.
 
 위 인용한 논문에서 QP 수식에서의 hessian matrix $H$ 가 쉽게 ill-conditioned 일 수 있다고 한다.
 

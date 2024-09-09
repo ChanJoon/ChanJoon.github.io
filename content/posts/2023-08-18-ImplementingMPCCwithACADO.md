@@ -5,7 +5,7 @@ title: Implementing MPCC with ACADO
 tags:
   - self-study
   - acado
-  - optimization
+  - control-planning
 ---
 ### Implementing MPCC with ACADO
 
