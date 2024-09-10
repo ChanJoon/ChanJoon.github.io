@@ -105,7 +105,7 @@ Ray sampling 기반으로 빠르게 cluster 를 생성하는 [36] 은 accuracy �
 
 여기서 제시된 EGO-Planner 는 soft constrained 방식으로 GCOPTER 에서 사용한 방식에 기반하였다. 그러나, 이 논문에서는 <span style="color:red">**nonlinear optimization 이므로 local minima 에 빠질 수 있고, initial solution 에 민감하다고 지적하고 있다.**</span>
 
-반면 hard-constrained 방식인 convex optimization(CO) 기반은 초창기부터 활발히 연구되어왔다. 앞선 방식에 비해 느리다는 단점이 있다고 알고 있다. 본 논문에서 제시한 문제점은 <span style="color:red">s**afety 가 hard constrained 로 고려되기 때문에 장애물과 너무 가깝게 경로가 생성될 수 있고, 실제 환경에서는 외란 등으로 인해 unsafe 할 수 있다고 한다.**</span>
+반면 hard-constrained 방식인 convex optimization(CO) 기반은 초창기부터 활발히 연구되어왔다. 앞선 방식에 비해 느리다는 단점이 있다고 알고 있다. 본 논문에서 제시한 문제점은 <span style="color:red">**safety 가 hard constrained 로 고려되기 때문에 장애물과 너무 가깝게 경로가 생성될 수 있고, 실제 환경에서는 외란 등으로 인해 unsafe 할 수 있다고 한다.**</span>
 
 **따라서 본 논문은 위와 같은 문제점들을 해결하여 success rate, computational efficiency, minimum clearance 에서 우수함을 보인다고 한다.**
 
@@ -340,7 +340,7 @@ $$
 Jacobian 을 0으로 만듦으로써, optimal free derivatives $\mathbf{w}_p^*$ 를 아래와 같이 얻어낼 수 있다.
 
 $$
-\mathbf{w}_p^* = -\mathbf{R}_{pp}^{-1}(\mathbf{K}_p + \mathbf{R}_{pp}\mathbf{w}_f)
+\mathbf{w}_p^* = -\mathbf{R}_{pp}^{-1}(\mathbf{K}_p + \mathbf{R}_{pf}\mathbf{w}_f)
 $$
 
 ### C. Environmental Adaptive Parameter Tuning
