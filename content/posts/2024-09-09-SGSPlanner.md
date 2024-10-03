@@ -5,8 +5,6 @@ date: 2024-09-09
 categories: Robotics
 tags:
   - paper
-  - self-study
-  - control-planning
 math: "true"
 ---
 
