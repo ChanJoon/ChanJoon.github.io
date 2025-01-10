@@ -11,3 +11,7 @@ private/
 replit.nix
 
 Note.md
+
+content/.smtcmp_chat_histories/
+content/.smtcmp_vector_db.tar.gz
+
