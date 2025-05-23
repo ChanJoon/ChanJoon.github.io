@@ -54,8 +54,23 @@ sudo apt-get install --reinstall libffi-dev libp11-kit-dev libc6-dev
 
 5. **(중요) Build error on rotors_hil_interface**
 
-아래 Github Issue 확인
-https://github.com/ethz-asl/rotors_simulator/issues/737
+```bash
+/opt/ros/noetic/include/mavlink/v2.0/common/./mavlink_msg_logging_data.h: In function ‘uint16_t mavlink_msg_logging_data_pack_status(uint8_t, uint8_t, int*, mavlink_message_t*, uint8_t, uint8_t, uint16_t, uint8_t, uint8_t, const uint8_t*)’:  
+/opt/ros/noetic/include/mavlink/v2.0/common/./mavlink_msg_logging_data.h:134:74: error: cannot convert ‘int*’ to ‘mavlink::mavlink_status_t*’ {aka ‘mavlink::__mavlink_status*’}
+```
+
+위와 같은 종류의 에러가 생길 시 `src/rotors_simulator/rotors_hil_interface/include/rotors_hil_interface/hil_interface.h` 에 아래와 같이 추가해준다.
+
+```cpp
+#ifndef MAVLINK_H
+	typedef mavlink::mavlink_message_t mavlink_message_t; 
+	typedef mavlink::mavlink_status_t mavlink_status_t; // 이거 추가
+	#include <mavlink/v2.0/common/mavlink.h>
+#endif
+```
+
+> Reference
+> - https://github.com/ethz-asl/rotors_simulator/issues/737
 
 6. **(중요) Deactivate anaconda in ~/.zshrc (also check PATH, LD_LIBRARY_PATH)**
 
