@@ -5,6 +5,7 @@ date: 2024-09-09
 categories: Robotics
 tags:
   - paper
+  - control-planning
 math: "true"
 ---
 
