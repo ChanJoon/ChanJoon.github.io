@@ -75,3 +75,22 @@ $ dpkg-query --show --showformat='${Package;-50}\t${Installed-Size}\n' | sort -k
 ```
 
 위 명령어로 용량이 큰 패키지들을 찾을 수 있고, 사용하지 않는 패키지들은 `apt-get remove` 로 제거해준다.
+
+## Google Drive 내용 한번에 설치하기
+
+Drive 에 있는 여러 압축파일/폴더 들을 하나씩 다운로드 누르기 귀찮을 때
+
+### Install gdown
+
+```bash
+pip install gdown
+```
+
+### Download entire folder
+
+링크에는 구글 드라이브 공유 링크를 넣으면 된다~
+
+
+```bash
+gdown --folder https://drive.google.com/drive/folders/1za2riVJKV5-InhgOpAdsK-Ug-bUCyeUO
+```
