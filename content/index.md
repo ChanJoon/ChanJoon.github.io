@@ -8,8 +8,6 @@ title: My Note Container
 
 Hi. I’m **Chan-joon Park**, M.S Student in KAIST Robotics
 
-(Bachelor of M.E. from Yonsei University)
-
 My dream is **to share the thrill that engineering fills my heart** and ignite a similar passion in others. I am currently deeply interested in **Robotics and Autonomous Navigation**, especially in the field of Aerial Vehicles.
 
 ---
@@ -23,7 +21,6 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 
 **B.S.**, School of Mechanical Engineering, Yonsei University  
 *Mar 2018 – Aug 2024*  
-- Studied at: [PI Lab](https://pi.kpu.ac.kr)
 
 ---
 
