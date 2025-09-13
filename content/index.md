@@ -27,11 +27,11 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 ### 🔬 Research Experience
 **Internship Program** — *Urban Robotics Lab (URL)*  
 *Aug 2023 – Aug 2024*  
-- Worked on UAV planning, mapping, and exploration.
+- Worked on Model Predictive Contouring Control(MPCC) for UAV.
 
 **Undergraduate Intern** — *KIST Center for Healthcare Robotics*  
 *Dec 2022 – Feb 2023*  
-- Focused on medical navigation robotics.
+- Focused on medical robotics.
 
 **Special Oral Session (Co-first Author)** — *18th Korea Robotics Conference (KRoC 2023)*  
 *Feb 2023*  
@@ -39,7 +39,7 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 
 **Undergraduate Member** — *AI Racing Team (MLCS Lab)*  
 *Dec 2021 – Aug 2023*  
-- Developed autonomous racing algorithms and systems.
+- Developed path planning and hardward for autonomous racing car.
 
 ---
 
