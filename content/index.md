@@ -3,7 +3,7 @@ date: 1999-11-12
 title: My Note Container
 ---
 <p align="left">
-	<img src="static/icon.png" width="250px"/>
+	<img src="static/profile.png" width="250px"/>
 </p>
 
 Hi. I’m **Chan-joon Park**, M.S Student in KAIST Robotics
