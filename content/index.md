@@ -17,7 +17,7 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 
 **M.S.**, School of Electrical Engineering, KAIST  
 *Aug 2024 – Current*  
-- Studied at: [Urban Robotics Lab (URL)](https://url-kaist.github.io)  
+- @ [Urban Robotics Lab (URL)](https://url-kaist.github.io)  
 
 **B.S.**, School of Mechanical Engineering, Yonsei University  
 *Mar 2018 – Aug 2024*  
@@ -64,14 +64,10 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 - Participated in national competitions, organized SLAM study sessions, and developed custom drones.
 
 #### Yonsei Computer Club (YCC) — *Member*  
-*Mar 2022 – Feb 2024*  
-- Engaged in full-stack development and robotics programming.  
-- Participated in hackathons and technology exploration.
+*Mar 2022 – Feb 2024*
 
 #### ROBOIN — *Member*  
-*Mar 2021 – Dec 2022*  
-- Worked on quadrupeds and motor control projects.  
-- Gained experience from senior members and attended robotics events.
+*Mar 2021 – Dec 2022*
 
 ---
 
