@@ -8,7 +8,7 @@ title: My Note Container
 
 Hi. I’m **Chan-joon Park**, M.S Student in KAIST Robotics
 
-My dream is **to share the thrill that engineering fills my heart** and ignite a similar passion in others. I am currently deeply interested in **Robotics and Autonomous Navigation**, especially in the field of Aerial Vehicles.
+My dream is **to share the thrill that engineering brings to my heart** and inspire others to feel the same passion. I am currently deeply interested in **Robotics**, with a particular focus on **aerial vehicles** and **neural planning for UAVs**.
 
 ---
 
