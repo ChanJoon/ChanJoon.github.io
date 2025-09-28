@@ -24,6 +24,21 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 
 ---
 
+### 📄 Publications
+
+<div style="display: flex; align-items: center; margin-bottom: 1.2em;">
+  <img src="static/iccas2025_logo.png" alt="ICCAS 2025 Logo" width="100px" style="margin-right: 15px; border-radius: 8px;"/>
+  <div>
+    <strong>SSF-Exploration: Safe Segments Forwarding-Based Seamless Replanning and Tracking for Fast UAV Exploration</strong><br>
+    <em>Eungchang Mason Lee<sup>†</sup>, Chanjoon Park<sup>†</sup>, Hyun Myung</em><br>
+    <span style="color: gray;">The 25th International Conference on Control, Automation, and Systems (ICCAS) 2025</span><br>
+    <!-- <small>Submission No. 360 · Regular Paper · Final Version Accepted</small> -->
+	<small><sup>†</sup>Co-first Author</small>
+  </div>
+</div>
+
+---
+
 ### 🔬 Research Experience
 **Internship Program** — *Urban Robotics Lab (URL)*  
 *Aug 2023 – Aug 2024*  
