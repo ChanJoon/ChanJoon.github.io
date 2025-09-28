@@ -27,7 +27,7 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 ### 📄 Publications
 
 <div style="display: flex; align-items: center; margin-bottom: 1.2em;">
-  <img src="static/iccas2025_logo.png" alt="ICCAS 2025 Logo" width="100px" style="margin-right: 15px; border-radius: 8px;"/>
+  <img src="static/iccas2025_logo.png" alt="ICCAS 2025 Logo" width="145px" style="margin-right: 15px; border-radius: 8px;"/>
   <div>
     <strong>SSF-Exploration: Safe Segments Forwarding-Based Seamless Replanning and Tracking for Fast UAV Exploration</strong><br>
     <em>Eungchang Mason Lee<sup>†</sup>, Chanjoon Park<sup>†</sup>, Hyun Myung</em><br>
