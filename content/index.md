@@ -17,7 +17,7 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 
 **M.S.**, School of Electrical Engineering, KAIST  
 *Aug 2024 – Current*  
-- @ [Urban Robotics Lab (URL)](https://url-kaist.github.io)  
+- @ [Urban Robotics Lab (URL)](https://urobot.kaist.ac.kr/)  
 
 **B.S.**, School of Mechanical Engineering, Yonsei University  
 *Mar 2018 – Aug 2024*  
@@ -40,7 +40,7 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 ---
 
 ### 🔬 Research Experience
-**Internship Program** — *Urban Robotics Lab (URL)*  
+**Internship Program** — *[Urban Robotics Lab (URL)](https://urobot.kaist.ac.kr/)*  
 *Aug 2023 – Aug 2024*  
 - Worked on Model Predictive Contouring Control(MPCC) for UAV.
 
@@ -52,7 +52,7 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 *Feb 2023*  
 - Oral Paper: [Obstacle Layer-based Avoidance for Self-Driving Racing Cars](https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:6de791ec-7a39-32e9-945b-821f86ba0394)
 
-**Undergraduate Member** — *AI Racing Team (MLCS Lab)*  
+**Undergraduate Member** — *AI Racing Team ([MLCS Lab](https://mlcs.yonsei.ac.kr/))*  
 *Dec 2021 – Aug 2023*  
 - Developed path planning and hardward for autonomous racing car.
 
@@ -73,7 +73,7 @@ My dream is **to share the thrill that engineering fills my heart** and ignite a
 
 ### 🤸 Extracurricular Activities
 
-#### YonseiDrone — *Founding Member, Club Management*  
+#### [YonseiDrone](https://yonseidrone.notion.site/a9c169ae021445d0a5d95a083d69b1ad) — *Founding Member, Club Management*  
 *May 2021 – Aug 2024*  
 - Founded and led Yonsei University's only drone club.  
 - Participated in national competitions, organized SLAM study sessions, and developed custom drones.
