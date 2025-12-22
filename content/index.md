@@ -6,21 +6,12 @@ title: My Note Container
 	<img src="static/icon.png" width="250px"/>
 </p>
 
-Hi. I’m **Chan-joon Park**, M.S Student in KAIST Robotics
+I am a Master's student at KAIST, working in the Urban Robotics Lab (URL) under Prof. Hyun Myung.
 
-My dream is **to share the thrill that engineering brings to my heart** and inspire others to feel the same passion. I am currently deeply interested in **Robotics**, with a particular focus on **aerial vehicles** and **neural planning for UAVs**.
+My research focuses on **learning-based planning**, trajectory optimization, and reinforcement learning for agile quadrotors, with an emphasis on **end-to-end policy learning in unknown and cluttered environments**.
 
----
-
-
-### 🎓 Education
-
-**M.S.**, School of Electrical Engineering, KAIST  
-*Aug 2024 – Current*  
-- @ [Urban Robotics Lab (URL)](https://urobot.kaist.ac.kr/)  
-
-**B.S.**, School of Mechanical Engineering, Yonsei University  
-*Mar 2018 – Aug 2024*  
+**Links:**
+📄 [Resume](https://drive.google.com/file/d/1w8_ewBBT_fc1AepMGMERiwE7jvTv0W5c/view?usp=sharing) | 💻 [GitHub](https://github.com/ChanJoon) | 💼 [LinkedIn](https://linkedin.com/in/chanjoon-park)
 
 ---
 
@@ -70,22 +61,6 @@ My dream is **to share the thrill that engineering brings to my heart** and insp
 | Aug 2021 | Academic Excellence Award | Yonsei University |
 
 ---
-
-### 🤸 Extracurricular Activities
-
-#### [YonseiDrone](https://yonseidrone.notion.site/a9c169ae021445d0a5d95a083d69b1ad) — *Founding Member, Club Management*  
-*May 2021 – Aug 2024*  
-- Founded and led Yonsei University's only drone club.  
-- Participated in national competitions, organized SLAM study sessions, and developed custom drones.
-
-#### Yonsei Computer Club (YCC) — *Member*  
-*Mar 2022 – Feb 2024*
-
-#### ROBOIN — *Member*  
-*Mar 2021 – Dec 2022*
-
----
-
 
 ## Contents
 
