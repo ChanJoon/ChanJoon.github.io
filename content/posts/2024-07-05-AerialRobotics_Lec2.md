@@ -255,7 +255,7 @@ $$
 
 
 
-## 2.2 Quadrotor Dynamics
+## 2.2 [[2024-01-15-GeometricControlSE3|Quadrotor Dynamics]]
 
 ### Dynamics of a Quadrotor
 

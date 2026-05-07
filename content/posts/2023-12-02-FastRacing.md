@@ -86,7 +86,7 @@ nonlinear constraints 를 cubic and max function 으로 바꿔 unconstrained opt
 
 이제 처음 살펴봤던 [[2023-11-14-SearchMotionPlanning| Liu et al.]] 논문이 kinodynamic searching 방식으로 resolution complete한 SE(3) planner를 제안하였으나, search-based method의 한계로 연산 시간이나 메모리 소요가 매우 커서 실제로 사용하기에는 어려움이 있었다.
 
-본인들이 낸 논문인 GCOPTER 가 *high-quality* 의 SE(3) 궤적을 만들어내었다고 언급하였지만, 이 논문도 적용방식에 대해서 완전히 해결해내지는 못하였다. (병렬 구조를 통한 성능 개선을 위한 언급으로 보임)
+본인들이 낸 논문인 [[2024-02-06-GCOPTER|GCOPTER]] 가 *high-quality* 의 SE(3) 궤적을 만들어내었다고 언급하였지만, 이 논문도 적용방식에 대해서 완전히 해결해내지는 못하였다. (병렬 구조를 통한 성능 개선을 위한 언급으로 보임)
 
 >[!quote] GCOPTER
 >

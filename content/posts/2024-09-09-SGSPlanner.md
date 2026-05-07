@@ -20,7 +20,7 @@ paper:
 
 > T. Li, S. Zhang, X. Zhang, Q. Dong, and J. Huang, “SGS-Planner: A Skeleton-Guided Spatiotemporal Motion Planner for Flight in Constrained Space,” IEEE/ASME Transactions on Mechatronics, pp. 1–12, 2024, doi: 10.1109/TMECH.2024.3393144.
 
-이 논문은 올해 T-Mech Accept 된 논문으로 기존의 SOTA 로 여겨진 GCOPTER 기반의 nonlinear optimization 방식으로 경로를 생성하던 방식 대신 hierarchical framework 기반의 QP 로 경로를 생성하였다.
+이 논문은 올해 T-Mech Accept 된 논문으로 기존의 SOTA 로 여겨진 [[2024-02-06-GCOPTER|GCOPTER]] 기반의 nonlinear optimization 방식으로 경로를 생성하던 방식 대신 hierarchical framework 기반의 QP 로 경로를 생성하였다.
 
 따라서, <u>어떤 부분에서 뚜렷한 contribution 이 있었고 motion planning 에서 얻어갈 요소가 있을지 찾아보자.</u>
 
@@ -109,7 +109,7 @@ Ray sampling 기반으로 빠르게 cluster 를 생성하는 [36] 은 accuracy �
 
 *Skeleton-graph methods 를 이번에 알게 되어 자세한 연구 동향은 잘 모름.*
 
-여기서 제시된 EGO-Planner 는 soft constrained 방식으로 GCOPTER 에서 사용한 방식에 기반하였다. 그러나, 이 논문에서는 <span style="color:red">**nonlinear optimization 이므로 local minima 에 빠질 수 있고, initial solution 에 민감하다고 지적하고 있다.**</span>
+여기서 제시된 EGO-Planner 는 soft constrained 방식으로 [[2024-02-06-GCOPTER|GCOPTER]] 에서 사용한 방식에 기반하였다. 그러나, 이 논문에서는 <span style="color:red">**nonlinear optimization 이므로 local minima 에 빠질 수 있고, initial solution 에 민감하다고 지적하고 있다.**</span>
 
 반면 hard-constrained 방식인 convex optimization(CO) 기반은 초창기부터 활발히 연구되어왔다. 앞선 방식에 비해 느리다는 단점이 있다고 알고 있다. 본 논문에서 제시한 문제점은 <span style="color:red">**safety 가 hard constrained 로 고려되기 때문에 장애물과 너무 가깝게 경로가 생성될 수 있고, 실제 환경에서는 외란 등으로 인해 unsafe 할 수 있다고 한다.**</span>
 
@@ -129,7 +129,7 @@ Ray sampling 기반으로 빠르게 cluster 를 생성하는 [36] 은 accuracy �
 
 이 **최적화 과정에서 환경에 adaptive 하게 parameter tuning** 이 이루어진다.
 
-**Temporal planning** 에서는 최적화된 경로에 대해 **time-optimal trajectory generation(TOTG)** 방법을 통해 시간 최적화가 이루어진다. 하지만 강건하지 않아 실패할 경우에 trapezoidal velocity profile 이 사용된다.
+**Temporal planning** 에서는 최적화된 경로에 대해 **[[2025-06-23-MPCC|time-optimal trajectory generation(TOTG)]]** 방법을 통해 시간 최적화가 이루어진다. 하지만 강건하지 않아 실패할 경우에 trapezoidal velocity profile 이 사용된다.
 
 >[!quote] TOTG
 >

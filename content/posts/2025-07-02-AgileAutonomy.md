@@ -22,7 +22,7 @@ paper:
 
 [DOI: 10.1126/scirobotics.abg5810](https://doi.org/10.1126/scirobotics.abg5810)
 
-이 논문은 러닝 기법을 활용한 드론 비행의 시초가 되는 논문으로 Imitation learning (IL) 기법을 활용하여 end-to-end 로 여러 환경에서 비행함을 보였다. End-to-end planning 은 센서 input 에서 바로 trajectory 를 output 을 내보내는 것을 의미한다.
+이 논문은 러닝 기법을 활용한 드론 비행의 시초가 되는 논문으로 [[2024-01-13-CS285_Week2_2|Imitation learning]] (IL) 기법을 활용하여 end-to-end 로 여러 환경에서 비행함을 보였다. End-to-end planning 은 센서 input 에서 바로 trajectory 를 output 을 내보내는 것을 의미한다.
 
 기존의 자율 비행 시스템은 Sensing → Mapping → Planning 의 순차적인 파이프라인에 의존하여, 처리 지연(latency)과 누적 오차 문제로 고속 주행에는 한계가 있었다.
 
@@ -174,7 +174,7 @@ $$
 
 ## Conclusion & Discussion
 
-본 논문은 드론 분야에서 Privileged Learning 을 통해 학습된 End-to-End policy 로, 드론의 고속 자율 비행을 최초로 보인 논문이다. 그래서 본 논문 이후로 여러 로보틱스 분야에서 end-to-end 기법을 적용한 (자율주행 제외) 방법론이 등장하고 RL, Imperative learning 등이 등장하였다.
+본 논문은 드론 분야에서 Privileged Learning 을 통해 학습된 End-to-End policy 로, 드론의 고속 자율 비행을 최초로 보인 논문이다. 그래서 본 논문 이후로 여러 로보틱스 분야에서 end-to-end 기법을 적용한 (자율주행 제외) 방법론이 등장하고 [[2023-10-15-IntroToRL|RL]], Imperative learning 등이 등장하였다.
 
 **주요 기여**:
 1. **End-to-End 고속 비행**: 감지부터 제어까지의 과정을 하나의 신경망으로 통합하여 고속 비행에 필수적인 낮은 지연 시간을 달성.

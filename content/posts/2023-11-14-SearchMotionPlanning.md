@@ -52,7 +52,7 @@ Sampling 방식을 사용한 Planning with 6 DOF는 여러 연구에서 진행�
 >
 >[2] B. MacAllister, J. Butzke, A. Kushleyev, H. Pandey, and M. Likhachev, “Path planning for non-circular micro aerial vehicles in constrained environments,” in Robotics and Automation (ICRA), 2013 IEEE International Conference on. IEEE, 2013, pp. 3933–3940.
 >
->[3] Liu, Sikang, et al. "Search-based motion planning for quadrotors using linear quadratic minimum time control." 2017 IEEE/RSJ international conference on intelligent robots and systems (IROS). IEEE, 2017.
+>[3] Liu, Sikang, et al. "[[2023-11-16-SearchMotionPlanningLQMTC|Search-based motion planning for quadrotors using linear quadratic minimum time control]]." 2017 IEEE/RSJ international conference on intelligent robots and systems (IROS). IEEE, 2017.
 
 ^723bc9
 
@@ -86,7 +86,7 @@ Quadrotor의 dynamics는 $\mathbb{R}^3$ 에서 [differentially flat](https://en.
 >[!cite]
 >[5] D. Mellinger and V. Kumar, “Minimum snap trajectory generation and control for quadrotors,” in Proceedings of the 2011 IEEE International Conference on Robotics and Automation (ICRA), 2011.
 >
->[6] T. Lee, M. Leoky, and N. H. McClamroch, “Geometric tracking control of a quadrotor UAV on SE(3),” in 49th IEEE Conference on Decision and Control (CDC). IEEE, 2010, pp. 5420–5425.
+>[6] T. Lee, M. Leoky, and N. H. McClamroch, “[[2024-01-15-GeometricControlSE3|Geometric tracking control of a quadrotor UAV on SE(3)]],” in 49th IEEE Conference on Decision and Control (CDC). IEEE, 2010, pp. 5420–5425.
 >
 >[7] M. Hehn and R. D’Andrea, “Quadrocopter trajectory generation and control,” IFAC Proceedings Volumes, vol. 44, no. 1, 2011.
 
@@ -178,10 +178,10 @@ $$
 s.t. \ C(s_n,u_m)=C(u_m)=(\|u_m\|^2+\rho)\tau \tag{12}
 $$
 
-*Pontryagin' minimum principle*에 의해 [[#^0e9d52|식 (10)]]은 [[#^6c3abf|식 (11)]]의 optimal solution 이다. 따라서 [[#^6c3abf|식 (11)]]을 푸는 것은 아래의 deterministic shortest path problem의 최적해를 찾는 것과 같다. (= 아래 problem의 optima = optimal trajectory)
+*[[2024-09-06-PMP|Pontryagin' minimum principle]]*에 의해 [[#^0e9d52|식 (10)]]은 [[#^6c3abf|식 (11)]]의 optimal solution 이다. 따라서 [[#^6c3abf|식 (11)]]을 푸는 것은 아래의 deterministic shortest path problem의 최적해를 찾는 것과 같다. (= 아래 problem의 optima = optimal trajectory)
 
 >[!example] Todo
->- Pontryagin' minimum principle과 선행 논문 [3] 증명 정리
+>- [[2024-09-06-PMP|Pontryagin' minimum principle]]과 선행 논문 [3] 증명 정리
 
 ***Problem 1*** ^9a204f
 
@@ -362,7 +362,7 @@ $$
 
 ^c8e725
 
-초기 state $s=[p_0^T,v_0^T,a_0^T]^T$ 라고 가정하면 Pontryagin's minimum principle에 의해 아래와 같이 최적 경로의 위치 수식이 정리된다.
+초기 state $s=[p_0^T,v_0^T,a_0^T]^T$ 라고 가정하면 [[2024-09-06-PMP|Pontryagin's minimum principle]]에 의해 아래와 같이 최적 경로의 위치 수식이 정리된다.
 
 $$
 p=\frac{d_5}{120}t^5+\frac{d_4}{24}t^4+\frac{d_3}{6}t^3+\frac{a_0}{2}t^2+v_0t+p_0

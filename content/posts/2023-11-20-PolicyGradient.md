@@ -21,7 +21,7 @@ State-value function V와 Q 모두 앞으로의 기대되는 return에 대한 �
 
 A. Model-free 접근 방식을 사용하여 주어진 policy에 대한 State-value function V를 학습할 수 있다. 하지만 학습한 V를 사용하여 action을 선택할 수는 없다.
 
-그 이유는 action에 따라 다음에 어떤 state가 발생할지 예측할 방법이 없기 때문이다. 이는 모두 action 값을 사용해야 하는 몬테카를로(Monte-Carlo) 제어, SARSA 및 Q-러닝과 같은 경우에서 문제다. Actor-Critic 방법에서와 같이 policy gradient와 결합하면 별도의 제어 가능한 policy을 제공하기 때문에 문제가 되지 않는다.
+그 이유는 action에 따라 다음에 어떤 state가 발생할지 예측할 방법이 없기 때문이다. 이는 모두 action 값을 사용해야 하는 몬테카를로(Monte-Carlo) 제어, SARSA 및 Q-러닝과 같은 경우에서 문제다. [[2023-11-21-PolicyGradient2|Actor-Critic]] 방법에서와 같이 policy gradient와 결합하면 별도의 제어 가능한 policy을 제공하기 때문에 문제가 되지 않는다.
 
 ## RL Agent Taxonomy
 
@@ -43,7 +43,7 @@ $$
     - Fitted value iteration
 - Actor-critic RL: 현재 policy의 value function이나 Q-function을 추정하여 policy 개선에 사용
     - Asynchronous advantage actor-critic (A3C)
-    - Soft Actor-Critic (SAC), DDPG
+    - Soft Actor-Critic (SAC), [[2023-11-29-DDPG|DDPG]]
 - Model-based RL: transition model을 추정하여 planning에 사용하거나 policy 개선에 사용
     - Dyna
     - Gaussian Process dynamic programming / PILCO ([https://mlg.eng.cam.ac.uk/pub/pdf/DeiRas11.pdf](https://mlg.eng.cam.ac.uk/pub/pdf/DeiRas11.pdf))
@@ -105,7 +105,7 @@ Policy based에는
 - Learnt policy
 - Examples
     - Asynchronous advantage actor-critic (A3C)
-    - Soft Actor-Critic (SAC), DDPG
+    - Soft Actor-Critic (SAC), [[2023-11-29-DDPG|DDPG]]
 
 왜 이렇게 많은 알고리즘들이 있는 걸까?
 

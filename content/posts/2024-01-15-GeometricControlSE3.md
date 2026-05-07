@@ -21,7 +21,7 @@ paper:
 
 논문 제목 그대로 $\mathbf{SE}(3)$ 에서 desired state 를 추종하는 controller 를 제안하였다.
 
-앞선 Whole-body Motion Planning 논문들에서 여러 차례 attitude 를 고려하기 위해 $\mathbf{SE}(3)$ 에서의 경로 생성이 필요하다고 언급하였는데, Lie theory 까지 파고들기 어려워 **To-Do** 로 남겨두었는데, 본 논문을 보면서 이해가능한 정도로만 살펴보기로 하였다.
+앞선 [[2023-11-29-WholebodyMotionPlanning|Whole-body Motion Planning]] 논문들에서 여러 차례 attitude 를 고려하기 위해 $\mathbf{SE}(3)$ 에서의 경로 생성이 필요하다고 언급하였는데, Lie theory 까지 파고들기 어려워 **To-Do** 로 남겨두었는데, 본 논문을 보면서 이해가능한 정도로만 살펴보기로 하였다.
 
 **Contributions**
 - *almost global* 한 control system 을 제안하여 어떤 initial state 에서도 desired state 로 제어가 가능하다.

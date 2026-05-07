@@ -22,7 +22,7 @@ paper:
 
 [Publisher Link](https://doi.org/10.1109/ICRA48891.2023.10160767)
 
-[[2023-11-14-SearchMotionPlanning|Liu et al.]] 과 [[2023-12-02-FastRacing|Han et al.]] 이 가지고 있는 문제를 일부 해결하면서 모르는 지도에 대한 최적 경로 생성에 대한 논문으로, 대다수는 GCOPTER 논문을 기반으로 하되 프레임 워크를 제안하였다.
+[[2023-11-14-SearchMotionPlanning|Liu et al.]] 과 [[2023-12-02-FastRacing|Han et al.]] 이 가지고 있는 문제를 일부 해결하면서 모르는 지도에 대한 최적 경로 생성에 대한 논문으로, 대다수는 [[2024-02-06-GCOPTER|GCOPTER]] 논문을 기반으로 하되 프레임 워크를 제안하였다.
 
 **주요 contribution**
 - **좁은 지역은 full pose (=$\mathrm{SE}(3)$) planning을 하고 이외의 지역은 position planning을 하도록 하는 hierachical framework 를 제안**
@@ -65,7 +65,7 @@ $\mathrm{SE}(3)$ planning 논문들의 **큰 문제 중 하나는 *unknown and u
 
 위 논문들은 지나가야 하는 틈에 대해 미리 알고 있는 것을 전제로 경로 계획이 이루어 져서 실제 환경에서 사용하기에는 어렵거나 전역 지도가 필요했다.
 
-[[2023-12-02-FastRacing|Han et al.]] 논문에서 언급되었듯이 [6]-[8] 은 틈을 지나는 것에만 초점을 많이 맞추었고, [9] 는 [[2023-11-29-WholebodyMotionPlanning|이전 Post]] 에서 다루었고 [10] 은 GCOPTER 논문이다.
+[[2023-12-02-FastRacing|Han et al.]] 논문에서 언급되었듯이 [6]-[8] 은 틈을 지나는 것에만 초점을 많이 맞추었고, [9] 는 [[2023-11-29-WholebodyMotionPlanning|이전 Post]] 에서 다루었고 [10] 은 [[2024-02-06-GCOPTER|GCOPTER]] 논문이다.
 
 또 다른 기존 $\mathrm{SE}(3)$ Planning 연구의 문제점으로 꼽은 것은 연산 효율성이다. 아마도 본 연구의 contribution을 강조하고자 넣은 것으로 보이는데, 아래 연구들을 꼽으며 **수백 $ms$ 에서 수 초의 연산이 걸린다**고 한다.
 

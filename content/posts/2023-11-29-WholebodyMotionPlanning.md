@@ -116,7 +116,7 @@ Trajectory optimization algorithm 선행 연구로는 아래 논문이 있는데
 ![[Yang2021icra_eqn1_4.png]]
 
 >[!example] Todo
->- Orientation of quadrotor dynamics
+>- Orientation of [[2024-01-15-GeometricControlSE3|quadrotor dynamics]]
 >- 확실히 정리하고 가기 + quaternion 표현으로도
 
 ### B. Geometrically Constrained Trajectory Optimization for Multicopters Framework Revisit

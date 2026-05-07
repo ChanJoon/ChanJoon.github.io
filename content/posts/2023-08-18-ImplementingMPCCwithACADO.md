@@ -19,13 +19,13 @@ tags:
 >- [ ] 전체 time horizon $T$를 linear하거나 exponential하게 고려하는 것으로 알고 있는데, 이러한 경우에 scaling을 어떻게 하는지
 
 >[!abstract] Goal
->1. Implement **Model Predictive Contouring Control(MPCC)** on quadrotor with *ACADO+qpOASES* by referencing [CMPCC](https://arxiv.org/abs/2007.03271v3)
->2. Experiment MPCC on ROS by using the source code of [PAMPC](https://arxiv.org/abs/1804.04811v2)
+>1. Implement **[[2025-06-23-MPCC|Model Predictive Contouring Control(MPCC)]]** on quadrotor with *[[2023-07-17-ACADOToolkitstudy|ACADO]]+qpOASES* by referencing [CMPCC](https://arxiv.org/abs/2007.03271v3)
+>2. Experiment MPCC on ROS by using the source code of [[2023-07-28-PaperReviewPAMPCPerceptionAwareModelPredictiveControlforQuadrotors|PAMPC]]
 
 
 ##### Differences between each papers(MPC or MPCC on quadrotor)
 
-|        | CMPCC | PAMPC | [MPCC](https://arxiv.org/abs/2108.13205v4) | Ours  |
+|        | CMPCC | PAMPC | [[2025-06-23-MPCC|MPCC]] | Ours  |
 | ------ | ----- | ----- | ------------------------------------------ | ----- |
 | OCP    | ==MPCC==  | MPC   | ==MPCC==                                       | MPCC  |
 | Solver | OSQP  | ==ACADO== | ==ACADO==                                      | ACADO |
@@ -33,7 +33,7 @@ tags:
 | ODE    | No    | ==Yes==   | ==Yes==                                        | Yes      |
 
 As we can see above, the easiest way of implementing MPCC is migration solver of CMPCC to ACADO. But CMPCC does not consider quadrotor dynamic model on their control.
-the MPCC paper considered quadrotor dynamic model well, and they used ACADO for experiments. but they didn't open their source code.
+the [[2025-06-23-MPCC|MPCC]] paper considered quadrotor dynamic model well, and they used ACADO for experiments. but they didn't open their source code.
 
 So based on CMPCC, we need to reformulate optimal control problem and the cost function of MPCC.
 

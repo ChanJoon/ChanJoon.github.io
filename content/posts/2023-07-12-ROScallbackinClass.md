@@ -40,7 +40,7 @@ title: "ROS callback in Class"
 
 ---
 
-### ACADO Toolkit Study
+### [[2023-07-17-ACADOToolkitstudy|ACADO Toolkit Study]]
 
 #acado 
 
@@ -49,8 +49,8 @@ title: "ROS callback in Class"
 >- [ ] Explicit Runge-Kutta (ERK) / Implicit Runge-Kutta (IRK)
 >- [ ] Variational Differential Equations (VDE)
 
-acados와 다르게 ACADO는 여러 강의자료나 문서들이 잘 되어 있음. 우선은 uzh-rpg(Robotics and Perception Group)에서 공개해놓은 rpg_mpc는 ACADO와 qpOASES를 사용하고, data_driven_mpc는 acados를 사용하고 있어 2개 모두 살펴보면 좋을 것 같음.
-이를 참고하여 MPCC로 작성해보고자 함.
+acados와 다르게 [[2023-07-17-ACADOToolkitstudy|ACADO]]는 여러 강의자료나 문서들이 잘 되어 있음. 우선은 uzh-rpg(Robotics and Perception Group)에서 공개해놓은 rpg_mpc는 ACADO와 qpOASES를 사용하고, data_driven_mpc는 acados를 사용하고 있어 2개 모두 살펴보면 좋을 것 같음.
+이를 참고하여 [[2023-08-18-ImplementingMPCCwithACADO|MPCC]]로 작성해보고자 함.
 
 `make doc`으로 문서 생성을 해도 되고 [Link](https://acado.sourceforge.net/doc/html/db/d4e/tutorial.html)에서 온라인으로 봐도 된다. 또한, [User Manual PDF](https://acado.sourceforge.net/doc/pdf/acado_manual.pdf)도 매우 잘 제공 되어 있음.
 

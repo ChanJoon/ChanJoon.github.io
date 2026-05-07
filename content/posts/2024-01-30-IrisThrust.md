@@ -13,7 +13,7 @@ math: "true"
 
 ^57f567
 
-GCOPTER 에서 `magnitudeBounds` 로 `minThrust`, `maxThrust` 를 요구하기 때문에 tracking 가능한 경로 (or dynamically feasible) 를 만들기 위해 계산이 필요하다.
+[[2024-02-06-GCOPTER|GCOPTER]] 에서 `magnitudeBounds` 로 `minThrust`, `maxThrust` 를 요구하기 때문에 tracking 가능한 경로 (or dynamically feasible) 를 만들기 위해 계산이 필요하다.
 
 Iris SDF 파일에 나와있는 `maxRotVelocity` 와 `motorConstant` 에 따르면 motor constant $k=5.84 \times 10^{-6}$ 이고 maximum rotor velocity $w=1100\ \text{(rpm)}\times\frac{2\pi}{60}$ 이다.
 
@@ -192,7 +192,7 @@ $$
 
 ## Gazebo Motor Plugin
 
-PX4 시뮬레이션에서 SDF 의 모터를 직접 처리하는 [gazebo_motor_model.cpp](https://github.com/PX4/PX4-SITL_gazebo-classic/blob/main/src/gazebo_motor_model.cpp) 를 참고하였다.
+[[2023-08-01-PX4SITLGazebo|PX4 시뮬레이션]]에서 SDF 의 모터를 직접 처리하는 [gazebo_motor_model.cpp](https://github.com/PX4/PX4-SITL_gazebo-classic/blob/main/src/gazebo_motor_model.cpp) 를 참고하였다.
 
 이전 [[#^57f567|Model SDF]] 에서 계산한 방식이 잘못되었다. `maxRotVelocity` 가 RPM 이 아닌지 값 그대로 계산되었다. [VelocityCallback](https://github.com/PX4/PX4-SITL_gazebo-classic/blob/main/src/gazebo_motor_model.cpp#L184) 을 보면 `force` 를 계산하는데 들어가는 `real_motor_velocity` 과 같은 단위를 사용하고 있다.
 
@@ -278,7 +278,7 @@ SDF 파일에 나와있는 모터 값들 외에 PX4 내부에서 설정하는 �
 
 이전에는 **Mixer** 로 관리되던 **Control Allocation** 과 관련이 있었다. normalized thrust 를 어떤 모델에도 적용하기 위해 필요한 내용으로 자세한 내용은 [공식 문서](https://docs.px4.io/main/en/concept/control_allocation.html) 에 잘(?) 나와있다.
 
-`v1.13` 이후로는 control allocator 로 바뀌면서 소스코드 위치가 바뀌었고, 일부 문서 링크도 깨져있다. 현재 control allocator 의 소스코드 링크는 [src/modules/control_allocator](https://github.com/PX4/PX4-Autopilot/tree/main/src/modules/control_allocator) 이다.
+`v1.13` 이후로는 control allocator 로 바뀌면서 소스코드 위치가 바뀌었고, 일부 문서 링크도 깨져있다. 현재 [[2023-09-15-PX4AutopilotInstallation|PX4-Autopilot]] control allocator 의 소스코드 링크는 [src/modules/control_allocator](https://github.com/PX4/PX4-Autopilot/tree/main/src/modules/control_allocator) 이다.
 
 여기에 있는 `module.yaml` 파일에 airframe 에 정의되는 값들의 기본값 및 설명이 들어있다. (Multirotor 이 외는 모두 생략)
 

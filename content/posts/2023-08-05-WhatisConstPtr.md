@@ -6,7 +6,7 @@ title: "What is ConstPtr&?"
 ### What is ConstPtr&?
 #ros
 
-지난 [[2023-07-12#^8bd526|ROS Callback in Class]]에서 콜백함수의 메세지 타입 마지막에 ::ConstPtr에 붙이는 것을 보고 자료형을 그대로 쓰지 않는 이유에 대해 알아보았다.
+지난 [[2023-07-12-ROScallbackinClass#^8bd526|ROS Callback in Class]]에서 콜백함수의 메세지 타입 마지막에 ::ConstPtr에 붙이는 것을 보고 자료형을 그대로 쓰지 않는 이유에 대해 알아보았다.
 
 `::Ptr`은 `boost::shared_ptr<msg>`를 의미하고, `::ConstPtr`은 `boost::shared_ptr<const msg>`를 의미한다. `boost`에서 사용하는 방식은 C++11 이전 형식으로 이후 Standard Library로 포함되어 `std::shared_ptr`을 지원하고 있다.
 

@@ -9,7 +9,7 @@ math: "true"
 ---
 # 4. Policy Gradient (2)
 
-이전에 다 살펴보지 못한 Policy Gradient를 강의 교안과 “수학으로 풀어보는 강화학습” 교재로 마저 공부하기로 했다.
+이전에 다 살펴보지 못한 [[2023-11-20-PolicyGradient|Policy Gradient]]를 강의 교안과 “수학으로 풀어보는 강화학습” 교재로 마저 공부하기로 했다.
 
 ## The Goal of Policy Gradient Method
 
@@ -232,7 +232,7 @@ Action을 선택하는 **actor**와 추정된 Value function **critic** 으로 �
 
 ![[pg_2_23.png]]
 
-## Bias in Actor-Critic Algorithms
+## Bias in [[2024-03-18-CS285_Week6|Actor-Critic Algorithms]]
 
 - PG를 근사하는 것은 bias를 만든다.
 - 이러한 biased PG는 제대로 된 해를 구하지 못할 수 있다.

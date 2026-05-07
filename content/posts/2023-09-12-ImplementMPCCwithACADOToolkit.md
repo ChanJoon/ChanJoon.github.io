@@ -9,7 +9,7 @@ tags:
 ---
 ### Implement MPCC with ACADO Toolkit
 
-이전에 정리해둔 [2023-08-18-ImplementingMPCCwithACADO](2023-08-18-ImplementingMPCCwithACADO.md)에서 Cost function이 acado를 사용하기에 맞지 않게 정리되었음.
+이전에 정리해둔 [[2023-08-18-ImplementingMPCCwithACADO]]에서 Cost function이 acado를 사용하기에 맞지 않게 정리되었음.
 
 CMPCC에서 아래와 같이 Quadratic form으로 정리하였다.
 
@@ -27,9 +27,9 @@ $$
 &=\sum_{k=1}^Nx^TQx+q^Tx\end{align}
 $$
 
-이러한 이유는 OSQP 솔버를 사용하기 때문이고, MPCC에서 reference trajectory에 해당하는 부분이 $Q, q$ 에 들어가 있었다.
+이러한 이유는 OSQP 솔버를 사용하기 때문이고, [[2025-06-23-MPCC|MPCC]]에서 reference trajectory에 해당하는 부분이 $Q, q$ 에 들어가 있었다.
 
-ACADO 에서는 Code Generation Tool에서 아래 이미지에 표현된 것처럼 weighted $l_2$-norm으로 Cost function이 구성된다.
+[[2023-07-17-ACADOToolkitstudy|ACADO]] 에서는 Code Generation Tool에서 아래 이미지에 표현된 것처럼 weighted $l_2$-norm으로 Cost function이 구성된다.
 
 ![[Screenshot from 2023-09-12 02-26-39.png]]
 

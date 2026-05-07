@@ -135,7 +135,7 @@ $$
 >[!quote]
 >13. E. Verriest and F. Lewis, “On the linear quadratic minimum-time problem,” IEEE Transactions on Automatic Control, vol. 36, no. 7, pp. 859–863, 1991.
 
-**이 $x(t) \in \mathscr{X}^{free}, u(t) \in \mathscr{U}, \forall t \in [0, T]$ 부분이 풀기 어려운 부분인데, 만약 이 부분을 덜어낼 수 있다면 Pontryagin's minimum principle에 의해 최적해를 구할 수 있게 된다.**
+**이 $x(t) \in \mathscr{X}^{free}, u(t) \in \mathscr{U}, \forall t \in [0, T]$ 부분이 풀기 어려운 부분인데, 만약 이 부분을 덜어낼 수 있다면 [[2024-09-06-PMP|Pontryagin's minimum principle]]에 의해 최적해를 구할 수 있게 된다.**
 
 본 논문은 이 safety constraints 부분을 *deterministic shortest path problem* 으로 바꿔서 해결하였다고 한다. (*with $3n$* dimensional state space $\mathscr{X}$, 3 dimensional control space $\mathscr{U}$)
 

@@ -11,7 +11,7 @@ tags:
 
 #### Code Generation Tool
 
-앞서서 ACADO 사용법은 메뉴얼과 튜토리얼을 통해 익혔고, ACADO에서 제공하는 CGT를 사용하는 방법에 대해 알아보자.
+앞서서 [[2023-07-17-ACADOToolkitstudy|ACADO 사용법]]은 메뉴얼과 튜토리얼을 통해 익혔고, ACADO에서 제공하는 CGT를 사용하는 방법에 대해 알아보자.
 
 [rpg_mpc](https://github.com/uzh-rpg/rpg_mpc)에서 CGT로 만들어진 코드를 사용하고 있어 어떤 식으로 작성하고, Class로 끌어와서 쓸 수 있을지 보아야 한다.
 

@@ -11,7 +11,7 @@ math: "true"
 
 자잘하게 빌드 이슈해결한 것들 기록.
 
-## Agile Autonomy
+## [[2025-07-02-AgileAutonomy|Agile Autonomy]]
 Learning High-Speed Flight in the Wild 논문 오픈소스 빌드 해결
 
 > Reference: https://github.com/uzh-rpg/agile_autonomy/issues/10#issuecomment-981095386
@@ -78,7 +78,7 @@ sudo apt-get install --reinstall libffi-dev libp11-kit-dev libc6-dev
 
 pyqt 에러는 conda `PATH` 를 연결한 후 해결되었음.
 
-7. **`gzserver: symbol lookup error: `**
+7. **`gzserver: [[2023-09-07-ROSsymbollookuperror|symbol lookup error]]: `**
 
 gzserver: symbol lookup error: /home/as06047/agile_autonomy_ws/catkin_aa/devel/lib/librotors_gazebo_multirotor_base_plugin.so: undefined symbol:
  _ZN14gz_sensor_msgs9ActuatorsC1Ev 에러
@@ -87,7 +87,7 @@ gzserver: symbol lookup error: /home/as06047/agile_autonomy_ws/catkin_aa/devel/l
 > -  https://blog.csdn.net/woaixiaojiang/article/details/141933935
 > - https://blog.csdn.net/m0_47737058/article/details/115736623
 
-요약하면 PX4-Autopilot 과 Rotors 의 shared object 가 충돌하는 문제
+요약하면 [[2023-09-15-PX4AutopilotInstallation|PX4-Autopilot]] 과 Rotors 의 shared object 가 충돌하는 문제
 
 나의 경우, `/home/as06047/PX4-Autopilot/build/px4_sitl_default/build_gazebo-classic` 에 있는 libmav_msgs.so 와
 `/home/as06047/agile_autonomy_ws/catkin_aa/build/rotors_gazebo_plugins` 에 있는 libmav_msgs.so 가 충돌했음.

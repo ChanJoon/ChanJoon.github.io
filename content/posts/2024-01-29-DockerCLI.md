@@ -48,7 +48,7 @@ docker run -it --privileged \
 ```
 
 >[!error]
->기존 PX4-Autopilot 소스코드를 마운트하여 사용하기 때문에, 이미 빌드된 파일을 사용할 수 없는 문제가 있다. `rm -rf ./build` 로 빌드 제거 후 `make px4_sitl gazebo-classic` 으로 다시 빌드해주어야 한다.
+>기존 [[2023-09-15-PX4AutopilotInstallation|PX4-Autopilot]] 소스코드를 마운트하여 사용하기 때문에, 이미 빌드된 파일을 사용할 수 없는 문제가 있다. `rm -rf ./build` 로 빌드 제거 후 `make px4_sitl gazebo-classic` 으로 다시 빌드해주어야 한다.
 
 그래서 마운트 없이 아래 명령어로 실행.
 
@@ -61,7 +61,7 @@ docker run -it --privileged \
 --name=px4-ros px4io/px4-dev-ros-noetic:latest bash
 ```
 
-PX4-Autopilot 을 별도로 설치하면 빌드도 다시 해주어야 한다.
+[[2023-09-15-PX4AutopilotInstallation|PX4-Autopilot]] 을 별도로 설치하면 빌드도 다시 해주어야 한다.
 
 ```bash
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
