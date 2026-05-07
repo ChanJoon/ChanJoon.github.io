@@ -6,6 +6,14 @@ categories: Robotics
 tags:
   - paper
 math: "true"
+paper:
+  title: "Whole-Body Real-Time Motion Planning for Multicopters"
+  authors: "Shaohui Yang, Botao He, Zhepei Wang, Chao Xu, Fei Gao"
+  venue: "ICRA"
+  year: 2021
+  doi: "10.1109/ICRA48506.2021.9561526"
+  pdf: "https://zhepeiwang.github.io/pubs/icra_2021_wholebody.pdf"
+  bibkey: "yang2021wholebody"
 ---
 
 # Whole-Body Real-Time Motion Planning for Multicopters

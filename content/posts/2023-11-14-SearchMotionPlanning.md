@@ -6,6 +6,15 @@ categories: Robotics
 tags:
   - paper
 math: "true"
+paper:
+  title: "Search-Based Motion Planning for Aggressive Flight in SE(3)"
+  authors: "Sikang Liu, Kartik Mohta, Nikolay Atanasov, Vijay Kumar"
+  venue: "IEEE RA-L"
+  year: 2018
+  arxiv: "1710.02748"
+  doi: "10.1109/LRA.2018.2795654"
+  code: "https://github.com/sikang/motion_primitive_library"
+  bibkey: "liu2018searchse3"
 ---
 # Search-Based Motion Planning for Aggressive Flight in SE(3)
 

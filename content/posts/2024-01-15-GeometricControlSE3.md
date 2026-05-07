@@ -6,6 +6,14 @@ categories: Robotics
 tags:
   - paper
 math: "true"
+paper:
+  title: "Geometric Tracking Control of a Quadrotor UAV on SE(3)"
+  authors: "Taeyoung Lee, Melvin Leok, N. Harris McClamroch"
+  venue: "IEEE CDC"
+  year: 2010
+  arxiv: "1003.2005"
+  doi: "10.1109/CDC.2010.5717652"
+  bibkey: "lee2010geometric"
 ---
 # Geometric Tracking Control of a Quadrotor UAV on $\mathbf{SE}(3)$
 

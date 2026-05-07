@@ -6,9 +6,18 @@ import { SimpleSlug } from "./quartz/util/path"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.MobileOnly(
+      Component.RecentNotes({
+        title: "Recent notes",
+        limit: 6,
+        linkToMore: "posts/" as SimpleSlug,
+      }),
+    ),
+  ],
   footer: Component.Footer({
     links: {
+      About: "/about",
       GitHub: "https://github.com/ChanJoon",
     },
   }),
@@ -23,6 +32,7 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
+    Component.PaperReviewCard(),
     Component.TagList(),
   ],
   left: [
@@ -35,24 +45,14 @@ export const defaultContentPageLayout: PageLayout = {
           grow: true,
         },
         { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
       ],
     }),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.CategoryNav(),
   ],
   right: [
-    // Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Graph(),
+    Component.TableOfContents(),
     Component.Backlinks(),
-  ],
-  afterBody: [
-    Component.MobileOnly(
-      Component.RecentNotes({
-        title: "Recent notes",
-        limit: 6,
-        linkToMore: "posts/" as SimpleSlug,
-      }),
-    ),
   ],
 }
 
@@ -71,7 +71,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.CategoryNav(),
   ],
   right: [],
 }

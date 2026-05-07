@@ -6,6 +6,14 @@ categories: Robotics
 tags:
   - paper
 math: "true"
+paper:
+  title: "Online Whole-Body Motion Planning for Quadrotor using Multi-Resolution Search"
+  authors: "Yunfan Ren, Siqi Liang, Fangcheng Zhu, Guozheng Lu, Fu Zhang"
+  venue: "ICRA"
+  year: 2023
+  arxiv: "2209.06761"
+  doi: "10.1109/ICRA48891.2023.10160767"
+  bibkey: "ren2023onlinewb"
 ---
 
 # Online Whole-body Motion Planning for Quadrotor using Multi-resolution Search

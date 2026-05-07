@@ -6,6 +6,15 @@ categories: Robotics
 tags:
   - paper
 math: "true"
+paper:
+  title: "Search-Based Motion Planning for Quadrotors Using Linear Quadratic Minimum Time Control"
+  authors: "Sikang Liu, Nikolay Atanasov, Kartik Mohta, Vijay Kumar"
+  venue: "IROS"
+  year: 2017
+  arxiv: "1709.05401"
+  doi: "10.1109/IROS.2017.8206119"
+  code: "https://github.com/sikang/motion_primitive_library"
+  bibkey: "liu2017searchlqmt"
 ---
 [[2023-11-14-SearchMotionPlanning|이전 Post인 RA-L 논문]] 저자의 선행 연구를 살펴보고자 한다.
 

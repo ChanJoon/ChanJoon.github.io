@@ -6,6 +6,15 @@ categories: Robotics
 tags:
   - paper
 math: "true"
+paper:
+  title: "Fast-Racing: An Open-Source Strong Baseline for SE(3) Planning in Autonomous Drone Racing"
+  authors: "Zhichao Han, Zhepei Wang, Neng Pan, Yi Lin, Chao Xu, Fei Gao"
+  venue: "IEEE RA-L"
+  year: 2021
+  arxiv: "2105.10276"
+  doi: "10.1109/LRA.2021.3113976"
+  code: "https://github.com/ZJU-FAST-Lab/Fast-Racing"
+  bibkey: "han2021fastracing"
 ---
 
 # Fast-Racing: An Open-Source Strong Baseline for SE(3) Planning in Autonomous Drone Racing

@@ -7,6 +7,13 @@ tags:
   - paper
   - control-planning
 math: "true"
+paper:
+  title: "SGS-Planner: A Skeleton-Guided Spatiotemporal Motion Planner for Flight in Constrained Space"
+  authors: "T. Li, S. Zhang, X. Zhang, Q. Dong, J. Huang"
+  venue: "IEEE/ASME T-Mech"
+  year: 2024
+  doi: "10.1109/TMECH.2024.3393144"
+  bibkey: "li2024sgsplanner"
 ---
 
 # SGS-Planner: A Skeleton-Guided Spatiotemporal Motion Planner for Flight in Constrained Space

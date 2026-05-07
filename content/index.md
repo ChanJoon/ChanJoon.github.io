@@ -36,5 +36,6 @@ My research focuses on **learning-based planning**, trajectory optimization, and
  - 📂 [Reinforcement Learning](/tags/RL)
  - 📂 [Self Study](/tags/self-study)
  - 📂 [etc](/tags)
+ - 👤 [About](/about)
 
 ---

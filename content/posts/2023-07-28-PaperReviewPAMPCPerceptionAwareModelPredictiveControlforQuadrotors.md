@@ -5,6 +5,14 @@ title: "Paper Review: PAMPC: Perception-Aware Model Predictive Control for Quadr
 tags:
   - paper
   - self-study
+paper:
+  title: "PAMPC: Perception-Aware Model Predictive Control for Quadrotors"
+  authors: "Davide Falanga, Philipp Foehn, Peng Lu, Davide Scaramuzza"
+  venue: "IROS"
+  year: 2018
+  arxiv: "1804.04811"
+  doi: "10.1109/IROS.2018.8593739"
+  bibkey: "falanga2018pampc"
 ---
 ### Paper Review: PAMPC: Perception-Aware Model Predictive Control for Quadrotors
 #paper 

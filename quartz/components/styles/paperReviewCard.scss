@@ -1,0 +1,68 @@
+.paper-card {
+  border: 1px solid color-mix(in srgb, var(--secondary) 30%, var(--lightgray));
+  border-left: 4px solid var(--secondary);
+  border-radius: 6px;
+  background-color: color-mix(in srgb, var(--secondary) 5%, var(--light));
+  padding: 0.85rem 1.1rem 0.95rem;
+  margin: 0.5rem 0 1.4rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+
+  .paper-card-title {
+    font-family: var(--headerFont);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+  }
+
+  .paper-card-meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 0.7rem;
+    row-gap: 0.18rem;
+    margin: 0;
+
+    dt {
+      color: var(--gray);
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+      align-self: baseline;
+      padding-top: 0.18rem;
+    }
+
+    dd {
+      margin: 0;
+      color: var(--darkgray);
+    }
+  }
+
+  .paper-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.65rem;
+  }
+
+  .paper-card-link {
+    display: inline-block;
+    padding: 0.18rem 0.55rem;
+    border: 1px solid color-mix(in srgb, var(--secondary) 35%, transparent);
+    border-radius: 4px;
+    background: transparent;
+    background-image: none;
+    color: var(--secondary);
+    font-size: 0.78rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+
+    &:hover {
+      background-color: var(--secondary);
+      color: var(--light);
+      background-size: 0;
+    }
+  }
+}

@@ -7,6 +7,15 @@ tags:
   - paper
   - control-planning
 math: "true"
+paper:
+  title: "Learning High-Speed Flight in the Wild"
+  authors: "Antonio Loquercio, Elia Kaufmann, René Ranftl, Matthias Müller, Vladlen Koltun, Davide Scaramuzza"
+  venue: "Science Robotics"
+  year: 2021
+  arxiv: "2110.05113"
+  doi: "10.1126/scirobotics.abg5810"
+  code: "https://github.com/uzh-rpg/agile_autonomy"
+  bibkey: "loquercio2021learning"
 ---
 
 # Learning high-speed flight in the wild
@@ -39,7 +48,7 @@ $$
 P(\tau | T_{ref}, C) = \frac{1}{Z} \exp(-c(\tau, T_{ref}, C))
 $$
 
-즉, $\boldsymbol{\tau}$ 의 확률분포는 장애물로 부터 멀고, $\boldsymbol{\tau}_\text{ref}$ 와 가까울 수록 크다. 여기서 $\mathcal{C}\in\mathbb{R}^{n\times 3}$ 는 environment 의 point cloud 이고, $Z=\int_\boldsymbol{\tau}P(\boldsymbol{\tau}|\boldsymbol{\tau}_\text{ref}.\mathcal{C})$ 는 정규화 항이다.
+즉, $\boldsymbol{\tau}$ 의 확률분포는 장애물로 부터 멀고, $\boldsymbol{\tau}_\text{ref}$ 와 가까울 수록 크다. 여기서 $\mathcal{C}\in\mathbb{R}^{n\times 3}$ 는 environment 의 point cloud 이고, $Z=\int_{\boldsymbol{\tau}}P(\boldsymbol{\tau}|\boldsymbol{\tau}_\text{ref},\mathcal{C})$ 는 정규화 항이다.
 
 비용 함수 $c(\cdot)$ 는 아래와 같이 정의된다.
 
