@@ -1,5 +1,6 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { SimpleSlug } from "./quartz/util/path"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -16,34 +17,42 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
+    Component.ConditionalRender({
+      component: Component.Breadcrumbs(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
   ],
   left: [
     Component.PageTitle(),
-    Component.Search(),
     Component.MobileOnly(Component.Spacer()),
-    // Component.DesktopOnly(Component.Explorer()),
-    Component.DesktopOnly(Component.RecentNotes({
-    	title: "Recent notes",
-    	limit: 6,
-    	linkToMore: "posts/" as SimpleSlug,
-    })),
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+        { Component: Component.ReaderMode() },
+      ],
+    }),
+    Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
-    Component.Darkmode(),
     // Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
   afterBody: [
-    Component.MobileOnly(Component.RecentNotes({
-    	title: "Recent notes",
-    	limit: 6,
-    	linkToMore: "posts/" as SimpleSlug,
-    })),
+    Component.MobileOnly(
+      Component.RecentNotes({
+        title: "Recent notes",
+        limit: 6,
+        linkToMore: "posts/" as SimpleSlug,
+      }),
+    ),
   ],
 }
 
@@ -53,9 +62,16 @@ export const defaultListPageLayout: PageLayout = {
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.Flex({
+      components: [
+        {
+          Component: Component.Search(),
+          grow: true,
+        },
+        { Component: Component.Darkmode() },
+      ],
+    }),
+    Component.Explorer(),
   ],
   right: [],
 }

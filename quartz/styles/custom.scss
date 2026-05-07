@@ -1,3 +1,167 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+// Pretendard variable handles Korean + Latin in a single family
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/woff2/PretendardVariable.woff2")
+    format("woff2-variations");
+}
+
+// =============================================================
+// Theme A — academic blog, Pretendard family for body & headings
+// Quartz sets --bodyFont/--headerFont/--codeFont via theme.ts
+// based on the typography config; we just provide @font-face.
+// =============================================================
+
+// Page rhythm
+article {
+  & > p,
+  & > ul,
+  & > ol,
+  & > blockquote {
+    font-size: 1.0625rem; // ~17px
+    line-height: 1.75;
+  }
+
+  & > p {
+    margin: 0 0 1.1em;
+  }
+}
+
+// Heading hierarchy: tighter, more contrast vs body serif
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--headerFont);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+h3 {
+  font-size: 1.18rem;
+  margin-top: 1.6rem;
+}
+
+// Article title front-and-center
+.article-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+// Refined link treatment: subtle underline, accent on hover
+a {
+  text-decoration: none;
+  color: var(--secondary);
+  background-image: linear-gradient(var(--secondary), var(--secondary));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: background-size 0.18s ease;
+}
+
+a:hover {
+  background-size: 100% 2px;
+}
+
+// Internal links: dotted-underline style for that wiki/digital-garden feel
+a.internal {
+  background-image: linear-gradient(var(--tertiary), var(--tertiary));
+  background-size: 100% 1px;
+}
+
+a.internal:hover {
+  background-size: 100% 2px;
+}
+
+// Inline code: tighter, monospaced, warm tinted bg
+code {
+  font-size: 0.9em;
+  background: color-mix(in srgb, var(--secondary) 10%, var(--light));
+  border: 1px solid color-mix(in srgb, var(--secondary) 18%, transparent);
+  border-radius: 4px;
+  padding: 0.05em 0.35em;
+}
+
+pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.92rem;
+}
+
+// Blockquotes feel like academic margin commentary
+blockquote {
+  border-left: 3px solid var(--tertiary);
+  padding: 0.2rem 0 0.2rem 1rem;
+  color: var(--darkgray);
+  font-style: italic;
+  margin: 1.25rem 0;
+}
+
+// Callouts: prominent left rule, soft tinted bg, tighter spacing
+.callout {
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  border-left: 4px solid var(--color);
+  border-radius: 6px;
+  background-color: color-mix(in srgb, var(--color) 7%, var(--light));
+  padding: 0 1.25rem;
+  margin: 1.25rem 0;
+
+  & > .callout-title {
+    padding: 0.85rem 0 0.6rem;
+    --icon-size: 17px;
+  }
+
+  & > .callout-content {
+    padding-bottom: 0.85rem;
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &[data-callout="quote"] {
+    border-left-color: var(--lightgray);
+    background-color: transparent;
+
+    .callout-title {
+      color: var(--darkgray);
+    }
+  }
+}
+
+.callout-title {
+  align-items: center;
+
+  .callout-title-inner {
+    line-height: 1.3;
+  }
+}
+
+// CategoryNav placement
+.category-nav {
+  margin-top: 1rem;
+}
