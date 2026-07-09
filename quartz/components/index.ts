@@ -20,6 +20,7 @@ import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import CategoryNav from "./CategoryNav"
+import TopNav from "./TopNav"
 import PaperReviewCard from "./PaperReviewCard"
 import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
@@ -48,6 +49,7 @@ export {
   MobileOnly,
   RecentNotes,
   CategoryNav,
+  TopNav,
   PaperReviewCard,
   NotFound,
   Breadcrumbs,

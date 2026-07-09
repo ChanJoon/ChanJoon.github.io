@@ -5,7 +5,8 @@ import { SimpleSlug } from "./quartz/util/path"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  // top-right site nav replaces the old left CategoryNav
+  header: [Component.TopNav()],
   afterBody: [
     Component.MobileOnly(
       Component.RecentNotes({
@@ -47,7 +48,6 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.CategoryNav(),
   ],
   right: [
     Component.Graph(),
@@ -71,7 +71,6 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.CategoryNav(),
   ],
   right: [],
 }

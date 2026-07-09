@@ -1,4 +1,5 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
 
 // Pretendard variable handles Korean + Latin in a single family
 @font-face {
@@ -11,27 +12,47 @@
 }
 
 // =============================================================
-// Theme A — academic blog, Pretendard family for body & headings
-// Quartz sets --bodyFont/--headerFont/--codeFont via theme.ts
-// based on the typography config; we just provide @font-face.
+// Theme A.2 — scholarly wiki refresh (dev preview)
+// Preserves brand: Pretendard, cream + forest green light mode,
+// warm dark mode with amber accent. Reworks reading rhythm,
+// link language, and panel chrome after the patterns of
+// gwern.net (metadata-first reading), distill.pub (measure and
+// figure discipline), and maggieappleton.com (garden wayfinding).
+// One radius scale: 8px surfaces, 999px small chips.
 // =============================================================
 
-// Page rhythm
+:root {
+  --radius-surface: 8px;
+  --radius-chip: 999px;
+}
+
+// ---------------------------------------------------------
+// Reading rhythm
+// ---------------------------------------------------------
 article {
+  // 한국어 타이포: 단어 중간 줄바꿈 방지 (긴 영문 토큰은 base의 overflow-wrap이 처리)
+  word-break: keep-all;
+
   & > p,
   & > ul,
   & > ol,
   & > blockquote {
     font-size: 1.0625rem; // ~17px
-    line-height: 1.75;
+    line-height: 1.78;
   }
 
   & > p {
-    margin: 0 0 1.1em;
+    margin: 0 0 1.15em;
+  }
+
+  // constrain raw line length even when the center column is wide
+  & > p,
+  & > ul,
+  & > ol {
+    max-width: 46rem;
   }
 }
 
-// Heading hierarchy: tighter, more contrast vs body serif
 h1,
 h2,
 h3,
@@ -39,9 +60,10 @@ h4,
 h5,
 h6 {
   font-family: var(--headerFont);
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -0.015em;
   line-height: 1.25;
+  text-wrap: balance;
 }
 
 h1 {
@@ -52,7 +74,7 @@ h1 {
 
 h2 {
   font-size: 1.45rem;
-  margin-top: 2.25rem;
+  margin-top: 2.4rem;
   margin-bottom: 0.75rem;
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--lightgray);
@@ -60,18 +82,32 @@ h2 {
 
 h3 {
   font-size: 1.18rem;
-  margin-top: 1.6rem;
+  margin-top: 1.7rem;
 }
 
 // Article title front-and-center
 .article-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  font-size: 2.5rem;
+  font-weight: 720;
+  letter-spacing: -0.022em;
+  line-height: 1.14;
+  margin-bottom: 0.4rem;
 }
 
-// Refined link treatment: subtle underline, accent on hover
+// Metadata line under the title: quiet, tabular, one glance
+p.content-meta {
+  margin-top: 0.15rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-variant-numeric: tabular-nums;
+}
+
+// ---------------------------------------------------------
+// Link language
+//  - external links: gradient underline in accent green
+//  - internal wiki links: same underline, sage; no pill background
+//  - tag links: hairline chips
+// ---------------------------------------------------------
 a {
   text-decoration: none;
   color: var(--secondary);
@@ -79,40 +115,96 @@ a {
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 100% 1px;
-  transition: background-size 0.18s ease;
+  transition:
+    background-size 0.18s ease,
+    background-color 0.18s ease;
 }
 
 a:hover {
   background-size: 100% 2px;
 }
 
-// Internal links: dotted-underline style for that wiki/digital-garden feel
 a.internal {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  line-height: inherit;
   background-image: linear-gradient(var(--tertiary), var(--tertiary));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
   background-size: 100% 1px;
+
+  &:hover {
+    background-size: 100% 2px;
+    background-color: var(--highlight);
+  }
 }
 
-a.internal:hover {
-  background-size: 100% 2px;
+a.internal.tag-link {
+  background-image: none;
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius-chip);
+  padding: 0.02rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--darkgray);
+
+  &:hover {
+    border-color: var(--tertiary);
+    color: var(--secondary);
+    background-color: var(--highlight);
+  }
 }
 
-// Inline code: tighter, monospaced, warm tinted bg
+// anchor glyphs on headings: keep quiet
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &[id] > a[href^="#"] {
+    background-image: none;
+  }
+}
+
+// ---------------------------------------------------------
+// Code
+// ---------------------------------------------------------
 code {
   font-size: 0.9em;
-  background: color-mix(in srgb, var(--secondary) 10%, var(--light));
-  border: 1px solid color-mix(in srgb, var(--secondary) 18%, transparent);
+  background: color-mix(in srgb, var(--secondary) 9%, var(--light));
+  border: 1px solid color-mix(in srgb, var(--secondary) 16%, transparent);
   border-radius: 4px;
   padding: 0.05em 0.35em;
 }
 
-pre code {
-  background: transparent;
-  border: none;
-  padding: 0;
-  font-size: 0.92rem;
+pre {
+  border-radius: var(--radius-surface);
+
+  & > code {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 0;
+    font-size: 0.92rem;
+  }
 }
 
-// Blockquotes feel like academic margin commentary
+figure[data-rehype-pretty-code-figure] > [data-rehype-pretty-code-title] {
+  border-radius: var(--radius-surface) var(--radius-surface) 0 0;
+  border-bottom: none;
+  margin-bottom: 0;
+  background: var(--lightgray);
+  font-size: 0.8rem;
+
+  & + pre {
+    border-top-left-radius: 0;
+  }
+}
+
+// ---------------------------------------------------------
+// Quotes, callouts, figures, rules
+// ---------------------------------------------------------
 blockquote {
   border-left: 3px solid var(--tertiary);
   padding: 0.2rem 0 0.2rem 1rem;
@@ -121,11 +213,10 @@ blockquote {
   margin: 1.25rem 0;
 }
 
-// Callouts: prominent left rule, soft tinted bg, tighter spacing
 .callout {
   border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
   border-left: 4px solid var(--color);
-  border-radius: 6px;
+  border-radius: var(--radius-surface);
   background-color: color-mix(in srgb, var(--color) 7%, var(--light));
   padding: 0 1.25rem;
   margin: 1.25rem 0;
@@ -161,7 +252,521 @@ blockquote {
   }
 }
 
-// CategoryNav placement
+article img {
+  border-radius: var(--radius-surface);
+  border: 1px solid var(--lightgray);
+}
+
+// badges / linked images (shields.io etc.) stay chromeless
+article a img {
+  border: none;
+  border-radius: 4px;
+}
+
+// image caption idiom: *caption* on the line after an image
+p > img + em {
+  display: block;
+  transform: translateY(-0.4rem);
+  font-size: 0.85rem;
+  color: var(--gray);
+  font-style: normal;
+  text-align: center;
+}
+
+hr {
+  background: none;
+  border: none;
+  border-top: 1px solid var(--lightgray);
+  height: 0;
+}
+
+article li::marker {
+  color: var(--tertiary);
+}
+
+// ---------------------------------------------------------
+// Left sidebar: identity, search, categories
+// ---------------------------------------------------------
+h2.page-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.search > .search-button {
+  border-radius: var(--radius-surface);
+  border: 1px solid var(--lightgray);
+  background-color: color-mix(in srgb, var(--lightgray) 32%, var(--light));
+  transition: border-color 0.18s ease;
+
+  &:hover {
+    border-color: var(--tertiary);
+  }
+}
+
+.search-container > .search-space {
+  & > input.search-bar,
+  & > .search-layout {
+    border-radius: var(--radius-surface);
+    box-shadow:
+      0 2px 6px rgba(30, 28, 20, 0.06),
+      0 14px 40px rgba(30, 28, 20, 0.12);
+  }
+}
+
+button.darkmode {
+  transition: transform 0.18s ease;
+
+  &:hover {
+    transform: scale(1.08);
+  }
+}
+
 .category-nav {
   margin-top: 1rem;
+
+  h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--gray);
+    margin-bottom: 0.4rem;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li a.internal {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.24rem 0.4rem;
+    margin: 0 -0.4rem;
+    border-radius: 6px;
+    background-image: none;
+    color: var(--darkgray);
+
+    &:hover {
+      background-color: var(--highlight);
+      color: var(--secondary);
+    }
+
+    .cat-icon {
+      font-size: 0.9rem;
+    }
+
+    .cat-label {
+      font-size: 0.92rem;
+    }
+  }
+}
+
+// ---------------------------------------------------------
+// Right sidebar: graph, TOC, backlinks as quiet panels
+// ---------------------------------------------------------
+.graph {
+  & > h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gray);
+    margin-bottom: 0.4rem;
+  }
+
+  & .graph-outer {
+    border: 1px solid var(--lightgray);
+    border-radius: var(--radius-surface);
+    background-color: color-mix(in srgb, var(--lightgray) 22%, var(--light));
+  }
+}
+
+.toc {
+  button.toc-header {
+    h3 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray);
+    }
+  }
+
+  ul.toc-content {
+    border-left: 1px solid var(--lightgray);
+    padding-left: 0.75rem;
+
+    & > li > a {
+      color: var(--gray);
+      background-image: none;
+      transition: color 0.18s ease;
+
+      &:hover {
+        color: var(--secondary);
+      }
+
+      &.in-view {
+        color: var(--dark);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.backlinks {
+  & > h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--gray);
+  }
+
+  & > ul.overflow > li > a.internal {
+    display: block;
+    padding: 0.28rem 0.5rem;
+    margin: 0.1rem -0.5rem;
+    border-radius: 6px;
+    background-image: none;
+    color: var(--darkgray);
+    font-weight: 500;
+    font-size: 0.92rem;
+
+    &:hover {
+      background-color: var(--highlight);
+      color: var(--secondary);
+    }
+  }
+}
+
+// ---------------------------------------------------------
+// Listing pages (folder, tags, posts): ledger rows
+// ---------------------------------------------------------
+.page-listing {
+  ul.section-ul {
+    margin-top: 0.5rem;
+  }
+
+  li.section-li {
+    border-bottom: 1px solid color-mix(in srgb, var(--lightgray) 55%, transparent);
+    padding: 0.55rem 0;
+    margin-bottom: 0;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    & > .section {
+      align-items: baseline;
+
+      p.meta {
+        color: var(--gray);
+        font-size: 0.85rem;
+        font-variant-numeric: tabular-nums;
+        opacity: 1;
+      }
+
+      .desc h3 {
+        margin: 0;
+        font-size: 1.02rem;
+        font-weight: 600;
+
+        a {
+          background-image: none;
+          color: var(--dark);
+
+          &:hover {
+            color: var(--secondary);
+          }
+        }
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------
+// Popovers: hover preview cards
+// ---------------------------------------------------------
+.popover > .popover-inner {
+  border: 1px solid var(--lightgray);
+  border-radius: var(--radius-surface);
+  box-shadow:
+    0 2px 6px rgba(30, 28, 20, 0.05),
+    0 18px 50px rgba(30, 28, 20, 0.14);
+}
+
+// ---------------------------------------------------------
+// Breadcrumbs, footer, chrome
+// ---------------------------------------------------------
+nav.breadcrumb-container {
+  font-size: 0.82rem;
+
+  a {
+    color: var(--gray);
+    background-image: none;
+
+    &:hover {
+      color: var(--secondary);
+    }
+  }
+}
+
+footer {
+  opacity: 0.85;
+  font-size: 0.85rem;
+
+  a {
+    background-image: none;
+  }
+}
+
+// ---------------------------------------------------------
+// Researcher home (index only)
+// ---------------------------------------------------------
+[data-slug="index"] {
+  .content-meta {
+    display: none;
+  }
+
+  .article-title {
+    margin-bottom: 0.2rem;
+  }
+}
+
+// Blog 폴더 페이지: 날짜·읽기시간 메타는 목록에 이미 있으니 상단에선 숨김
+[data-slug="posts"] .content-meta {
+  display: none;
+}
+
+.home-hero {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+  margin: 0.75rem 0 1.5rem;
+
+  .home-hero__intro {
+    flex: 1;
+    min-width: 0;
+
+    & > p {
+      max-width: none;
+    }
+  }
+
+  .home-hero__role {
+    font-size: 1.02rem;
+    color: var(--gray);
+    margin: 0 0 0.9em;
+  }
+
+  .home-hero__photo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid color-mix(in srgb, var(--tertiary) 45%, var(--lightgray));
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .home-hero__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 0;
+
+    // 서비스별 브랜드 컬러 버튼 (이모지 아이콘은 마크다운 쪽에)
+    a {
+      display: inline-block;
+      padding: 0.42rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background-image: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: var(--gray);
+      transition:
+        transform 0.15s ease,
+        filter 0.15s ease;
+
+      &:hover {
+        filter: brightness(1.12);
+        transform: translateY(-1px);
+        background-size: 0;
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      .external-icon > path {
+        fill: #fff;
+      }
+
+      &.hl--scholar {
+        background-color: #4285f4;
+      }
+      &.hl--github {
+        background-color: #24292f;
+      }
+      &.hl--linkedin {
+        background-color: #0a66c2;
+      }
+      &.hl--cv {
+        background-color: #2563eb;
+      }
+      &.hl--email {
+        background-color: #4b5563;
+      }
+    }
+  }
+
+  @media all and ($mobile) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    .home-hero__photo {
+      width: 180px;
+      height: 180px;
+    }
+  }
+}
+
+.home-news {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+
+  li {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--lightgray) 55%, transparent);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .home-news__date {
+    font-size: 0.85rem;
+    color: var(--gray);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.pub-item {
+  border-left: 3px solid color-mix(in srgb, var(--tertiary) 55%, var(--lightgray));
+  padding-left: 1.1rem;
+
+  p {
+    margin: 0;
+  }
+
+  .pub-item__title {
+    font-weight: 650;
+    font-size: 1.02rem;
+    color: var(--dark);
+    line-height: 1.4;
+  }
+
+  .pub-item__authors {
+    font-size: 0.9rem;
+    color: var(--darkgray);
+    margin-top: 0.15rem;
+  }
+
+  .pub-item__venue {
+    font-size: 0.85rem;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: 0.1rem;
+  }
+
+  .pub-item__links {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+
+    a {
+      display: inline-block;
+      padding: 0.08rem 0.6rem;
+      border: 1px solid color-mix(in srgb, var(--secondary) 35%, transparent);
+      border-radius: 999px;
+      background-image: none;
+      font-size: 0.78rem;
+      font-weight: 550;
+      color: var(--secondary);
+
+      &:hover {
+        background-color: var(--secondary);
+        color: var(--light);
+      }
+    }
+  }
+}
+
+.home-contents {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+
+  a {
+    display: block;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid var(--lightgray);
+    border-radius: var(--radius-surface);
+    background-image: none;
+    font-weight: 600;
+    color: var(--darkgray);
+    transition:
+      border-color 0.15s ease,
+      background-color 0.15s ease,
+      color 0.15s ease;
+
+    &:hover {
+      border-color: var(--tertiary);
+      background-color: var(--highlight);
+      color: var(--secondary);
+    }
+  }
+
+  @media all and ($mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ---------------------------------------------------------
+// Accessibility & motion restraint
+// ---------------------------------------------------------
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--tertiary) 32%, transparent);
+  color: var(--dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
