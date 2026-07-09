@@ -8,11 +8,11 @@ title: Chanjoon Park
     <p class="home-hero__role">M.S. student, <a href="https://urobot.kaist.ac.kr/">Urban Robotics Lab (URL)</a>, KAIST</p>
     <p>I work on <strong>learning-based planning</strong>, trajectory optimization, and reinforcement learning for agile quadrotors, with an emphasis on <strong>end-to-end policy learning in unknown and cluttered environments</strong>. I am advised by <a href="https://scholar.google.com/citations?user=NrWfJ1gAAAAJ&hl=en">Prof. Hyun Myung</a>.</p>
     <p class="home-hero__links">
-      <a class="hl--scholar" href="https://scholar.google.com/citations?user=YOUR_ID">🎓 Google Scholar</a>
+      <a class="hl--scholar" href="https://scholar.google.com/citations?user=37VDRnkAAAAJ">🎓 Google Scholar</a>
       <a class="hl--github" href="https://github.com/ChanJoon">💻 GitHub</a>
       <a class="hl--linkedin" href="https://linkedin.com/in/chanjoon-park">💼 LinkedIn</a>
       <a class="hl--cv" href="https://drive.google.com/file/d/1w8_ewBBT_fc1AepMGMERiwE7jvTv0W5c/view">📄 CV</a>
-      <a class="hl--email" href="mailto:chanj00n1112@gmail.com">✉️ Email</a>
+      <a class="hl--email" href="mailto:chanjoon.park@kaist.ac.kr">✉️ Email</a>
     </p>
   </div>
   <img class="home-hero__photo" src="static/profile.png" alt="Chanjoon Park" />

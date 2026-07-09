@@ -11,13 +11,13 @@ I am a Master's student at KAIST, working in the **Urban Robotics Lab (URL)** un
 <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:8px;">
   <a href="https://drive.google.com/file/d/1w8_ewBBT_fc1AepMGMERiwE7jvTv0W5c/view"
      style="padding:8px 14px; border-radius:8px; background:#2563eb; color:white; text-decoration:none; font-weight:600;">📄 CV</a>
-  <a href="https://scholar.google.com/citations?user=YOUR_ID"
+  <a href="https://scholar.google.com/citations?user=37VDRnkAAAAJ"
      style="padding:8px 14px; border-radius:8px; background:#4285F4; color:white; text-decoration:none; font-weight:600;">🎓 Google Scholar</a>
   <a href="https://github.com/ChanJoon"
      style="padding:8px 14px; border-radius:8px; background:#111827; color:white; text-decoration:none; font-weight:600;">💻 GitHub</a>
   <a href="https://linkedin.com/in/chanjoon-park"
      style="padding:8px 14px; border-radius:8px; background:#0A66C2; color:white; text-decoration:none; font-weight:600;">💼 LinkedIn</a>
-  <a href="mailto:chanj00n1112@gmail.com"
+  <a href="mailto:chanjoon.park@kaist.ac.kr"
      style="padding:8px 14px; border-radius:8px; background:#374151; color:white; text-decoration:none; font-weight:600;">✉️ Email</a>
 </div>
 
@@ -87,5 +87,5 @@ I am a Master's student at KAIST, working in the **Urban Robotics Lab (URL)** un
 
 ## Contact
 
-- Email: chanj00n1112 [at] gmail [dot] com
+- Email: chanjoon.park [at] kaist [dot] ac [dot] kr
 - Office: (Building, Room), KAIST, Daejeon, Republic of Korea
