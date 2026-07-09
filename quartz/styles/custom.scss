@@ -517,13 +517,34 @@ footer {
 // ---------------------------------------------------------
 // Researcher home (index only)
 // ---------------------------------------------------------
-[data-slug="index"] {
+[data-slug="index"],
+[data-slug="about"] {
   .content-meta {
     display: none;
   }
 
   .article-title {
     margin-bottom: 0.2rem;
+  }
+}
+
+body[data-slug="index"],
+body[data-slug="about"] {
+  .sidebar.right {
+    display: none;
+  }
+
+  @media all and ($desktop) {
+    .page > #quartz-body {
+      grid-template-columns: 260px minmax(0, 900px);
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "grid-sidebar-left grid-header"
+        "grid-sidebar-left grid-center"
+        "grid-sidebar-left grid-footer";
+      column-gap: 2rem;
+      justify-content: center;
+    }
   }
 }
 
@@ -688,6 +709,12 @@ footer {
     margin-top: 0.1rem;
   }
 
+  .pub-item__note {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: 0.2rem;
+  }
+
   .pub-item__links {
     display: flex;
     gap: 0.4rem;
@@ -695,7 +722,7 @@ footer {
 
     a {
       display: inline-block;
-      padding: 0.08rem 0.6rem;
+      padding: 0.28rem 0.7rem;
       border: 1px solid color-mix(in srgb, var(--secondary) 35%, transparent);
       border-radius: 999px;
       background-image: none;
@@ -707,6 +734,83 @@ footer {
         background-color: var(--secondary);
         color: var(--light);
       }
+    }
+  }
+}
+
+.home-writing {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+
+  > a {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.72rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--lightgray) 60%, transparent);
+    background-image: none;
+
+    &:hover {
+      .home-writing__title {
+        color: var(--secondary);
+      }
+    }
+  }
+
+  .home-writing__title {
+    font-weight: 600;
+    color: var(--darkgray);
+    transition: color 0.15s ease;
+  }
+
+  .home-writing__meta {
+    font-size: 0.8rem;
+    color: var(--gray);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  @media all and ($mobile) {
+    > a {
+      grid-template-columns: 1fr;
+      gap: 0.18rem;
+    }
+  }
+}
+
+.home-writing__more {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.2rem;
+    padding: 0 0.75rem;
+    border: 1px solid var(--lightgray);
+    border-radius: var(--radius-surface);
+    background-image: none;
+    color: var(--darkgray);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition:
+      border-color 0.15s ease,
+      background-color 0.15s ease,
+      color 0.15s ease;
+
+    &:hover {
+      border-color: var(--tertiary);
+      background-color: var(--highlight);
+      color: var(--secondary);
     }
   }
 }

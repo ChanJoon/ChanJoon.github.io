@@ -1,91 +1,37 @@
 ---
 title: About
-date: 2026-05-08
 draft: false
+description: About Chanjoon Park, a Ph.D. student in robotics at KAIST working on learning-based planning and autonomous navigation.
+socialDescription: About Chanjoon Park, Ph.D. student in robotics at KAIST starting in September 2026.
 ---
 
-> Brief one-line summary of who you are and what you work on.
+I am a **Ph.D. student in the Robotics Program at KAIST, starting in September 2026**, and a member of the **Urban Robotics Lab (URL)** under Prof. Hyun Myung. My research focuses on learning-based planning, trajectory optimization, and reinforcement learning for agile robots operating in unknown and cluttered environments.
 
-I am a Master's student at KAIST, working in the **Urban Robotics Lab (URL)** under Prof. Hyun Myung. My research focuses on **learning-based planning**, trajectory optimization, and reinforcement learning for agile quadrotors, with an emphasis on end-to-end policy learning in unknown and cluttered environments.
-
-<div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:8px;">
-  <a href="https://drive.google.com/file/d/1w8_ewBBT_fc1AepMGMERiwE7jvTv0W5c/view"
-     style="padding:8px 14px; border-radius:8px; background:#2563eb; color:white; text-decoration:none; font-weight:600;">📄 CV</a>
-  <a href="https://scholar.google.com/citations?user=37VDRnkAAAAJ"
-     style="padding:8px 14px; border-radius:8px; background:#4285F4; color:white; text-decoration:none; font-weight:600;">🎓 Google Scholar</a>
-  <a href="https://github.com/ChanJoon"
-     style="padding:8px 14px; border-radius:8px; background:#111827; color:white; text-decoration:none; font-weight:600;">💻 GitHub</a>
-  <a href="https://linkedin.com/in/chanjoon-park"
-     style="padding:8px 14px; border-radius:8px; background:#0A66C2; color:white; text-decoration:none; font-weight:600;">💼 LinkedIn</a>
-  <a href="mailto:chanjoon.park@kaist.ac.kr"
-     style="padding:8px 14px; border-radius:8px; background:#374151; color:white; text-decoration:none; font-weight:600;">✉️ Email</a>
-</div>
-
----
-
-## Research Interests
+## Research interests
 
 - **Learning-based motion planning** for agile aerial robots
-- **Reinforcement learning** in continuous control / sim-to-real
-- **Trajectory optimization** and model predictive control
-- (add more keywords here)
-
----
+- **Reinforcement learning** for robust autonomy and sim-to-real deployment
+- **Trajectory optimization and model predictive control** for autonomous navigation
 
 ## Education
 
-- **M.S. in Robotics**, KAIST, 2024 – present
+- **Ph.D. in Robotics**, KAIST — starting Sep. 2026
   - Advisor: Prof. Hyun Myung, Urban Robotics Lab
-- **B.S. in (Major)**, (Institution), (Year) – (Year)
-  - (Awards / Honors)
+- **M.S. in Robotics**, KAIST — Sep. 2024 – Aug. 2026
+- **B.S. in Mechanical Engineering**, Yonsei University — Mar. 2018 – Aug. 2024
 
----
+## Selected awards
 
-## Publications
-
-> Newest first. `*` denotes equal contribution.
-
-- (Author list). **Paper title.** Venue, Year. \[[arXiv](https://arxiv.org/abs/xxxx.xxxxx)\] \[[Code](https://github.com/...)\]
-- (Author list). **Paper title.** Venue, Year. \[[arXiv](https://arxiv.org/abs/xxxx.xxxxx)\]
-
-### Workshop / Preprint
-
-- (Author list). **Title.** Venue, Year.
-
-### Under Review
-
-- (Author list). **Title.** (Submitted to Venue), Year.
-
----
-
-## Talks / Posters
-
-- *Title* — Venue, Date. \[[Slides](#)\]
-
----
-
-## Awards & Honors
-
-- (Year) — Award name, Issuing body
-- (Year) — Award name, Issuing body
-
----
-
-## Service
-
-- Reviewer: (Venue, Year), (Venue, Year)
-- Teaching assistant: (Course, Term)
-
----
-
-## Experience
-
-- **(Role)**, (Organization). (Start) – (End).
-  - (One-line description of work)
-
----
+- **2nd Place**, 2023 Korea Robot Aircraft Competition — Korea Aerospace Industries Association
+- **KIPO Commissioner Award**, Student Startup Competition GROW-UP, 2023 — Yonsei University
+- **Grand Prize**, Autonomous Driving Robot Race, 2022 — Korea Robotics Society
 
 ## Contact
 
-- Email: chanjoon.park [at] kaist [dot] ac [dot] kr
-- Office: (Building, Room), KAIST, Daejeon, Republic of Korea
+<div class="profile-links">
+  <a href="mailto:chanjoon.park@kaist.ac.kr">Email</a>
+  <a href="https://scholar.google.com/citations?user=37VDRnkAAAAJ">Google Scholar</a>
+  <a href="https://github.com/ChanJoon">GitHub</a>
+  <a href="https://linkedin.com/in/chanjoon-park">LinkedIn</a>
+  <a href="https://drive.google.com/file/d/1w8_ewBBT_fc1AepMGMERiwE7jvTv0W5c/view">CV</a>
+</div>

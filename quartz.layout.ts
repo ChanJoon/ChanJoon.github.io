@@ -2,19 +2,24 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { SimpleSlug } from "./quartz/util/path"
 
+const isProfilePage = (slug: string | undefined) => slug === "index" || slug === "about"
+
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   // top-right site nav replaces the old left CategoryNav
   header: [Component.TopNav()],
   afterBody: [
-    Component.MobileOnly(
-      Component.RecentNotes({
-        title: "Recent notes",
-        limit: 6,
-        linkToMore: "posts/" as SimpleSlug,
-      }),
-    ),
+    Component.ConditionalRender({
+      component: Component.MobileOnly(
+        Component.RecentNotes({
+          title: "Recent notes",
+          limit: 6,
+          linkToMore: "posts/" as SimpleSlug,
+        }),
+      ),
+      condition: (page) => !isProfilePage(page.fileData.slug),
+    }),
   ],
   footer: Component.Footer({
     links: {
@@ -29,10 +34,13 @@ export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
       component: Component.Breadcrumbs(),
-      condition: (page) => page.fileData.slug !== "index",
+      condition: (page) => !isProfilePage(page.fileData.slug),
     }),
     Component.ArticleTitle(),
-    Component.ContentMeta(),
+    Component.ConditionalRender({
+      component: Component.ContentMeta(),
+      condition: (page) => !isProfilePage(page.fileData.slug),
+    }),
     Component.PaperReviewCard(),
     Component.TagList(),
   ],
@@ -50,9 +58,18 @@ export const defaultContentPageLayout: PageLayout = {
     }),
   ],
   right: [
-    Component.Graph(),
-    Component.TableOfContents(),
-    Component.Backlinks(),
+    Component.ConditionalRender({
+      component: Component.Graph(),
+      condition: (page) => !isProfilePage(page.fileData.slug),
+    }),
+    Component.ConditionalRender({
+      component: Component.TableOfContents(),
+      condition: (page) => !isProfilePage(page.fileData.slug),
+    }),
+    Component.ConditionalRender({
+      component: Component.Backlinks(),
+      condition: (page) => !isProfilePage(page.fileData.slug),
+    }),
   ],
 }
 
