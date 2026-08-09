@@ -13,6 +13,7 @@ paper:
   arxiv: "2209.06761"
   doi: "10.1109/ICRA48891.2023.10160767"
   bibkey: "ren2023onlinewb"
+thumbnail: Ren2023icra_fig3.png
 ---
 
 # Online Whole-body Motion Planning for Quadrotor using Multi-resolution Search

@@ -14,6 +14,7 @@ paper:
   doi: "10.1109/LRA.2018.2795654"
   code: "https://github.com/sikang/motion_primitive_library"
   bibkey: "liu2018searchse3"
+thumbnail: "Liu et al_fig6.png"
 ---
 # Search-Based Motion Planning for Aggressive Flight in SE(3)
 

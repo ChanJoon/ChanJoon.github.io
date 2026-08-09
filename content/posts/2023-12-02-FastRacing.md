@@ -14,6 +14,7 @@ paper:
   doi: "10.1109/LRA.2021.3113976"
   code: "https://github.com/ZJU-FAST-Lab/Fast-Racing"
   bibkey: "han2021fastracing"
+thumbnail: Han2021ral_fig4.png
 ---
 
 # Fast-Racing: An Open-Source Strong Baseline for SE(3) Planning in Autonomous Drone Racing

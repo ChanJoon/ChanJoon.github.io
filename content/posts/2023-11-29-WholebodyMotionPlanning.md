@@ -13,6 +13,7 @@ paper:
   doi: "10.1109/ICRA48506.2021.9561526"
   pdf: "https://zhepeiwang.github.io/pubs/icra_2021_wholebody.pdf"
   bibkey: "yang2021wholebody"
+thumbnail: Yang2021icra_fig4.png
 ---
 
 # Whole-Body Real-Time Motion Planning for Multicopters
