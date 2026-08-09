@@ -2,7 +2,6 @@
 layout: post
 title: Linux CLI Cheatseet
 date: 2024-04-04
-categories: Misc.
 tags:
   - linux
 math: "true"

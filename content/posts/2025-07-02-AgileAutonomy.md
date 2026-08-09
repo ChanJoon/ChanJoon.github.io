@@ -2,7 +2,6 @@
 layout: post
 title: "[Sci. Robot '21] Learning high-speed flight in the wild"
 date: 2025-07-02
-categories: Robotics
 tags:
   - paper
   - control-planning

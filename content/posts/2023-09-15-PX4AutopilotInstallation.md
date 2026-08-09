@@ -2,6 +2,9 @@
 date: 2023-09-15
 layout: post
 title: "귀찮을 때 보기위한 PX4-Autopilot 설치"
+tags:
+  - px4
+  - setup
 ---
 
 ## PX4-Autopilot Installation 

@@ -2,7 +2,6 @@
 layout: post
 title: "[ICRA '21] Whole-Body Real-Time Motion Planning for Multicopters"
 date: 2023-11-29
-categories: Robotics
 tags:
   - paper
 math: "true"

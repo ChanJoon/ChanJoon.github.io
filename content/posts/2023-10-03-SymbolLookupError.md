@@ -2,8 +2,9 @@
 date: 2023-10-03
 layout: post
 title: "Symbol lookup error"
-categories: ROS
-tags: ROS
+tags:
+  - ROS
+  - troubleshooting
 math: "true"
 ---
 

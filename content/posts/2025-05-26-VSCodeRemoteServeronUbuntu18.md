@@ -2,9 +2,8 @@
 layout: post
 title: VSCode Remote on Ubuntu18.04
 date: 2025-05-26
-categories: Misc.
 tags:
-  - linux
+  - setup
 math: "true"
 ---
 

@@ -2,7 +2,6 @@
 date: 2023-10-16
 layout: post
 title: "rpg_trajectory_evalutation"
-categories: Robotics
 tags: ROS
 math: "true"
 ---

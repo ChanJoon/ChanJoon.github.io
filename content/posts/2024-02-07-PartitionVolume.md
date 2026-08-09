@@ -2,8 +2,8 @@
 layout: post
 title: 파티션 용량 정리
 date: 2024-02-07
-categories: Misc.
-tags: 
+tags:
+  - linux
 math: "true"
 ---
 ## 파티션 용량 정리

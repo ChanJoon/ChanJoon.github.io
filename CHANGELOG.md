@@ -1,5 +1,40 @@
 # Changelog
 
+## 2026-08-09
+
+### Fixed — unpublished draft was live
+
+- [x] `content/posts/Paper Draft.md` → `content/private/paper-draft.md`, plus `draft: true`. It was serving at `/posts/Paper-Draft`, sitting at the top of `/posts` as "2026-03-23", and shipping in `index.xml` — a paper-writing template containing unpublished PIDLoc analysis. `ignorePatterns: ["private"]` keeps the whole subtree out of the pipeline (verified against the real content dir with globby); the `draft: true` is a second latch. **Search Console index removal is still outstanding and must be done by hand.**
+
+### Added — build-time title H1 strip
+
+- [x] `quartz/plugins/transformers/stripTitleH1.ts` — removes the leading `# Title` when it is the document's only H1. 43 posts migrated from Jekyll opened with an H1 that repeated the frontmatter `title`, so every page rendered its title twice. Registered before `TableOfContents()` in `quartz.config.ts`.
+- [x] Kept the H1 in the markdown source deliberately: filenames here are dates (`2025-12-01-SOLID`), so the H1 is what identifies a note in Obsidian. The rule is structural, not string-matching — a document with several H1s is using them as section headings and is left untouched.
+- [x] Side effect, and the reason this was worth doing: `toc.ts` normalizes depth against the shallowest heading, so the duplicate H1 was pushing every real section down a level. Sections now sit at the top of the ToC and one more level fits inside `maxDepth: 4`.
+- [x] Headings demoted one level in the 5 posts whose H1s were section headings (`CS285_Week3`, `quasiNewton`, `AerialRobotics_Lec3`, `illConditioned`, `BangBangControl`). Max depth after demotion is H4.
+- [x] `2023-10-02-RLMath.md` — the wikilink to `2023-10-15-IntroToRL` lived only inside the stripped H1 and was the sole edge between the two notes; repeated it in the body so the backlink survives.
+
+### Fixed — reading typography
+
+- [x] `custom.scss` set `font-size`/`line-height` on `article > p, > ul, > ol, > blockquote`. The child combinator meant text inside list items, callouts, and blockquotes fell back to the 16px browser default, so the page changed size as you scrolled. Moved onto `article`.
+- [x] `base.scss` declares `tbody, li, p { line-height: 1.6rem }` — a fixed rem that ignores font-size, and a direct element selector beats an inherited value. Overridden with `article p, article li { line-height: inherit }`.
+- [x] One measure for the whole article. `max-width: 46rem` previously applied to p/ul/ol only, so headings, code blocks, tables, and images ran to the full ~850px column and the right edge never lined up.
+
+### Changed — taxonomy
+
+- [x] Dropped the dead `categories:` key from 57 posts and from `content/templates/template.md`. Nothing in Quartz reads it — tags are the only taxonomy — so it was a second, invisible axis that split the vocabulary.
+- [x] `ros` → `ROS` across 8 frontmatter entries and 5 inline body tags. `sluggify()` does not fold case, so the build was emitting both `tags/ros.html` and `tags/ROS.html`.
+- [x] `tags/pragma` was a real page: `\#pragma once` in a blockquote in `2024-03-05-PX4toMAVROSglobal.md` parsed as an inline tag (the backslash does not stop Quartz's tag parser). Wrapped in a code span.
+- [x] Split the overloaded `linux` tag: `linux` keeps OS operation (filesystem, boot media, power, shell), new `setup` takes dev-environment work (editors, runtimes, containers, toolchains). Added `troubleshooting` as a cross-cutting axis over error notes that were scattered across `ROS`/`linux`/`px4`, and `research` for research-practice notes.
+- [x] Tagged the 11 posts that had none. Every published post now carries at least one tag; 16 tags total.
+
+### Known / deliberately left alone
+
+- `2025-02-26-CS285_Week10.md` has frontmatter and no body — a title-only page is live.
+- `2023-07-25-acado.md` is two unrelated snippets (ACADO OnlineData, a symlink tip) in one note, which is why it carries both `acado` and `linux`.
+- `2023-07-11-InstallObsidianonUbuntu2004.md` contains an MPCC paper-review section under an inline `#paper`, so an install note appears in the paper listing.
+- `layout: post` remains in 78 files. Quartz ignores it.
+
 ## 2026-05-08
 
 ### Added — academic blog upgrade

@@ -2,6 +2,9 @@
 date: 2023-07-10
 layout: post
 title: "sitl_pc_transform_tutorial"
+tags:
+  - ROS
+  - px4
 ---
 ### sitl_pc_transform_tutorial
 ```bash

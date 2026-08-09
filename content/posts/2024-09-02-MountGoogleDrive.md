@@ -2,7 +2,6 @@
 layout: post
 title: Mount Google Drive on Ubuntu 20.04
 date: 2024-09-02
-categories: Misc.
 tags:
   - linux
 math: "true"

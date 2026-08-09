@@ -2,7 +2,6 @@
 layout: post
 title: Transformers From Scratch
 date: 2024-01-01
-categories: LLM
 tags:
   - self-study
 math: "true"

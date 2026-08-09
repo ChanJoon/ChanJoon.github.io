@@ -4,7 +4,7 @@ layout: post
 title: "What is ConstPtr&?"
 ---
 ### What is ConstPtr&?
-#ros
+#ROS
 
 지난 [[2023-07-12-ROScallbackinClass#^8bd526|ROS Callback in Class]]에서 콜백함수의 메세지 타입 마지막에 ::ConstPtr에 붙이는 것을 보고 자료형을 그대로 쓰지 않는 이유에 대해 알아보았다.
 

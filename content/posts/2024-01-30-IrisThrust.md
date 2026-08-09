@@ -2,7 +2,6 @@
 layout: post
 title: How to calculate Total Thrust of iris model
 date: 2024-01-30
-categories: ROS
 tags:
   - px4
 math: "true"

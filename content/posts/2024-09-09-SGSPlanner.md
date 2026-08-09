@@ -2,7 +2,6 @@
 layout: post
 title: "[T-Mech '24] SGS-Planner: A Skeleton-Guided Spatiotemporal Motion Planner for Flight in Constrained Space"
 date: 2024-09-09
-categories: Robotics
 tags:
   - paper
   - control-planning

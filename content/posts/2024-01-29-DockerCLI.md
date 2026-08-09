@@ -2,8 +2,9 @@
 layout: post
 title: Docker 명령어 정리
 date: 2024-01-29
-categories: Misc.
-tags: 
+tags:
+  - setup
+  - ROS
 math: "true"
 ---
 ## Docker 명령어 정리

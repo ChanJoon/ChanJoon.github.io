@@ -2,7 +2,6 @@
 layout: post
 title: "Summary: Whole-body motion planning in multirotors"
 date: 2023-12-07
-categories: Robotics
 tags:
   - self-study
   - control-planning

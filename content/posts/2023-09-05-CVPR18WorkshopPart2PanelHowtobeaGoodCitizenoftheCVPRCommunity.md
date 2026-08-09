@@ -2,6 +2,8 @@
 date: 2023-09-05
 layout: post
 title: "CVPR18: Workshop: Part 2: Panel: How to be a Good Citizen of the CVPR Community"
+tags:
+  - research
 ---
 ### CVPR18: Workshop: Part 2: Panel: How to be a Good Citizen of the CVPR Community
 

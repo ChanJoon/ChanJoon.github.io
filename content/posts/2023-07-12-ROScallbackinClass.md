@@ -4,7 +4,7 @@ layout: post
 title: "ROS callback in Class"
 ---
 ## ROS callback in Class
-#ros
+#ROS
 
 >[!error]
 >error: no match for call to ‘(boost::_mfi::mf1<void, BuildingSearch, const boost::shared_ptr<const geometry_msgs::PoseStamped_<std::allocator<void> > >&>) (const boost::shared_ptr<const geometry_msgs::PoseStamped_<std::allocator<void> > >&)’

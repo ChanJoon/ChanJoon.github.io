@@ -2,7 +2,6 @@
 layout: post
 title: "[ICRA '23] Online Whole-body Motion Planning for Quadrotor using Multi-resolution Search"
 date: 2023-12-05
-categories: Robotics
 tags:
   - paper
 math: "true"

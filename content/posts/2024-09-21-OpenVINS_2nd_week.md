@@ -2,7 +2,6 @@
 layout: post
 title: OpenVINS Study 2주차
 date: 2024-09-21
-categories: Robotics
 tags:
   - VIO
 math: "true"

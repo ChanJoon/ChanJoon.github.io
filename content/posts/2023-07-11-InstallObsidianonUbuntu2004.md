@@ -3,10 +3,9 @@ date: 2023-07-11
 layout: post
 title: Install Obsidian on Ubuntu 20.04
 tags:
-  - linux
   - acado
   - paper
-categories: Misc.
+  - setup
 ---
 ### Install Obsidian on Ubuntu 20.04
 1. Go to https://obsidian.md/download and Download AppImage

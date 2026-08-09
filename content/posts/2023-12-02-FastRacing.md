@@ -2,7 +2,6 @@
 layout: post
 title: "[RA-L '21] Fast-Racing: An Open-Source Strong Baseline for SE(3) Planning in Autonomous Drone Racing"
 date: 2023-12-02
-categories: Robotics
 tags:
   - paper
 math: "true"

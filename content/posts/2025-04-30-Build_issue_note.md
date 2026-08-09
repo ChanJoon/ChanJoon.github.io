@@ -2,9 +2,9 @@
 layout: post
 title: Build Issue Note (Agile Autonomy, ERRT, mav_voxblox_planning)
 date: 2025-04-30
-categories: ROS
 tags:
-  - ros
+  - ROS
+  - troubleshooting
 math: "true"
 ---
 # Build Issue Note

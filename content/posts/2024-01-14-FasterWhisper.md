@@ -2,8 +2,8 @@
 layout: post
 title: faster-whisper 로 영상 자막파일 얻고 DeepL API로 번역하기
 date: 2024-01-14
-categories: Misc.
-tags: 
+tags:
+  - linux
 math: "true"
 ---
 [CS285](https://rail.eecs.berkeley.edu/deeprlcourse/) 강의를 수강하면서 Youtube 영어 자막에 굉장히 불편함을 느껴, 직접 영한 자막을 달아보기로 했다.

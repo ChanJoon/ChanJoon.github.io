@@ -2,7 +2,6 @@
 date: 2023-11-14
 layout: post
 title: "[RA-L '18] Search-Based Motion Planning in SE(3)"
-categories: Robotics
 tags:
   - paper
 math: "true"

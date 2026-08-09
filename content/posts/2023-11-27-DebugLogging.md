@@ -2,10 +2,10 @@
 layout: post
 title: "Debug logging"
 date: 2023-11-27
-categories: ROS
 tags:
-  - ros
+  - ROS
   - self-study
+  - troubleshooting
 math: "true"
 ---
 

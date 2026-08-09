@@ -2,7 +2,6 @@
 layout: post
 title: "3. Policy Gradient"
 date: 2023-11-20
-categories: ReinforcementLearning
 tags:
   - RL
 math: "true"

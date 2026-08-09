@@ -2,9 +2,11 @@
 date: 2023-09-07
 layout: post
 title: "ROS symbol lookup error"
+tags:
+  - troubleshooting
 ---
 ### ROS symbol lookup error
-#ros
+#ROS
 ros 노드를 실행하는 중 `symbol lookpup error`가 발생.
 문제 해결과정에서 터미널 내용이 사라져서 구글 검색에서 가져온 예시를 가져왔다.
 ```bash

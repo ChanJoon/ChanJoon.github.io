@@ -4,7 +4,7 @@ layout: post
 title: "PX4 SITL & Gazebo"
 ---
 ### PX4 SITL & Gazebo
-#ros #px4
+#ROS #px4
 
 >[!ERROR]
 >```bash

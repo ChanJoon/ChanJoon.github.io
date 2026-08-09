@@ -2,6 +2,9 @@
 date: 2023-09-27
 layout: post
 title: "How to use roslaunch with gdb"
+tags:
+  - ROS
+  - troubleshooting
 ---
 
 ### How to use roslaunch with gdb

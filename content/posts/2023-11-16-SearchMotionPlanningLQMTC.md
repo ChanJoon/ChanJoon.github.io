@@ -2,7 +2,6 @@
 layout: post
 title: "[IROS '17] Search-based Motion Planning using Linear Quadratic Minimum Time Control"
 date: 2023-11-16
-categories: Robotics
 tags:
   - paper
 math: "true"

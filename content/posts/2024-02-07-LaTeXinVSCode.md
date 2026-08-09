@@ -2,8 +2,8 @@
 layout: post
 title: How to use LaTeX in VSCode
 date: 2024-02-07
-categories: Misc.
-tags: 
+tags:
+  - setup
 math: "true"
 ---
 ## How to use LaTeX in VSCode

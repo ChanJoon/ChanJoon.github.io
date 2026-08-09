@@ -2,7 +2,6 @@
 layout: post
 title: "[Aerial Robotics] Geometry and Mechanics"
 date: 2024-07-05
-categories: Robotics
 tags:
   - self-study
 math: "true"

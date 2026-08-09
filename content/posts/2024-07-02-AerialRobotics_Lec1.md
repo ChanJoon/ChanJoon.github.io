@@ -2,7 +2,6 @@
 layout: post
 title: "[Aerial Robotics] Introduction"
 date: 2024-07-02
-categories: Robotics
 tags:
   - self-study
 math: "true"
