@@ -23,6 +23,19 @@ export const ThumbnailSource: QuartzTransformerPlugin = () => {
       return [
         () => {
           return (tree: Root, file) => {
+            // An explicit `thumbnail:` in the frontmatter always wins. The first
+            // image is only a default, and it is often wrong: on paper reviews it
+            // tends to be a cropped equation or algorithm box rather than the
+            // overview figure. Filename and geometry both turned out to be too
+            // weak to pick the right one automatically — good and bad candidates
+            // overlap on aspect ratio, area, and naming alike.
+            const declared = file.data.frontmatter?.thumbnail
+            if (typeof declared === "string" && declared.trim() !== "") {
+              file.data.thumbnail = declared.trim()
+              return
+            }
+            if (declared === false) return
+
             let found: string | undefined
             visit(tree, "image", (node) => {
               if (found !== undefined) return

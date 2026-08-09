@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-10 (thumbnail selection)
+
+### Added — `thumbnail:` frontmatter override
+
+- [x] A note can name its own listing image with `thumbnail: figure.png`, or opt out with `thumbnail: false`. The first image remains the default.
+- [x] **No automatic selection heuristic**, deliberately. On paper reviews the first image is frequently a cropped equation or algorithm box rather than the overview figure, but neither geometry nor filename separates the two: aspect ratios of good and bad candidates overlap (0.47–2.47 against 0.88–2.66) and so do areas. A filename-scoring pass changed 9 of 42 posts and clearly improved 3 — `model` matched `model_free`, and one post moved from `Quasi-Newton-formulas.png` to an unrelated `mantid_accuracy.png`. A narrower skip-equations rule touched 4 posts and improved 1. Shipping either would have traded a predictable default for a shuffle.
+- [x] `ROS` (16 posts) and `CS285` (10) added to the blog index grid.
+
 ## 2026-08-10 (later)
 
 ### Added — in-post images optimized at build time
