@@ -13,11 +13,15 @@ li.section-li {
     display: grid;
     // the tag column takes only the width its tags need, capped — as a fraction
     // it reserved a quarter of the row for a single short tag
-    grid-template-columns: 88px minmax(0, 1fr) fit-content(8em);
-    column-gap: 1rem;
+    grid-template-columns: 140px minmax(0, 1fr) fit-content(8em);
+    column-gap: 1.1rem;
     align-items: center;
 
     @media all and ($mobile) {
+      // a 140px thumbnail would leave the title barely 200px on a phone
+      grid-template-columns: 96px minmax(0, 1fr);
+      column-gap: 0.85rem;
+
       & > .tags {
         display: none;
       }
@@ -39,12 +43,16 @@ li.section-li {
 }
 
 .section-thumb {
-  width: 88px;
+  width: 140px;
   aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--lightgray);
   align-self: center;
+
+  @media all and ($mobile) {
+    width: 96px;
+  }
 }
 
 // notes without an image keep the column, so titles stay on one vertical line

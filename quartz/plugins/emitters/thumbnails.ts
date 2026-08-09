@@ -6,7 +6,7 @@ import { glob } from "../../util/glob"
 import { QuartzEmitterPlugin } from "../types"
 
 export interface Options {
-  /** Width of the generated thumbnail, in CSS pixels before DPR. */
+  /** Generated width. Kept well above the CSS width so it stays sharp at 2x DPR. */
   width: number
   quality: number
   /** Output directory under the site root. */
@@ -14,7 +14,7 @@ export interface Options {
 }
 
 const defaultOptions: Options = {
-  width: 320,
+  width: 400,
   quality: 78,
   outDir: "thumbs",
 }
