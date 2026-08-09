@@ -104,6 +104,8 @@ const config: QuartzConfig = {
         rssLimit: 20,
       }),
       Plugin.Assets(),
+      // after Assets — rewrites the copies it just made
+      Plugin.OptimizeImages(),
       Plugin.Thumbnails(),
       Plugin.Static(),
       Plugin.Favicon(),

@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-08-10 (later)
+
+### Added — in-post images optimized at build time
+
+- [x] `OptimizeImages` emitter rewrites the copies `Assets` places in `public/`: scaled to 1400px and re-encoded. **37.8MB → 11.0MB across 337 files (−26.8MB)**; the heaviest post drops from 4.05MB to 1.08MB of images. Source files are untouched, so the full-resolution figures stay available for papers and slides.
+- [x] Kept as PNG/JPEG rather than converting to WebP. Measured across all 337 images, WebP reaches 10.3MB against 11.0MB for palette-quantized PNG — 2 percentage points, not worth rewriting 337 embed references and risking a broken image. Filenames and extensions are unchanged, so nothing in the markdown moves.
+- [x] Recompressing the sources and committing them was rejected: git already holds the original blobs, so committing smaller copies would have made the repository *larger*.
+- [x] Alpha checked, because dropping it would turn transparent figure backgrounds black on a cream page. 295 images carry an alpha channel; 280 are fully opaque and lose it losslessly, and all 15 with genuine transparency keep it.
+- [x] Build goes from ~5s to ~18s (8-way pool). Nothing is written when the result would be larger than the original, and a failure on one image leaves that image as-is instead of failing the site.
+
 ## 2026-08-10
 
 ### Added — thumbnails on listing pages
