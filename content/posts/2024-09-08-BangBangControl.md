@@ -2,13 +2,12 @@
 layout: post
 title: Bang-bang and Bang-singular control
 date: 2024-09-09
-categories: Control
 tags:
   - self-study
   - control-planning
 math: "true"
 ---
-# Introduction
+## Introduction
 
 ["Quadrotor control for accurate agile flight"](https://rpg.ifi.uzh.ch/docs/PhD18_Faessler.pdf) 논문에서 사용된 Bang-bang control 과 Bang-singular control 의 의미를 알아보자.
 
@@ -17,7 +16,7 @@ math: "true"
 >
 >`M. Fässler, “Quadrotor control for accurate agile flight,” University of Zurich, 2018. doi: 10.5167/UZH-152425.`
 
-# Bang-bang control
+## Bang-bang control
 
 제어 이론에서 2개의 state 를 오가는 feedback controller 를 **bang-bang controller** 라고 한다고 한다.
 
@@ -27,7 +26,7 @@ math: "true"
 
 굉장히 제한적이고 단순한 상황에서만 일어나는 방식이지만, Hamiltonian 이 선형적인 경우에도 발생한다고 한다. 왜냐하면 이러한 경우에 [[2024-09-06-PMP|Pontryagin's minimum prinicple]] 을 적용해보면, 제어입력이 각 upper or lower bound 가 되기 때문이다.
 
-# Singular control
+## Singular control
 
 **Singular control** 은 위에서 언급한 Hamiltonian 이 선형적인 경우 발생한다.
 

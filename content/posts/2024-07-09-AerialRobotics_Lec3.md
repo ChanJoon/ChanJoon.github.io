@@ -2,15 +2,14 @@
 layout: post
 title: "[Aerial Robotics] Planning and Control"
 date: 2024-07-09
-categories: Robotics
 tags:
   - self-study
 math: "true"
 ---
 
-# 3.1 Control
+## 3.1 Control
 
-## 2-D Quadrotor Control
+### 2-D Quadrotor Control
 
 앞서 [[2024-07-05-AerialRobotics_Lec2|Dynamics]] 에 대해서는 많이 살펴보았다. 1-D Quadrotor Control 에서 처럼 system modeling 을 통한 간단한 PD 제어기를 만들어보자.
 
@@ -37,7 +36,7 @@ $$
 이제 기체의 state 에서 나온 current state $x$ 가 feedback 되어 2-D PD 제어를 수행할 수 있다.
 
 
-## 3-D Quadrotor Control
+### 3-D Quadrotor Control
 
 이제 이를 확장하여 3D Control 을 수행해보자. 앞선 1D, 2D 와 달리 yaw 또한 고려된다.
 
@@ -60,7 +59,7 @@ $$
 
 Inner loop 에서는 $\phi_{c}, \theta_{c}, \psi_{c}$ 를 자세제어기에 넣어준 후, Dynamics 를 이용해 current state 를 얻어 $u_2$ 의 feedback loop 가 완성된다.
 
-### Control for Hovering
+#### Control for Hovering
 
 3D Hovering 의 경우에는 $u_1 \sim mg,\ \theta \sim 0,\ \phi \sim 0,\ \psi \sim \psi_0$ 와 $u_2 \sim 0,\ {\omega}_x \sim 0,\ {\omega}_y \sim 0,\ {\omega}_z \sim 0$ 으로 가정한다.
 
@@ -160,7 +159,7 @@ $$
 \end{align}
 $$
 
-### Linearization of Quadrotor Equations of Motion
+#### Linearization of Quadrotor Equations of Motion
 
 ^a8b7d9
 
@@ -168,9 +167,9 @@ $$
 
 ![[AR_Lec3_linearization_2.png]]
 
-# 3.2 Planning
+## 3.2 Planning
 
-## Time, Motion and Trajectories
+### Time, Motion and Trajectories
 
 이제 Quadrotor의 궤적 생성에 대해 다뤄본다.
 
@@ -212,7 +211,7 @@ $$
 
 추후에 다루겠지만 quadrotor 는 $n=4$ 인 snap 을 input 으로 사용한다.
 
-### Minimum Jerk Trajectory
+#### Minimum Jerk Trajectory
 
 ![[AR_Lec3_min_jerk_traj.png]]
 
@@ -224,7 +223,7 @@ $$
 
 그러면 위와 같이 행렬로 구해낼 수 있다.
 
-### Extensions to multiple dimensions
+#### Extensions to multiple dimensions
 
 이를 여러 차원으로 확장할 수 있다.
 
@@ -245,7 +244,7 @@ $$
 \min_{x(t), y(t), \theta(t)} \int^1_0(\dddot{x}^2, \dddot{y}^2, \dddot{\theta}^2)dt
 $$
 
-### Waypoint Navigation
+#### Waypoint Navigation
 
 실제 환경에서는 중간 경로점들을 지나도록 해야한다. 즉, multi-segment trajectories 가 필요해진다.
 
@@ -277,7 +276,7 @@ $$
 ![[AR_Lec3_splines.png]]
 
 
-## Motion Planning for Quadrotors
+### Motion Planning for Quadrotors
 
 ![[AR_Lec3_linearized_model.png]]
 
@@ -308,7 +307,7 @@ $$
 
 $b_{ofk}$ 가 0 또는 1이기 때문에 1인 경우에는 매우 큰 $M$ 에 의해 constraints 가 항상 만족하게 된다. 그러므로 각각의 장애물에서 적어도 한 면에 대해 constraint 를 만족해야 한다.
 
-## Solving for Coefficients of Minimum Jerk Trajectories
+### Solving for Coefficients of Minimum Jerk Trajectories
 
 이전에 Minimum jerk trajectory 의 계수를 찾는 문제를 조금 구체적으로 풀어보자.
 

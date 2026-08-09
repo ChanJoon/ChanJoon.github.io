@@ -2,23 +2,22 @@
 layout: post
 title: Quasi-Newton & BFGS & L-BFGS
 date: 2024-02-19
-categories: Optimization
 tags:
   - self-study
   - control-planning
   - mathematics
 math: "true"
 ---
-# Quasi-Newton
+## Quasi-Newton
 
 Quasi-Newton method 란 무엇일까? [위키피디아](https://en.wikipedia.org/wiki/Quasi-Newton_method) 를 바탕으로 간단히 살펴보고, 어떤 알고리즘들이 주로 사용되는지와 장단점을 알아보자.
 
-## Quasi-Newton methods
+### Quasi-Newton methods
 Quasi-Newton method 란 목적함수의 영점이나 극소/극대값을 찾기 위한 방법이다.
 
 Newton's method 는 Jacobian 이나 Hessian 이 있어야 영점이나 극값을 찾을 수 있다. 반면 Quasi-Newton method 는 이러한 **Jacobian 이나 Hessian 을 사용할 수 없거나 매번 계산하기 매우 어려운 경우**에 사용할 수 있다.
 
-## Search for zeros: root finding
+### Search for zeros: root finding
 
 위에서 말한 영점을 찾는 다는 것은 목적함수의 해를 구하는 것이다.
 
@@ -34,13 +33,13 @@ $$
 
 대개 극값을 찾기 위한 방법은 대칭인 행렬을 필요로 해서 이러한 방법들을 해를 찾는데 사용하는 것은 좋지 않다고 한다.
 
-## Search for extrema: optimization
+### Search for extrema: optimization
 
 Gradient 의 해를 구한다는 것은 원래 함수의 극값을 찾는 것과 같으므로 quasi-Newton method 는 극값을 찾는데 사용될 수 있다. 즉, $g$ 가 $f$ 의 gradient 라면 $g$ 의 Jacobian 은 $f$ 의 Hessian 이 된다.
 
 이렇게 찾은 극값은 목적함수의 local maxima and minima 가 된다.
 
-### Newton method expansion
+#### Newton method expansion
 
 ^e8d9f7
 
@@ -76,7 +75,7 @@ $$
 
 대신 연속적인 gradient 를 통해 Hessian 을 업데이트한다.
 
-### Quasi-Newton method expansion
+#### Quasi-Newton method expansion
 
 Quasi-Newton methods 는 secant method 의 방법을 일반화 한것으로 고차원에서는 secant equation 이 under-determined 이므로, 이를 어떤 제약조건을 통해 해를 구하는지에 따라 달라진다. (보통은 Hessian 의 현재 추정치에 간단한 low-rank 업데이트를 통해 이루어진다.)
 
@@ -118,7 +117,7 @@ Hessian 의 근사인 $B$ 은 secant equation 인 $\nabla f(x_k+\Delta x)=\nabla
 
 ![[Quasi-Newton-formulas.png]]
 
-# BFGS
+## BFGS
 
 ^9f000a
 
@@ -128,7 +127,7 @@ BFGS 알고리즘은 gradient evaluation 로 얻은 Hessian 의 loss function �
 
 BFGS 의 curvature 행렬을 업데이트하는데 역행렬이 필요하지 않아 복잡도는 $\cal{O}(n^2)$ 이다. (Newton's method 는 $\cal{O}(n^3)$ 이다.)
 
-### Rationale
+#### Rationale
 
 ^7fc0ba
 
@@ -172,7 +171,7 @@ B_{k+1}&=B_k+\alpha\mathbf{u}\mathbf{u}^T+\beta\mathbf{v}\mathbf{v}^T \\
 \end{align}
 $$
 
-### Algorithm
+#### Algorithm
 
 [[#^7fc0ba|Rationale ]]를 바탕으로 전체 알고리즘과 역행렬 근사하는 부분까지 정리해보자.
 
@@ -213,13 +212,13 @@ $$
 > 4. $y_k=\nabla f(x_{k+1})-\nabla f(x_k)$
 > 5. $H_{k+1} = H_k + \frac{(\mathbf{s}_k^{\mathrm{T}}\mathbf{y}_k+\mathbf{y}_k^{\mathrm{T}} B_k^{-1} \mathbf{y}_k)(\mathbf{s}_k \mathbf{s}_k^{\mathrm{T}})}{(\mathbf{s}_k^{\mathrm{T}} \mathbf{y}_k)^2} - \frac{B_k^{-1} \mathbf{y}_k \mathbf{s}_k^{\mathrm{T}} + \mathbf{s}_k \mathbf{y}_k^{\mathrm{T}}B_k^{-1}}{\mathbf{s}_k^{\mathrm{T}} \mathbf{y}_k}$.
 
-### Further developments
+#### Further developments
 
 **BFGS** 업데이트는 $\mathbf{s}_k^T\mathbf{y}_k>0$ 가 완전히 양수인 조건에 크게 의존한다. 이는 convex target 에 대해 Wolfe condition 을 만족하며 line search 를 수행해야 하는데, Sequential Quadratic Programming 같은 경우에서는 음수나 거의 0에 가까운 곡률을 얻기도 한다.
 
 따라서, 이러한 경우에는 $\mathbf{s}_k$ 나 $\mathbf{y}_k$ 를 적절히 변경하는 damped BFGS 라고 불리는 업데이트를 수행하기도 한다.
 
-## Limited-memory BFGS
+### Limited-memory BFGS
 
 L-BFGS 는 앞서 다룬 [[#^9f000a|BFGS]] 에 제한된 메모리를 사용하는 방법이다.
 
@@ -229,7 +228,7 @@ L-BFGS 는 앞서 다룬 [[#^9f000a|BFGS]] 에 제한된 메모리를 사용하�
 
 L-BFGS 는 $H_k$ 를 모두 저장하는 대신 지난 $m<10$ 개의 업데이트에서의 $x$ 와 $\nabla f(x)$ 를 저장한다.
 
-### Algorithm
+#### Algorithm
 
 L-BFGS 는 다른 quasi-Newton 방식과 매우 비슷하지만 approximate Newton\'s direction 인 $d_k$ 와 현재 gradient $g_k$, Hessian 역행렬 $H_k$에 대해 matrix-vector multiplication $d_k=-H_k g_k$ 를 수행한다는 점에서 차이가 있다.
 
@@ -290,15 +289,15 @@ Wolfe line search 를 통해 곡률 조건 $y_k^{\top} s_k > 0$ 이 만족되고
 
 two-loop recursion 방식은 Hessian 의 역행렬을 곱셈하는 효율성 때문에 unconstrained optimization 에 널리 사용된다고 한다. 이 외의 접근 방식으로 Hessian 이나 그 역행렬의 low-rank 표현을 사용하는 것도 있다고 한다. 이는 Hessian 을 diagonal 행렬과 low-rank 업데이트의 합으로 나타내는 것으로 SQP 와 같은 constrained problem 에서 L-BFGS 를 사용할 수 있도록 해준다.
 
-### L-BFGS-B
+#### L-BFGS-B
 
 **L-BFGS** 의 파생 중에 관심갔던 알고리즘은 **L-BFGS-B** 이다. 왜냐하면 L-BFGS 간단한 bound constraints ($i.e\quad l_i\leq x_i\leq u_i$)를 다룰 수 있도록 한 알고리즘이기 때문이다.
 
-## Comparison with Other Solvers
+### Comparison with Other Solvers
 
 여타 많은 알고리즘들과 차이가 궁금하였다. 예를 들어, 딥러닝에서는 Adam optimizer 를 대개 사용하는데 이러한 방식과 BFGS 방식과의 차이점을 찾아보았다.
 
-### L-BFGS vs Adam
+#### L-BFGS vs Adam
 
 https://stats.stackexchange.com/questions/315626/the-reason-of-superiority-of-limited-memory-bfgs-over-adam-solver
 
@@ -306,7 +305,7 @@ ADAM 은 모든 dimension 에서 step size 를 조정하는 first order 방법�
 
 각 차원을 따라만 추정하고 Hessian 에서 대각선을 벗어난 부분을 고려하지 않는다는 점에서 L-BFGS 보다 더 부족한 추정치이다. Hessian 이 거의 singular 하면 diagonal 을 벗어난 부분이 곡률에 중요한 역할을 할 수 있으며 이러한 경우 ADAM 은 BFGS 에 비해 성능이 저하될 가능성이 높다.
 
-### Benchmark
+#### Benchmark
 
 여러 quasi-Newton method 혹은 다른 gradient descent 와 같은 알고리즘들 중에서 어떠한 것이 우수한지, 혹은 unconstrained optimization 에서 가장 적절한지 궁금하였다.
 

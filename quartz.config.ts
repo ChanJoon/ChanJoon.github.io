@@ -70,6 +70,8 @@ const config: QuartzConfig = {
       }),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
+      // must precede TableOfContents so the stripped H1 is absent from the ToC
+      Plugin.StripTitleH1(),
       Plugin.TableOfContents({
         maxDepth: 4,
         collapseByDefault: false,

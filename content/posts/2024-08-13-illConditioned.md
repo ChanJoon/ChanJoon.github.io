@@ -2,14 +2,13 @@
 layout: post
 title: Ill-conditioned matrix
 date: 2024-08-13
-categories: Mathematics
 tags:
   - self-study
   - mathematics
 math: "true"
 ---
 
-# Introduction
+## Introduction
 
 >[!quote]
 >A poor choice of basis functions can cause the matrix H in (7.3) to be **ill-conditioned** for large order polynomials. In order to diagonalize H and ensure that it is **well-conditioned** matrix we use Legendre polynomials as basis functions for the krth derivatives of our positions.
@@ -28,7 +27,7 @@ s.t.& \quad Ac\leq b \\
 \end{align}
 $$
 
-# ill-posed, well-posed, ill-conditioned, well-conditioned matrix(or problem)
+## ill-posed, well-posed, ill-conditioned, well-conditioned matrix(or problem)
 
 [Ref. Dsaint31's blog](https://dsaint31.tistory.com/400)
 
@@ -50,7 +49,7 @@ $\mathbf{A}\mathbf{x}=\mathbf{b}$ 에서 $\mathbf{A}$ 가 invertible 하다면 �
 
 nearly singular 라고 부르기도 하며, 안정성이 낮아 noise 에도 큰 오차가 발생한다.
 
-## An example of ill-conditioned matrices
+### An example of ill-conditioned matrices
 
 [Reference PDF](https://emtiyaz.github.io/pcml15/illconditioned.pdf)
 
