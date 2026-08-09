@@ -84,15 +84,18 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
               ) : (
                 <div class="section-thumb section-thumb--empty" aria-hidden="true" />
               )}
-              <p class="meta">
-                {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
-              </p>
               <div class="desc">
                 <h3>
                   <a href={resolveRelative(fileData.slug!, page.slug!)} class="internal">
                     {title}
                   </a>
                 </h3>
+                {/* the date sits under the title rather than in its own column:
+                    paper-review titles run past 100 characters and a separate
+                    date column pushed most of them onto a second line */}
+                <p class="meta">
+                  {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
+                </p>
               </div>
               <ul class="tags">
                 {tags.map((tag) => (

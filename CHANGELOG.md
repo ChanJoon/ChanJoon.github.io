@@ -8,6 +8,7 @@
 - [x] `PageList` renders the slot even when a note has no image — 37 of 76 posts have none, and a missing column would leave the list ragged. `loading="lazy"` and `decoding="async"` on every thumbnail.
 - [x] Resolving the source is the fiddly part: an Obsidian embed records only `figure.png`, and 21 image files have spaces in their names, so the recorded URL is the slugified form. The emitter matches by path, then by path relative to the note, then by basename — raw and slugified — and prefers a file next to the note when a basename is ambiguous.
 - [x] The transformer skips non-image embeds on purpose: one note leads with a 4.2MB PDF, another with a remote YouTube thumbnail.
+- [x] Listing row reworked after seeing it rendered: the date moved under the title and the tag column shrank to its content. A separate date column plus a `1fr` tag column left the title about 450px, and 11 of 82 titles run past 60 characters (the longest is 105), so most paper reviews wrapped onto three lines. The title now gets ~670px.
 - [x] Named `ThumbnailSource` / `Thumbnails` rather than sharing a name. `quartz/plugins/index.ts` re-exports transformers and emitters into one namespace, and a duplicate star-export would have silently resolved to nothing.
 
 ### Fixed — broken image in the Pixhawk note
