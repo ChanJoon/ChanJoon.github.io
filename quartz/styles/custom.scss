@@ -33,23 +33,28 @@ article {
   // 한국어 타이포: 단어 중간 줄바꿈 방지 (긴 영문 토큰은 base의 overflow-wrap이 처리)
   word-break: keep-all;
 
-  & > p,
-  & > ul,
-  & > ol,
-  & > blockquote {
-    font-size: 1.0625rem; // ~17px
-    line-height: 1.78;
+  // Set the reading size on the article itself, not on a list of direct
+  // children. With `article > p` the size stopped at the top level, so text
+  // inside list items, callouts, and blockquotes fell back to the 16px browser
+  // default — the page changed size as you scrolled through it.
+  font-size: 1.0625rem; // ~17px
+  line-height: 1.78;
+
+  // One measure for everything. Previously only p/ul/ol were capped at 46rem
+  // while headings, code blocks, tables, and images ran to the full ~850px
+  // column, so the right edge of the article never lined up.
+  max-width: 46rem;
+
+  // base.scss declares `tbody, li, p { line-height: 1.6rem }`. That is a fixed
+  // rem, so it ignores font-size, and a direct element selector beats an
+  // inherited value — list items rendered tighter than the prose around them.
+  & p,
+  & li {
+    line-height: inherit;
   }
 
   & > p {
     margin: 0 0 1.15em;
-  }
-
-  // constrain raw line length even when the center column is wide
-  & > p,
-  & > ul,
-  & > ol {
-    max-width: 46rem;
   }
 }
 
