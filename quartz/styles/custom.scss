@@ -539,6 +539,13 @@ body[data-slug="about"] {
     display: none;
   }
 
+  // These two pages are not prose — they are a profile laid out against the
+  // 900px column below, so the 46rem reading measure does not apply. Capping
+  // them narrows the hero and publication rows and makes the page taller.
+  article {
+    max-width: none;
+  }
+
   @media all and ($desktop) {
     .page > #quartz-body {
       grid-template-columns: 260px minmax(0, 900px);
