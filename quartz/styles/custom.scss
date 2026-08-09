@@ -701,6 +701,35 @@ body[data-slug="about"] {
     margin: 0;
   }
 
+  // teaser figure, when the entry has one — entries without an image keep the
+  // single-column layout, so a half-illustrated list still reads evenly
+  &.pub-item--has-thumb {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 1.1rem;
+    align-items: start;
+  }
+
+  .pub-item__thumb {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid var(--lightgray);
+    border-radius: var(--radius-surface);
+    margin: 0.15rem 0 0;
+  }
+
+  @media all and ($mobile) {
+    &.pub-item--has-thumb {
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+
+    .pub-item__thumb {
+      max-width: 320px;
+    }
+  }
+
   .pub-item__title {
     font-weight: 650;
     font-size: 1.02rem;

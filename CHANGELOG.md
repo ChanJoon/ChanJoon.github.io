@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-08-09 (later)
+
+### Fixed — profile pages were narrowed by the reading measure
+
+- [x] `index` and `about` lay out against a 900px column, but the `article { max-width: 46rem }` from the typography pass capped them at 736px. The narrower column re-wrapped the hero and publication rows, which is what made the home page scroll longer than its content warranted.
+
+### Added — data-driven publications
+
+- [x] `content/publications.yaml` holds the publication list; `quartz/plugins/transformers/publications.ts` replaces a ` ```publications ` fence with the rendered list. `index.md` no longer carries hand-written `<div class="pub-item">` markup.
+- [x] Optional `image:` per entry renders a teaser thumbnail (`180px` column, 4:3 crop, `loading="lazy"`); entries without one keep the single-column layout, so a partly illustrated list still reads evenly.
+- [x] A trailing `*` on an author name becomes a superscript marker, and the name in `me:` is bolded — no HTML in the data file.
+- [x] The transformer **throws** on unreadable/malformed YAML rather than warning. It warned at first, and a single unquoted colon in a title emptied the Publications section while the build still exited 0 — exactly the failure that would ship unnoticed.
+
 ## 2026-08-09
 
 ### Fixed — unpublished draft was live

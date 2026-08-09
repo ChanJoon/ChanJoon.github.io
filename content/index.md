@@ -21,26 +21,9 @@ socialDescription: Chanjoon Park is a Ph.D. student in robotics at KAIST, starti
 
 ## Publications
 
-<div class="pub-list">
-  <div class="pub-item">
-    <p class="pub-item__title">Jump-Aware Hybrid Path Planning for Ground-Jumping Bimodal Robots</p>
-    <p class="pub-item__authors">Wonhong Lee, <strong>Chanjoon Park</strong>, Myungwoo Jeong, Hyun Myung</p>
-    <p class="pub-item__venue">Korea Robotics Society Annual Conference (KRoC), 2026</p>
-  </div>
-  <div class="pub-item">
-    <p class="pub-item__title">SSF-Exploration: Safe Segments Forwarding-Based Seamless Replanning and Tracking for Fast UAV Exploration</p>
-    <p class="pub-item__authors">Eungchang Mason Lee<sup>*</sup>, <strong>Chanjoon Park<sup>*</sup></strong>, Hyun Myung</p>
-    <p class="pub-item__venue">IEEE International Conference on Control, Automation and Systems (ICCAS), 2025</p>
-    <p class="pub-item__note"><sup>*</sup> Equal contribution</p>
-    <p class="pub-item__links"><a href="https://doi.org/10.23919/ICCAS66577.2025.11301270">DOI</a></p>
-  </div>
-  <div class="pub-item">
-    <p class="pub-item__title">Obstacle Layer-Based Avoidance for Self-Driving Racing Cars</p>
-    <p class="pub-item__authors"><strong>Chanjoon Park</strong>, Jaeyoon Kim, Sanghoon Jeon, Hyunwoo Kim, Taekwon Ga, Sungjae Nah, Jongeun Choi</p>
-    <p class="pub-item__venue">Korea Robotics Society Annual Conference (KRoC), 2023 · Special Oral Session</p>
-    <p class="pub-item__links"><a href="https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:6de791ec-7a39-32e9-945b-821f86ba0394">Paper</a></p>
-  </div>
-</div>
+```publications
+selected
+```
 
 ## News
 

@@ -1,0 +1,47 @@
+# Publications rendered by the ```publications fence (see index.md).
+#
+#   authors  — a trailing * on a name becomes a superscript marker
+#   me       — the author name to bold; set once at the top
+#   image    — optional teaser, relative to content/. ~600px wide, WebP.
+#              Omit it and the entry renders as a single column.
+#   links    — label: url, rendered in the order written
+#   selected — included when the fence says `selected`
+
+me: Chanjoon Park
+
+entries:
+  - title: "Jump-Aware Hybrid Path Planning for Ground-Jumping Bimodal Robots"
+    authors: [Wonhong Lee, Chanjoon Park, Myungwoo Jeong, Hyun Myung]
+    venue: Korea Robotics Society Annual Conference (KRoC)
+    year: 2026
+    selected: true
+
+  # titles containing a colon must be quoted, or YAML reads them as a mapping
+  - title:
+      "SSF-Exploration: Safe Segments Forwarding-Based Seamless Replanning and
+      Tracking for Fast UAV Exploration"
+    authors: [Eungchang Mason Lee*, Chanjoon Park*, Hyun Myung]
+    venue: IEEE International Conference on Control, Automation and Systems (ICCAS)
+    year: 2025
+    note: "* Equal contribution"
+    links:
+      DOI: https://doi.org/10.23919/ICCAS66577.2025.11301270
+    selected: true
+
+  - title: "Obstacle Layer-Based Avoidance for Self-Driving Racing Cars"
+    authors:
+      [
+        Chanjoon Park,
+        Jaeyoon Kim,
+        Sanghoon Jeon,
+        Hyunwoo Kim,
+        Taekwon Ga,
+        Sungjae Nah,
+        Jongeun Choi,
+      ]
+    venue: Korea Robotics Society Annual Conference (KRoC)
+    year: 2023
+    note: Special Oral Session
+    links:
+      Paper: https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:6de791ec-7a39-32e9-945b-821f86ba0394
+    selected: true
