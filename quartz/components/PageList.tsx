@@ -1,4 +1,5 @@
-import { FullSlug, isFolderPath, resolveRelative } from "../util/path"
+import { FullSlug, isFolderPath, joinSegments, pathToRoot, resolveRelative } from "../util/path"
+import { thumbnailPath } from "../plugins/emitters/thumbnails"
 import { QuartzPluginData } from "../plugins/vfile"
 import { Date, getDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
@@ -69,10 +70,20 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
       {list.map((page) => {
         const title = page.frontmatter?.title
         const tags = page.frontmatter?.tags ?? []
+        // Roughly half the notes have no image. The slot is always rendered so
+        // rows keep a common height and the list does not go ragged.
+        const thumb = page.thumbnail
+          ? joinSegments(pathToRoot(fileData.slug!), thumbnailPath(page.slug!))
+          : undefined
 
         return (
           <li class="section-li">
             <div class="section">
+              {thumb ? (
+                <img class="section-thumb" src={thumb} alt="" loading="lazy" decoding="async" />
+              ) : (
+                <div class="section-thumb section-thumb--empty" aria-hidden="true" />
+              )}
               <p class="meta">
                 {page.dates && <Date date={getDate(cfg, page)!} locale={cfg.locale} />}
               </p>

@@ -71,6 +71,8 @@ const config: QuartzConfig = {
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.Publications(),
+      // after OFM (embeds are image nodes by now), before CrawlLinks rewrites URLs
+      Plugin.ThumbnailSource(),
       // must precede TableOfContents so the stripped H1 is absent from the ToC
       Plugin.StripTitleH1(),
       Plugin.TableOfContents({
@@ -102,6 +104,7 @@ const config: QuartzConfig = {
         rssLimit: 20,
       }),
       Plugin.Assets(),
+      Plugin.Thumbnails(),
       Plugin.Static(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),

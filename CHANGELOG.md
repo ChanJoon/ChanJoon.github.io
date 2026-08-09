@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-08-10
+
+### Added — thumbnails on listing pages
+
+- [x] `ThumbnailSource` transformer records a note's first image; the `Thumbnails` emitter resizes it to a 320px WebP under `thumbs/`. 39 thumbnails weigh **416KB** against **4.4MB** for the originals, which average 214KB because they are figures cropped from papers at full resolution. Quartz does not lazy-load images, so serving the originals here was not an option.
+- [x] `PageList` renders the slot even when a note has no image — 37 of 76 posts have none, and a missing column would leave the list ragged. `loading="lazy"` and `decoding="async"` on every thumbnail.
+- [x] Resolving the source is the fiddly part: an Obsidian embed records only `figure.png`, and 21 image files have spaces in their names, so the recorded URL is the slugified form. The emitter matches by path, then by path relative to the note, then by basename — raw and slugified — and prefers a file next to the note when a basename is ambiguous.
+- [x] The transformer skips non-image embeds on purpose: one note leads with a 4.2MB PDF, another with a remote YouTube thumbnail.
+- [x] Named `ThumbnailSource` / `Thumbnails` rather than sharing a name. `quartz/plugins/index.ts` re-exports transformers and emitters into one namespace, and a duplicate star-export would have silently resolved to nothing.
+
+### Fixed — broken image in the Pixhawk note
+
+- [x] `2023-09-01-PixhawkFCConnectiontoaCompanionPC.md` embedded `![svg](../images/…)`, which resolved to `/images/…` and 404'd on the live site; the file is at `/posts/images/…`. Rewritten as a `![[…]]` embed like every other note.
+- [x] The same line carried a Jekyll `{: w="800"}` attribute, which rendered as literal text on the page and leaked into the meta description. It was the only one left in the repo.
+
 ## 2026-08-09 (later)
 
 ### Fixed — profile pages were narrowed by the reading measure
