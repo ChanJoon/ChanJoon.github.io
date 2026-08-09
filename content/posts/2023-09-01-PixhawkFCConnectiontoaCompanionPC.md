@@ -12,7 +12,7 @@ title: "Pixhawk FC Connection to a Companion PC"
 
 픽스호크 FC를 Companion PC에 연결하여 사용하는 경우가 많다.
 
-![svg](../images/px4_arch_fc_companion_fbe22b77.svg){: w="800"}
+![[px4_arch_fc_companion_fbe22b77.svg]]
 
 위 그림을 참고하면 이해가 편함. 자세한 링크는 [PX4 System Architecture](https://docs.px4.io/main/en/concept/px4_systems_architecture.html)를 참고.
 
